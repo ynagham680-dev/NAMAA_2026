@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -12,60 +11,117 @@
 
 <style>
 :root{
---green:#174c3e;--green2:#26745d;--mint:#e9f5ef;
---ink:#19342d;--muted:#71827c;--line:#e3ebe6;
---bg:#f5f8f6;--white:#fff;--red:#d93636;
---amber:#e9ac22;--blue:#397bb6;
---shadow:0 8px 25px rgba(25,65,51,.07);
+  --green:#174c3e;
+  --green2:#26745d;
+  --mint:#e9f5ef;
+  --ink:#19342d;
+  --muted:#71827c;
+  --line:#e3ebe6;
+  --bg:#f5f8f6;
+  --white:#fff;
+  --red:#d93636;
+  --amber:#e9ac22;
+  --blue:#397bb6;
+  --shadow:0 8px 25px rgba(25,65,51,.07);
 }
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Cairo,sans-serif}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:Cairo,sans-serif
+}
 button,input,select{font:inherit}
 button{cursor:pointer}
 .app{display:flex;min-height:100vh}
+
+/* SIDEBAR */
 .sidebar{
-width:245px;background:#123f35;color:white;padding:23px 15px;
-display:flex;flex-direction:column;flex-shrink:0
+  width:245px;background:#123f35;color:white;padding:23px 15px;
+  display:flex;flex-direction:column;flex-shrink:0
 }
-.brand{display:flex;align-items:center;gap:11px;padding:0 9px 25px;border-bottom:1px solid #ffffff25}
-.brand-mark{width:43px;height:43px;border-radius:14px;background:#e2f3e9;color:#174c3e;display:grid;place-items:center;font-weight:800;font-size:22px}
+.brand{
+  display:flex;align-items:center;gap:11px;
+  padding:0 9px 25px;border-bottom:1px solid #ffffff25
+}
+.brand-mark{
+  width:43px;height:43px;border-radius:14px;
+  background:#e2f3e9;color:#174c3e;
+  display:grid;place-items:center;font-weight:800;font-size:22px
+}
 .brand h1{font-size:22px;margin:0}
 .brand small{display:block;color:#b9d8ca;font-size:10px}
 .nav{padding-top:20px;display:grid;gap:7px}
-.nav button{border:0;background:transparent;color:#c8ddd4;text-align:right;padding:12px;border-radius:11px;font-weight:600;display:flex;align-items:center;gap:12px}
+.nav button{
+  border:0;background:transparent;color:#c8ddd4;text-align:right;
+  padding:12px;border-radius:11px;font-weight:600;
+  display:flex;align-items:center;gap:12px
+}
 .nav button.active,.nav button:hover{background:#ffffff19;color:#fff}
 .nav .ico{width:23px;text-align:center;font-size:18px}
-.side-note{margin-top:auto;background:#ffffff12;border:1px solid #ffffff20;border-radius:13px;padding:13px;color:#d9e9e1;font-size:10px;line-height:1.9}
+.side-note{
+  margin-top:auto;background:#ffffff12;border:1px solid #ffffff20;
+  border-radius:13px;padding:13px;color:#d9e9e1;
+  font-size:10px;line-height:1.9
+}
+
+/* MAIN */
 .main{flex:1;min-width:0;padding:27px 32px 40px}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:24px}
+.topbar{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:15px;margin-bottom:24px
+}
 .eyebrow{color:var(--green2);font-weight:700;font-size:11px}
 .topbar h2{margin:3px 0 0;font-size:24px}
-.date-chip,.user-chip{background:white;border:1px solid var(--line);border-radius:11px;padding:9px 12px;font-size:11px;color:var(--muted)}
+.date-chip,.user-chip{
+  background:white;border:1px solid var(--line);
+  border-radius:11px;padding:9px 12px;font-size:11px;color:var(--muted)
+}
 .user-chip{color:var(--green);font-weight:700}
 .page{display:none}
 .page.active{display:block}
-.welcome{background:linear-gradient(115deg,#174c3e,#2c8064);border-radius:18px;padding:23px 27px;color:white;display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}
+.welcome{
+  background:linear-gradient(115deg,#174c3e,#2c8064);
+  border-radius:18px;padding:23px 27px;color:white;
+  display:flex;align-items:center;justify-content:space-between;margin-bottom:17px
+}
 .welcome h3{font-size:20px;margin:0 0 5px}
 .welcome p{margin:0;color:#d9ebe2;font-size:12px}
 .welcome .symbol{font-size:55px;opacity:.3}
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:13px;margin-bottom:17px}
-.stat,.panel,.feature{background:white;border:1px solid var(--line);border-radius:15px;box-shadow:var(--shadow)}
+
+/* CARDS */
+.stats{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:13px;margin-bottom:17px
+}
+.stat,.panel,.feature{
+  background:white;border:1px solid var(--line);
+  border-radius:15px;box-shadow:var(--shadow)
+}
 .stat{padding:15px 17px}
 .stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:11px}
-.stat-icon{width:34px;height:34px;border-radius:10px;background:var(--mint);display:grid;place-items:center;color:var(--green);font-size:17px}
+.stat-icon{
+  width:34px;height:34px;border-radius:10px;background:var(--mint);
+  display:grid;place-items:center;color:var(--green);font-size:17px
+}
 .stat strong{display:block;font-size:27px;margin-top:7px;color:var(--green)}
 .stat small{color:var(--muted);font-size:10px}
 .panel{padding:18px;margin-bottom:16px}
-.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:14px}
+.panel-head{
+  display:flex;justify-content:space-between;align-items:center;
+  gap:10px;margin-bottom:14px
+}
 .panel-head h3{font-size:15px;margin:0}
 .muted{color:var(--muted);font-size:10px}
-.btn{border:0;border-radius:9px;background:var(--green);color:white;padding:9px 14px;font-size:11px;font-weight:700}
+.btn{
+  border:0;border-radius:9px;background:var(--green);
+  color:white;padding:9px 14px;font-size:11px;font-weight:700
+}
 .btn:hover{background:var(--green2)}
 .btn.light{background:var(--mint);color:var(--green)}
 .btn.outline{background:white;border:1px solid var(--line);color:var(--green)}
 .toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:13px}
 .toolbar input,.toolbar select,.field input,.field select{
-border:1px solid var(--line);background:white;border-radius:9px;padding:10px 12px;color:var(--ink);outline:none
+  border:1px solid var(--line);background:white;border-radius:9px;
+  padding:10px 12px;color:var(--ink);outline:none
 }
 .toolbar input{min-width:230px;flex:1}
 .toolbar input:focus,.field input:focus,.field select:focus{border-color:var(--green2)}
@@ -78,80 +134,155 @@ td b{font-size:11px}
 .pill.red{background:#fff0ef;color:var(--red)}
 .pill.amber{background:#fff6e4;color:#a96b16}
 .pill.green{background:#eaf6ee;color:var(--green2)}
-.pill.month{color:white}
-.month-dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-left:5px;vertical-align:middle}
+.month-dot{
+  display:inline-block;width:10px;height:10px;border-radius:50%;
+  margin-left:5px;vertical-align:middle
+}
 .alert-list{display:grid;gap:9px}
-.alert{display:flex;align-items:center;gap:10px;border:1px solid var(--line);border-radius:11px;padding:10px}
+.alert{
+  display:flex;align-items:center;gap:10px;
+  border:1px solid var(--line);border-radius:11px;padding:10px
+}
 .alert-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
 .alert .info{flex:1}
 .alert b{display:block;font-size:11px}
 .alert small{color:var(--muted);font-size:10px}
-.notice{padding:11px 13px;background:#fff8e9;border:1px solid #f3e4c3;border-radius:10px;color:#805b20;font-size:10px;line-height:1.9;margin-bottom:14px}
+.notice{
+  padding:11px 13px;background:#fff8e9;border:1px solid #f3e4c3;
+  border-radius:10px;color:#805b20;font-size:10px;line-height:1.9;
+  margin-bottom:14px
+}
 .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.map-box{height:440px;border-radius:12px;overflow:hidden;border:1px solid var(--line);background:#edf5ef}
+
+/* MAPS */
+.map-box{
+  height:440px;border-radius:12px;overflow:hidden;
+  border:1px solid var(--line);background:#e9efeb
+}
 #jordanMap,#reportMap{width:100%;height:100%}
 .map-layout{display:grid;grid-template-columns:1fr 265px;gap:14px}
-.province-list{display:grid;grid-template-columns:1fr 1fr;gap:7px;max-height:390px;overflow:auto}
-.province-btn{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:9px;padding:8px;background:white;text-align:right;font-size:10px}
-.province-btn.active{border-color:var(--green2);background:var(--mint);color:var(--green);font-weight:700}
+.province-list{
+  display:grid;grid-template-columns:1fr 1fr;gap:7px;
+  max-height:390px;overflow:auto
+}
+.province-btn{
+  display:flex;justify-content:space-between;align-items:center;
+  border:1px solid var(--line);border-radius:9px;
+  padding:8px;background:white;text-align:right;font-size:10px
+}
+.province-btn.active{
+  border-color:var(--green2);background:var(--mint);
+  color:var(--green);font-weight:700
+}
 .count{background:#edf4ef;border-radius:20px;padding:2px 7px}
 .legend{display:flex;gap:13px;flex-wrap:wrap;margin-top:10px;color:var(--muted);font-size:10px}
 .legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:4px}
+
+/* MONTHS */
 .month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
-.month-card{border:1px solid var(--line);border-radius:12px;padding:12px 8px;text-align:center;background:#fff;cursor:pointer;transition:.2s}
-.month-card:hover,.month-card.active{border-color:var(--green2);background:#f3faf6;transform:translateY(-2px)}
+.month-card{
+  border:1px solid var(--line);border-radius:12px;padding:12px 8px;
+  text-align:center;background:#fff;cursor:pointer;transition:.2s
+}
+.month-card:hover,.month-card.active{
+  border-color:var(--green2);background:#f3faf6;transform:translateY(-2px)
+}
 .month-circle{width:22px;height:22px;border-radius:50%;margin:0 auto 7px}
 .month-card b{display:block;font-size:10px}
 .month-card small{font-size:10px;color:var(--muted)}
-.month-detail{margin-top:13px;padding:13px;background:#f7faf8;border-radius:11px;font-size:11px;line-height:1.9}
+.month-detail{
+  margin-top:13px;padding:13px;background:#f7faf8;
+  border-radius:11px;font-size:11px;line-height:1.9
+}
+
+/* ENVIRONMENT */
 .impact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .impact-card{border:1px solid var(--line);border-radius:13px;padding:15px;background:white}
 .impact-card .icon{font-size:23px}
 .impact-card strong{display:block;font-size:25px;color:var(--green);margin:4px 0}
 .impact-card small{color:var(--muted);font-size:10px}
-.impact-warning{border-radius:12px;padding:14px;background:#fff5e5;border:1px solid #f1dfb7;color:#78551a;font-size:11px;line-height:1.9;margin-top:13px}
+.impact-warning{
+  border-radius:12px;padding:14px;background:#fff5e5;
+  border:1px solid #f1dfb7;color:#78551a;
+  font-size:11px;line-height:1.9;margin-top:13px
+}
 .feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:13px}
 .feature{padding:18px}
 .feature .big{font-size:25px}
 .feature h3{font-size:13px;margin:7px 0 4px}
 .feature p{font-size:10px;color:var(--muted);line-height:1.9;margin:0}
-.modal{display:none;position:fixed;inset:0;background:#10251fcc;z-index:1000;align-items:center;justify-content:center;padding:15px}
+
+/* MODALS */
+.modal{
+  display:none;position:fixed;inset:0;background:#10251fcc;
+  z-index:1000;align-items:center;justify-content:center;padding:15px
+}
 .modal.show{display:flex}
-.modal-card{background:white;width:min(500px,100%);border-radius:16px;padding:21px;max-height:90vh;overflow:auto}
+.modal-card{
+  background:white;width:min(500px,100%);border-radius:16px;
+  padding:21px;max-height:90vh;overflow:auto
+}
 .modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
 .modal-head h3{margin:0;font-size:16px}
-.close{border:0;background:#f0f4f1;border-radius:8px;width:31px;height:31px;font-size:18px}
+.close{
+  border:0;background:#f0f4f1;border-radius:8px;
+  width:31px;height:31px;font-size:18px
+}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}
 .field{display:grid;gap:5px}
 .field.full{grid-column:1/-1}
 .field label{font-size:10px;font-weight:700;color:var(--muted)}
 .field input,.field select{width:100%}
 .modal-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:16px}
-.toast{position:fixed;bottom:20px;left:20px;background:#173f34;color:white;padding:11px 16px;border-radius:10px;font-size:11px;z-index:1200;display:none}
+.toast{
+  position:fixed;bottom:20px;left:20px;background:#173f34;color:white;
+  padding:11px 16px;border-radius:10px;font-size:11px;z-index:1200;display:none
+}
 .toast.show{display:block}
-.footer{text-align:center;color:#91a29a;font-size:9px;margin-top:22px}
-.empty{text-align:center;color:var(--muted);font-size:11px;padding:22px}
 .qr-area{text-align:center;padding:12px}
 .qr-area canvas{margin:12px auto}
+.footer{text-align:center;color:#91a29a;font-size:9px;margin-top:22px}
+
+/* LEAFLET MAP CUSTOMIZATION */
+.leaflet-container{font-family:Cairo,sans-serif}
+.leaflet-popup-content-wrapper{border-radius:10px}
+.leaflet-popup-content{font-size:11px;line-height:1.9;text-align:right}
+.leaflet-control-zoom a{color:#174c3e!important}
+.leaflet-control-attribution{font-size:8px!important}
+
+/* RESPONSIVE */
 @media(max-width:1000px){
-.sidebar{width:210px}.main{padding:20px}.map-layout{grid-template-columns:1fr}.province-list{grid-template-columns:repeat(4,1fr)}
+  .sidebar{width:210px}
+  .main{padding:20px}
+  .map-layout{grid-template-columns:1fr}
+  .province-list{grid-template-columns:repeat(4,1fr)}
 }
 @media(max-width:750px){
-.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}
-.impact-grid{grid-template-columns:1fr 1fr}.feature-grid{grid-template-columns:1fr 1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .grid2{grid-template-columns:1fr}
+  .impact-grid{grid-template-columns:1fr 1fr}
+  .feature-grid{grid-template-columns:1fr 1fr}
 }
 @media(max-width:600px){
-.app{display:block}.sidebar{width:100%;padding:12px}
-.brand{padding:0 6px 10px;border:0}.brand-mark{width:36px;height:36px}
-.brand h1{font-size:18px}.nav{display:flex;overflow-x:auto;padding-top:8px;gap:4px}
-.nav button{white-space:nowrap;padding:8px 10px;font-size:10px}
-.side-note{display:none}.main{padding:16px 12px 30px}
-.topbar h2{font-size:19px}.date-chip{display:none}
-.welcome{padding:18px}.welcome .symbol{display:none}
-.province-list{grid-template-columns:1fr 1fr}.map-box{height:360px}
-.month-grid{grid-template-columns:repeat(3,1fr)}
-.impact-grid,.feature-grid{grid-template-columns:1fr}
-.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}
+  .app{display:block}
+  .sidebar{width:100%;padding:12px}
+  .brand{padding:0 6px 10px;border:0}
+  .brand-mark{width:36px;height:36px}
+  .brand h1{font-size:18px}
+  .nav{display:flex;overflow-x:auto;padding-top:8px;gap:4px}
+  .nav button{white-space:nowrap;padding:8px 10px;font-size:10px}
+  .side-note{display:none}
+  .main{padding:16px 12px 30px}
+  .topbar h2{font-size:19px}
+  .date-chip{display:none}
+  .welcome{padding:18px}
+  .welcome .symbol{display:none}
+  .province-list{grid-template-columns:1fr 1fr}
+  .map-box{height:360px}
+  .month-grid{grid-template-columns:repeat(3,1fr)}
+  .impact-grid,.feature-grid{grid-template-columns:1fr}
+  .form-grid{grid-template-columns:1fr}
+  .field.full{grid-column:auto}
 }
 </style>
 </head>
@@ -160,419 +291,444 @@ td b{font-size:11px}
 <div class="app">
 
 <aside class="sidebar">
- <div class="brand">
-  <div class="brand-mark">ن</div>
-  <div><h1>NAMAA</h1><small>منظومة أذكى لموارد أفضل</small></div>
- </div>
+  <div class="brand">
+    <div class="brand-mark">ن</div>
+    <div>
+      <h1>NAMAA</h1>
+      <small>منظومة أذكى لموارد أفضل</small>
+    </div>
+  </div>
 
- <nav class="nav">
-  <button class="active" data-page="dashboard"><span class="ico">▦</span>لوحة التحكم</button>
-  <button data-page="inventory"><span class="ico">▤</span>مخزون الأدوية</button>
-  <button data-page="calendar"><span class="ico">◷</span>تقويم الصلاحية</button>
-  <button data-page="alerts"><span class="ico">♧</span>التنبيهات</button>
-  <button data-page="network"><span class="ico">⌖</span>خريطة الأردن</button>
-  <button data-page="impact"><span class="ico">♻</span>الأثر البيئي</button>
- </nav>
+  <nav class="nav">
+    <button class="active" data-page="dashboard"><span class="ico">▦</span>لوحة التحكم</button>
+    <button data-page="inventory"><span class="ico">▤</span>مخزون الأدوية</button>
+    <button data-page="calendar"><span class="ico">◷</span>تقويم الصلاحية</button>
+    <button data-page="alerts"><span class="ico">♧</span>التنبيهات</button>
+    <button data-page="network"><span class="ico">⌖</span>خريطة الأردن</button>
+    <button data-page="impact"><span class="ico">♻</span>الأثر البيئي</button>
+  </nav>
 
- <div class="side-note">
-  NAMAA SMART PLATFORM<br>
-  نموذج أولي تجريبي لإدارة ومتابعة الأدوية.
-  البيانات المعروضة افتراضية.
- </div>
+  <div class="side-note">
+    NAMAA SMART PLATFORM<br>
+    نموذج أولي تجريبي لإدارة ومتابعة الأدوية.
+    البيانات المعروضة افتراضية.
+  </div>
 </aside>
 
 <main class="main">
 
 <header class="topbar">
- <div>
-  <div class="eyebrow">NAMAA • SMART PHARMACY PLATFORM</div>
-  <h2 id="pageTitle">لوحة التحكم</h2>
- </div>
- <div class="top-actions">
-  <div class="date-chip" id="today"></div>
-  <div class="user-chip">● مساحة تجريبية</div>
- </div>
+  <div>
+    <div class="eyebrow">NAMAA • SMART PHARMACY PLATFORM</div>
+    <h2 id="pageTitle">لوحة التحكم</h2>
+  </div>
+  <div class="top-actions">
+    <div class="date-chip" id="today"></div>
+    <div class="user-chip">● مساحة تجريبية</div>
+  </div>
 </header>
 
 <!-- DASHBOARD -->
 <section class="page active" id="dashboard">
 
- <div class="welcome">
-  <div>
-   <h3>مرحباً بك في منظومة نماء</h3>
-   <p>إدارة ذكية للمخزون الدوائي ومتابعة الصلاحية والتنبيهات.</p>
+  <div class="welcome">
+    <div>
+      <h3>مرحباً بك في منظومة نماء</h3>
+      <p>إدارة ذكية للمخزون الدوائي ومتابعة الصلاحية والتنبيهات.</p>
+    </div>
+    <div class="symbol">♻</div>
   </div>
-  <div class="symbol">♻</div>
- </div>
 
- <div class="stats">
-  <div class="stat">
-   <div class="stat-top"><span>إجمالي الأدوية</span><span class="stat-icon">▤</span></div>
-   <strong id="totalMedicines">0</strong>
-   <small>سجل دوائي</small>
+  <div class="stats">
+    <div class="stat">
+      <div class="stat-top"><span>إجمالي الأدوية</span><span class="stat-icon">▤</span></div>
+      <strong id="totalMedicines">0</strong>
+      <small>سجل دوائي</small>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span>أدوية قريبة الانتهاء</span><span class="stat-icon">◷</span></div>
+      <strong id="soonMedicines">0</strong>
+      <small>خلال 90 يوماً</small>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span>أدوية منتهية</span><span class="stat-icon">!</span></div>
+      <strong id="expiredMedicines">0</strong>
+      <small>تحتاج إلى مراجعة</small>
+    </div>
+    <div class="stat">
+      <div class="stat-top"><span>سجلات البلاغات</span><span class="stat-icon">⌁</span></div>
+      <strong id="totalReports">0</strong>
+      <small>بلاغات تجريبية</small>
+    </div>
   </div>
-  <div class="stat">
-   <div class="stat-top"><span>أدوية قريبة الانتهاء</span><span class="stat-icon">◷</span></div>
-   <strong id="soonMedicines">0</strong>
-   <small>خلال 90 يوماً</small>
-  </div>
-  <div class="stat">
-   <div class="stat-top"><span>أدوية منتهية</span><span class="stat-icon">!</span></div>
-   <strong id="expiredMedicines">0</strong>
-   <small>تحتاج إلى مراجعة</small>
-  </div>
-  <div class="stat">
-   <div class="stat-top"><span>سجلات البلاغات</span><span class="stat-icon">⌁</span></div>
-   <strong id="totalReports">0</strong>
-   <small>بلاغات تجريبية</small>
-  </div>
- </div>
 
- <div class="grid2">
+  <div class="grid2">
+    <div class="panel">
+      <div class="panel-head">
+        <h3>خريطة الأردن – مواقع البلاغات</h3>
+        <span class="muted">اضغط على النقطة للتفاصيل</span>
+      </div>
+      <div class="map-box" style="height:300px">
+        <div id="reportMap"></div>
+      </div>
+      <div class="legend">
+        <span><i class="legend-dot" style="background:#26745d"></i>بلاغ دوائي</span>
+        <span><i class="legend-dot" style="background:#d58a25"></i>معالجة خاصة</span>
+        <span><i class="legend-dot" style="background:#5689b5"></i>تدوير عبوات</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel-head">
+        <h3>تنبيهات الصلاحية</h3>
+        <button class="btn light" onclick="showPage('alerts')">عرض الكل</button>
+      </div>
+      <div class="alert-list" id="dashboardAlerts"></div>
+    </div>
+  </div>
+
   <div class="panel">
-   <div class="panel-head">
-    <h3>خريطة الأردن – مواقع البلاغات</h3>
-    <span class="muted">اضغط على النقطة للتفاصيل</span>
-   </div>
-   <div class="map-box" style="height:300px"><div id="reportMap"></div></div>
-   <div class="legend">
-    <span><i class="legend-dot" style="background:#26745d"></i>بلاغ دوائي</span>
-    <span><i class="legend-dot" style="background:#d58a25"></i>معالجة خاصة</span>
-    <span><i class="legend-dot" style="background:#5689b5"></i>تدوير عبوات</span>
-   </div>
+    <div class="panel-head">
+      <div>
+        <h3>آخر السجلات</h3>
+        <span class="muted">آخر البلاغات المسجلة على المنصة</span>
+      </div>
+      <button class="btn" onclick="openReportModal()">＋ إضافة بلاغ</button>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr><th>ID</th><th>المصدر</th><th>نوع البلاغ</th><th>المحافظة</th><th>الحالة</th></tr>
+        </thead>
+        <tbody id="latestReports"></tbody>
+      </table>
+    </div>
   </div>
-
-  <div class="panel">
-   <div class="panel-head">
-    <h3>تنبيهات الصلاحية</h3>
-    <button class="btn light" onclick="showPage('alerts')">عرض الكل</button>
-   </div>
-   <div class="alert-list" id="dashboardAlerts"></div>
-  </div>
- </div>
-
- <div class="panel">
-  <div class="panel-head">
-   <div>
-    <h3>آخر السجلات</h3>
-    <span class="muted">آخر البلاغات المسجلة على المنصة</span>
-   </div>
-   <button class="btn" onclick="openReportModal()">＋ إضافة بلاغ</button>
-  </div>
-  <div class="table-wrap">
-   <table>
-    <thead>
-     <tr><th>ID</th><th>المصدر</th><th>نوع البلاغ</th><th>المحافظة</th><th>الحالة</th></tr>
-    </thead>
-    <tbody id="latestReports"></tbody>
-   </table>
-  </div>
- </div>
-
 </section>
 
 <!-- INVENTORY -->
 <section class="page" id="inventory">
-
- <div class="notice">
-  يتيح سجل المخزون البحث بالاسم التجاري أو المادة الفعالة أو الاسم البديل أو التركيز أو رقم التشغيلة.
-  يجب مراجعة بيانات الدواء الفعلية قبل اتخاذ أي قرار.
- </div>
-
- <div class="panel">
-  <div class="panel-head">
-   <h3>مخزون الأدوية</h3>
-   <button class="btn" onclick="openMedicineModal()">＋ إضافة دواء</button>
+  <div class="notice">
+    يتيح سجل المخزون البحث بالاسم التجاري أو المادة الفعالة أو الاسم البديل أو التركيز أو رقم التشغيلة.
+    يجب مراجعة بيانات الدواء الفعلية قبل اتخاذ أي قرار.
   </div>
 
-  <div class="toolbar">
-   <input id="medicineSearch" placeholder="ابحث: Panadol أو Panda أو Paracetamol أو رقم التشغيلة..." oninput="renderInventory()">
-   <select id="statusFilter" onchange="renderInventory()">
-    <option value="all">كل حالات الصلاحية</option>
-    <option value="expired">منتهي</option>
-    <option value="soon">قريب الانتهاء</option>
-    <option value="good">ساري</option>
-   </select>
-   <select id="monthFilter" onchange="renderInventory()">
-    <option value="all">كل أشهر الانتهاء</option>
-   </select>
-   <select id="provinceFilter" onchange="renderInventory()">
-    <option value="all">كل المحافظات</option>
-   </select>
-  </div>
+  <div class="panel">
+    <div class="panel-head">
+      <h3>مخزون الأدوية</h3>
+      <button class="btn" onclick="openMedicineModal()">＋ إضافة دواء</button>
+    </div>
 
-  <div class="table-wrap">
-   <table>
-    <thead>
-     <tr>
-      <th>الاسم التجاري</th>
-      <th>المادة الفعالة</th>
-      <th>التركيز</th>
-      <th>التشغيلة</th>
-      <th>الكمية</th>
-      <th>المحافظة</th>
-      <th>انتهاء الصلاحية</th>
-      <th>لون الشهر</th>
-      <th>الحالة</th>
-      <th>QR</th>
-     </tr>
-    </thead>
-    <tbody id="inventoryTable"></tbody>
-   </table>
+    <div class="toolbar">
+      <input id="medicineSearch" placeholder="ابحث: Panadol أو Panda أو Paracetamol أو رقم التشغيلة..." oninput="renderInventory()">
+      <select id="statusFilter" onchange="renderInventory()">
+        <option value="all">كل حالات الصلاحية</option>
+        <option value="expired">منتهي</option>
+        <option value="soon">قريب الانتهاء</option>
+        <option value="good">ساري</option>
+      </select>
+      <select id="monthFilter" onchange="renderInventory()">
+        <option value="all">كل أشهر الانتهاء</option>
+      </select>
+      <select id="provinceFilter" onchange="renderInventory()">
+        <option value="all">كل المحافظات</option>
+      </select>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>الاسم التجاري</th>
+            <th>المادة الفعالة</th>
+            <th>التركيز</th>
+            <th>التشغيلة</th>
+            <th>الكمية</th>
+            <th>المحافظة</th>
+            <th>انتهاء الصلاحية</th>
+            <th>لون الشهر</th>
+            <th>الحالة</th>
+            <th>QR</th>
+          </tr>
+        </thead>
+        <tbody id="inventoryTable"></tbody>
+      </table>
+    </div>
   </div>
- </div>
 </section>
 
 <!-- MONTH CALENDAR -->
 <section class="page" id="calendar">
- <div class="panel">
-  <div class="panel-head">
-   <div>
-    <h3>الألوان المخصصة لكل شهر</h3>
-    <span class="muted">اختاري الشهر لعرض الأدوية التي تنتهي صلاحيتها فيه</span>
-   </div>
+  <div class="panel">
+    <div class="panel-head">
+      <div>
+        <h3>الألوان المخصصة لكل شهر</h3>
+        <span class="muted">اختاري الشهر لعرض الأدوية التي تنتهي صلاحيتها فيه</span>
+      </div>
+    </div>
+    <div class="month-grid" id="monthGrid"></div>
+    <div class="month-detail" id="monthDetail">اختاري أحد الأشهر لعرض السجلات المرتبطة به.</div>
   </div>
-  <div class="month-grid" id="monthGrid"></div>
-  <div class="month-detail" id="monthDetail">اختاري أحد الأشهر لعرض السجلات المرتبطة به.</div>
- </div>
- <div class="panel">
-  <div class="panel-head"><h3>مفتاح ألوان التنبيه</h3></div>
-  <div class="legend">
-   <span><i class="legend-dot" style="background:#21A36B"></i>ساري المفعول</span>
-   <span><i class="legend-dot" style="background:#E9AC22"></i>قريب الانتهاء</span>
-   <span><i class="legend-dot" style="background:#D93636"></i>منتهي الصلاحية</span>
+
+  <div class="panel">
+    <div class="panel-head"><h3>مفتاح ألوان التنبيه</h3></div>
+    <div class="legend">
+      <span><i class="legend-dot" style="background:#21A36B"></i>ساري المفعول</span>
+      <span><i class="legend-dot" style="background:#E9AC22"></i>قريب الانتهاء</span>
+      <span><i class="legend-dot" style="background:#D93636"></i>منتهي الصلاحية</span>
+    </div>
+    <p class="muted" style="line-height:2;margin-top:12px">
+      لون الشهر يحدد شهر انتهاء الصلاحية فقط، أما لون التنبيه فيوضح حالة الصلاحية.
+      لذلك قد يظهر الدواء بلون شهر تموز مثلاً، مع تنبيه أحمر إذا كان منتهي الصلاحية.
+    </p>
   </div>
-  <p class="muted" style="line-height:2;margin-top:12px">
-   لون الشهر يحدد شهر انتهاء الصلاحية فقط، أما لون التنبيه فيوضح حالة الصلاحية. لذلك قد يظهر الدواء بلون شهر تموز مثلاً، مع تنبيه أحمر إذا كان منتهي الصلاحية.
-  </p>
- </div>
 </section>
 
 <!-- ALERTS -->
 <section class="page" id="alerts">
- <div class="notice">
-  التنبيهات تعتمد على تاريخ انتهاء الصلاحية المدخل. الأحمر للدواء المنتهي، والبرتقالي للدواء الذي تبقى على انتهاء صلاحيته 90 يوماً أو أقل.
- </div>
- <div class="panel">
-  <div class="panel-head"><h3>مركز التنبيهات المبكرة</h3><span class="muted">تحديث تلقائي</span></div>
-  <div class="alert-list" id="allAlerts"></div>
- </div>
+  <div class="notice">
+    التنبيهات تعتمد على تاريخ انتهاء الصلاحية المدخل. الأحمر للدواء المنتهي،
+    والبرتقالي للدواء الذي تبقى على انتهاء صلاحيته 90 يوماً أو أقل.
+  </div>
+  <div class="panel">
+    <div class="panel-head">
+      <h3>مركز التنبيهات المبكرة</h3>
+      <span class="muted">تحديث تلقائي</span>
+    </div>
+    <div class="alert-list" id="allAlerts"></div>
+  </div>
 </section>
 
-<!-- NETWORK -->
+<!-- NETWORK MAP -->
 <section class="page" id="network">
- <div class="notice">
-  النقاط المعروضة تجريبية وليست صيدليات أو شركات متعاقدة فعلياً. يمكن استبدالها بمواقع الشركاء بعد التحقق من البيانات والحصول على موافقتهم.
- </div>
- <div class="panel">
-  <div class="panel-head">
-   <h3>شبكة الصيدليات والشركات – الأردن</h3>
-   <span class="muted">الخريطة محصورة بالأردن وقابلة للتكبير والتصغير</span>
+  <div class="notice">
+    النقاط المعروضة تجريبية وليست صيدليات أو شركات متعاقدة فعلياً.
+    يمكن استبدالها بمواقع الشركاء بعد التحقق من البيانات والحصول على موافقتهم.
   </div>
-  <div class="map-layout">
-   <div>
-    <div class="map-box"><div id="jordanMap"></div></div>
-    <div class="legend">
-     <span><i class="legend-dot" style="background:#26745d"></i>صيدلية تجريبية</span>
-     <span><i class="legend-dot" style="background:#d58a25"></i>شركة تجريبية</span>
-    </div>
-   </div>
-   <div>
+
+  <div class="panel">
     <div class="panel-head">
-     <h3>المحافظات</h3>
-     <button class="btn light" onclick="selectProvince('all')">الكل</button>
+      <h3>شبكة الصيدليات والشركات – الأردن</h3>
+      <span class="muted">خريطة تفاعلية قابلة للتكبير والتصغير</span>
     </div>
-    <div class="province-list" id="provinceList"></div>
-    <div id="provinceDetails" class="muted" style="margin-top:12px;line-height:2">
-     اختاري محافظة لعرض نقاطها.
+
+    <div class="map-layout">
+      <div>
+        <div class="map-box">
+          <div id="jordanMap"></div>
+        </div>
+        <div class="legend">
+          <span><i class="legend-dot" style="background:#26745d"></i>صيدلية تجريبية</span>
+          <span><i class="legend-dot" style="background:#d58a25"></i>شركة تجريبية</span>
+        </div>
+      </div>
+
+      <div>
+        <div class="panel-head">
+          <h3>المحافظات</h3>
+          <button class="btn light" onclick="selectProvince('all')">الكل</button>
+        </div>
+        <div class="province-list" id="provinceList"></div>
+        <div id="provinceDetails" class="muted" style="margin-top:12px;line-height:2">
+          اختاري محافظة لعرض نقاطها.
+        </div>
+      </div>
     </div>
-   </div>
   </div>
- </div>
 </section>
 
 <!-- ENVIRONMENT -->
 <section class="page" id="impact">
+  <div class="welcome">
+    <div>
+      <h3>مؤشرات المتابعة البيئية</h3>
+      <p>مراقبة مخاطر الهدر الدوائي ومتابعة مسار المخلفات.</p>
+    </div>
+    <div class="symbol">♻</div>
+  </div>
 
- <div class="welcome">
-  <div>
-   <h3>مؤشرات المتابعة البيئية</h3>
-   <p>مراقبة مخاطر الهدر الدوائي ومتابعة مسار المخلفات.</p>
+  <div class="impact-grid">
+    <div class="impact-card">
+      <div class="icon">🔴</div>
+      <strong id="impactExpired">0</strong>
+      <small>أدوية منتهية الصلاحية تحتاج إلى مراجعة</small>
+    </div>
+    <div class="impact-card">
+      <div class="icon">🟡</div>
+      <strong id="impactSoon">0</strong>
+      <small>أدوية قريبة من الانتهاء</small>
+    </div>
+    <div class="impact-card">
+      <div class="icon">♻️</div>
+      <strong id="impactRecycle">0</strong>
+      <small>سجلات عبوات تدوير موثقة تجريبياً</small>
+    </div>
   </div>
-  <div class="symbol">♻</div>
- </div>
 
- <div class="impact-grid">
-  <div class="impact-card">
-   <div class="icon">🔴</div>
-   <strong id="impactExpired">0</strong>
-   <small>أدوية منتهية الصلاحية تحتاج إلى مراجعة</small>
-  </div>
-  <div class="impact-card">
-   <div class="icon">🟡</div>
-   <strong id="impactSoon">0</strong>
-   <small>أدوية قريبة من الانتهاء</small>
-  </div>
-  <div class="impact-card">
-   <div class="icon">♻️</div>
-   <strong id="impactRecycle">0</strong>
-   <small>سجلات عبوات تدوير موثقة تجريبياً</small>
-  </div>
- </div>
+  <div class="impact-warning" id="environmentWarning"></div>
 
- <div class="impact-warning" id="environmentWarning">
-  يتم تحليل بيانات المخزون لتحديد حالات انتهاء الصلاحية ومخاطر الهدر المحتملة.
- </div>
+  <div class="panel" style="margin-top:15px">
+    <div class="panel-head">
+      <h3>مؤشر إدارة الهدر الدوائي</h3>
+      <span class="pill amber">مؤشر متابعة وليس قياساً بيئياً مثبتاً</span>
+    </div>
+    <div id="wasteIndicator" style="font-size:12px;line-height:2;color:var(--muted)">
+      يتم تحديث هذا المؤشر بناءً على سجلات المخزون والتنبيهات.
+    </div>
+  </div>
 
- <div class="panel" style="margin-top:15px">
-  <div class="panel-head">
-   <h3>مؤشر إدارة الهدر الدوائي</h3>
-   <span class="pill amber">مؤشر متابعة وليس قياساً بيئياً مثبتاً</span>
+  <div class="panel">
+    <div class="panel-head"><h3>مسار المتابعة المقترح</h3></div>
+    <div class="alert-list">
+      <div class="alert">
+        <span class="alert-dot" style="background:#26745d"></span>
+        <div class="info"><b>تسجيل الدواء</b><small>تسجيل الاسم التجاري والمادة الفعالة والكمية وتاريخ الصلاحية.</small></div>
+      </div>
+      <div class="alert">
+        <span class="alert-dot" style="background:#d58a25"></span>
+        <div class="info"><b>التنبيه المبكر</b><small>إظهار الأدوية القريبة من انتهاء الصلاحية قبل موعدها.</small></div>
+      </div>
+      <div class="alert">
+        <span class="alert-dot" style="background:#d93636"></span>
+        <div class="info"><b>المراجعة والتعامل المسؤول</b><small>مراجعة الأدوية المنتهية واتباع إجراءات التخلص المعتمدة.</small></div>
+      </div>
+      <div class="alert">
+        <span class="alert-dot" style="background:#5689b5"></span>
+        <div class="info"><b>توثيق مسار المخلفات</b><small>تسجيل ما تم توثيقه من عمليات الجمع والتدوير وفق الإجراءات المعتمدة.</small></div>
+      </div>
+    </div>
   </div>
-  <div id="wasteIndicator" style="font-size:12px;line-height:2;color:var(--muted)">
-   يتم تحديث هذا المؤشر بناءً على سجلات المخزون والتنبيهات.
-  </div>
- </div>
 
- <div class="panel">
-  <div class="panel-head"><h3>مسار المتابعة المقترح</h3></div>
-  <div class="alert-list">
-   <div class="alert"><span class="alert-dot" style="background:#26745d"></span><div class="info"><b>تسجيل الدواء</b><small>تسجيل الاسم التجاري والمادة الفعالة والكمية وتاريخ الصلاحية.</small></div></div>
-   <div class="alert"><span class="alert-dot" style="background:#d58a25"></span><div class="info"><b>التنبيه المبكر</b><small>إظهار الأدوية القريبة من انتهاء الصلاحية قبل موعدها.</small></div></div>
-   <div class="alert"><span class="alert-dot" style="background:#d93636"></span><div class="info"><b>المراجعة والتعامل المسؤول</b><small>مراجعة الأدوية المنتهية واتباع إجراءات التخلص المعتمدة.</small></div></div>
-   <div class="alert"><span class="alert-dot" style="background:#5689b5"></span><div class="info"><b>توثيق مسار المخلفات</b><small>تسجيل ما تم توثيقه من عمليات الجمع والتدوير وفق الإجراءات المعتمدة.</small></div></div>
+  <div class="feature-grid">
+    <div class="feature">
+      <div class="big">▤</div>
+      <h3>تقليل الهدر</h3>
+      <p>تحسين متابعة تواريخ الصلاحية وتوفير رؤية أوضح للمخزون.</p>
+    </div>
+    <div class="feature">
+      <div class="big">♻</div>
+      <h3>إدارة المخلفات</h3>
+      <p>تعزيز التعامل المسؤول مع المخلفات الدوائية وفق الإجراءات المعتمدة.</p>
+    </div>
+    <div class="feature">
+      <div class="big">⌁</div>
+      <h3>مسار بحثي مستقبلي</h3>
+      <p>دراسة إمكانات الاستفادة من بعض المواد بعد اختبارات السلامة والأداء.</p>
+    </div>
   </div>
- </div>
-
- <div class="feature-grid">
-  <div class="feature">
-   <div class="big">▤</div>
-   <h3>تقليل الهدر</h3>
-   <p>تحسين متابعة تواريخ الصلاحية وتوفير رؤية أوضح للمخزون.</p>
-  </div>
-  <div class="feature">
-   <div class="big">♻</div>
-   <h3>إدارة المخلفات</h3>
-   <p>تعزيز التعامل المسؤول مع المخلفات الدوائية وفق الإجراءات المعتمدة.</p>
-  </div>
-  <div class="feature">
-   <div class="big">⌁</div>
-   <h3>مسار بحثي مستقبلي</h3>
-   <p>دراسة إمكانات الاستفادة من بعض المواد بعد اختبارات السلامة والأداء.</p>
-  </div>
- </div>
-
 </section>
 
 <div class="footer">NAMAA 2026 • نموذج أولي تجريبي • منظومة أذكى لموارد أفضل</div>
 </main>
 </div>
 
-<!-- ADD MEDICINE -->
+<!-- ADD MEDICINE MODAL -->
 <div class="modal" id="medicineModal">
- <div class="modal-card">
-  <div class="modal-head">
-   <h3>إضافة دواء إلى المخزون</h3>
-   <button class="close" onclick="closeModal('medicineModal')">×</button>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>إضافة دواء إلى المخزون</h3>
+      <button class="close" onclick="closeModal('medicineModal')">×</button>
+    </div>
+
+    <form id="medicineForm">
+      <div class="form-grid">
+        <div class="field">
+          <label>الاسم التجاري (Brand Name)</label>
+          <input name="brand" required placeholder="مثال: Panadol">
+        </div>
+        <div class="field">
+          <label>المادة الفعالة (Active Ingredient)</label>
+          <input name="active" required placeholder="مثال: Paracetamol">
+        </div>
+        <div class="field full">
+          <label>أسماء تجارية أو بديلة للبحث</label>
+          <input name="aliases" placeholder="مثال: Panda, بانادول">
+        </div>
+        <div class="field">
+          <label>التركيز</label>
+          <input name="strength" placeholder="500 mg">
+        </div>
+        <div class="field">
+          <label>رقم التشغيلة</label>
+          <input name="batch" required placeholder="NM-2601">
+        </div>
+        <div class="field">
+          <label>الكمية</label>
+          <input name="qty" type="number" min="0" required>
+        </div>
+        <div class="field">
+          <label>المحافظة</label>
+          <select name="province" id="medicineProvince" required></select>
+        </div>
+        <div class="field full">
+          <label>تاريخ انتهاء الصلاحية</label>
+          <input name="expiry" type="date" required>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn" type="submit">حفظ الدواء</button>
+        <button class="btn outline" type="button" onclick="closeModal('medicineModal')">إلغاء</button>
+      </div>
+    </form>
   </div>
-  <form id="medicineForm">
-   <div class="form-grid">
-    <div class="field">
-     <label>الاسم التجاري (Brand Name)</label>
-     <input name="brand" required placeholder="مثال: Panadol">
-    </div>
-    <div class="field">
-     <label>المادة الفعالة (Active Ingredient)</label>
-     <input name="active" required placeholder="مثال: Paracetamol">
-    </div>
-    <div class="field full">
-     <label>أسماء تجارية أو بديلة للبحث</label>
-     <input name="aliases" placeholder="مثال: Panda, بانادول">
-    </div>
-    <div class="field">
-     <label>التركيز</label>
-     <input name="strength" placeholder="500 mg">
-    </div>
-    <div class="field">
-     <label>رقم التشغيلة</label>
-     <input name="batch" required placeholder="NM-2601">
-    </div>
-    <div class="field">
-     <label>الكمية</label>
-     <input name="qty" type="number" min="0" required>
-    </div>
-    <div class="field">
-     <label>المحافظة</label>
-     <select name="province" id="medicineProvince" required></select>
-    </div>
-    <div class="field full">
-     <label>تاريخ انتهاء الصلاحية</label>
-     <input name="expiry" type="date" required>
-    </div>
-   </div>
-   <div class="modal-actions">
-    <button class="btn" type="submit">حفظ الدواء</button>
-    <button class="btn outline" type="button" onclick="closeModal('medicineModal')">إلغاء</button>
-   </div>
-  </form>
- </div>
 </div>
 
-<!-- QR -->
+<!-- QR MODAL -->
 <div class="modal" id="qrModal">
- <div class="modal-card">
-  <div class="modal-head">
-   <h3>رمز QR للسجل</h3>
-   <button class="close" onclick="closeModal('qrModal')">×</button>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>رمز QR للسجل</h3>
+      <button class="close" onclick="closeModal('qrModal')">×</button>
+    </div>
+    <div class="qr-area">
+      <div id="qrCanvas"></div>
+      <b id="qrName"></b>
+      <p class="muted">رمز تجريبي لتعريف سجل الدواء.</p>
+    </div>
   </div>
-  <div class="qr-area">
-   <div id="qrCanvas"></div>
-   <b id="qrName"></b>
-   <p class="muted">رمز تجريبي لتعريف سجل الدواء.</p>
-  </div>
- </div>
 </div>
 
-<!-- ADD REPORT -->
+<!-- ADD REPORT MODAL -->
 <div class="modal" id="reportModal">
- <div class="modal-card">
-  <div class="modal-head">
-   <h3>إضافة بلاغ جديد</h3>
-   <button class="close" onclick="closeModal('reportModal')">×</button>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h3>إضافة بلاغ جديد</h3>
+      <button class="close" onclick="closeModal('reportModal')">×</button>
+    </div>
+
+    <form id="reportForm">
+      <div class="form-grid">
+        <div class="field full">
+          <label>المصدر / المنشأة</label>
+          <input name="source" required placeholder="مثال: صيدلية تجريبية">
+        </div>
+        <div class="field">
+          <label>نوع البلاغ</label>
+          <select name="type">
+            <option value="medicine">بلاغ دوائي</option>
+            <option value="special">معالجة خاصة</option>
+            <option value="recycle">عبوات تدوير</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>المحافظة</label>
+          <select name="province" id="reportProvince"></select>
+        </div>
+        <div class="field full">
+          <label>الحالة</label>
+          <select name="status">
+            <option value="received">تم الاستلام</option>
+            <option value="pending">قيد المتابعة</option>
+            <option value="review">للمراجعة</option>
+          </select>
+        </div>
+      </div>
+      <div class="modal-actions">
+        <button class="btn" type="submit">حفظ البلاغ</button>
+        <button class="btn outline" type="button" onclick="closeModal('reportModal')">إلغاء</button>
+      </div>
+    </form>
   </div>
-  <form id="reportForm">
-   <div class="form-grid">
-    <div class="field full">
-     <label>المصدر / المنشأة</label>
-     <input name="source" required placeholder="مثال: صيدلية تجريبية">
-    </div>
-    <div class="field">
-     <label>نوع البلاغ</label>
-     <select name="type">
-      <option value="medicine">بلاغ دوائي</option>
-      <option value="special">معالجة خاصة</option>
-      <option value="recycle">عبوات تدوير</option>
-     </select>
-    </div>
-    <div class="field">
-     <label>المحافظة</label>
-     <select name="province" id="reportProvince"></select>
-    </div>
-    <div class="field full">
-     <label>الحالة</label>
-     <select name="status">
-      <option value="received">تم الاستلام</option>
-      <option value="pending">قيد المتابعة</option>
-      <option value="review">للمراجعة</option>
-     </select>
-    </div>
-   </div>
-   <div class="modal-actions">
-    <button class="btn" type="submit">حفظ البلاغ</button>
-    <button class="btn outline" type="button" onclick="closeModal('reportModal')">إلغاء</button>
-   </div>
-  </form>
- </div>
 </div>
 
 <div class="toast" id="toast"></div>
@@ -581,734 +737,816 @@ td b{font-size:11px}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 
 <script>
-/* =========================
-   DATA
-========================= */
+/* ==========================================
+   1. MONTH COLORS
+========================================== */
 
 const months=[
-{name:"كانون الثاني",color:"#176B48"},
-{name:"شباط",color:"#20B5A5"},
-{name:"آذار",color:"#3479E8"},
-{name:"نيسان",color:"#8051B7"},
-{name:"أيار",color:"#183C83"},
-{name:"حزيران",color:"#39B9D5"},
-{name:"تموز",color:"#F0BC24"},
-{name:"آب",color:"#E65C9A"},
-{name:"أيلول",color:"#A66BC4"},
-{name:"تشرين الأول",color:"#3674D8"},
-{name:"تشرين الثاني",color:"#E77B32"},
-{name:"كانون الأول",color:"#D93642"}
+  {name:"كانون الثاني",color:"#176B48"},
+  {name:"شباط",color:"#20B5A5"},
+  {name:"آذار",color:"#3479E8"},
+  {name:"نيسان",color:"#8051B7"},
+  {name:"أيار",color:"#183C83"},
+  {name:"حزيران",color:"#39B9D5"},
+  {name:"تموز",color:"#F0BC24"},
+  {name:"آب",color:"#E65C9A"},
+  {name:"أيلول",color:"#A66BC4"},
+  {name:"تشرين الأول",color:"#3674D8"},
+  {name:"تشرين الثاني",color:"#E77B32"},
+  {name:"كانون الأول",color:"#D93642"}
 ];
 
+/* ==========================================
+   2. JORDAN GOVERNORATES
+========================================== */
+
 const provinces=[
-{name:"عمّان",lat:31.9539,lng:35.9106},
-{name:"إربد",lat:32.5568,lng:35.8469},
-{name:"الزرقاء",lat:32.0728,lng:36.0880},
-{name:"البلقاء",lat:32.0392,lng:35.7272},
-{name:"مادبا",lat:31.7167,lng:35.7933},
-{name:"الكرك",lat:31.1853,lng:35.7048},
-{name:"الطفيلة",lat:30.8375,lng:35.6044},
-{name:"معان",lat:30.1929,lng:35.7342},
-{name:"العقبة",lat:29.5267,lng:35.0078},
-{name:"جرش",lat:32.2808,lng:35.8993},
-{name:"عجلون",lat:32.3326,lng:35.7524},
-{name:"المفرق",lat:32.3429,lng:36.2080}
+  {name:"عمّان",lat:31.9539,lng:35.9106},
+  {name:"إربد",lat:32.5568,lng:35.8469},
+  {name:"الزرقاء",lat:32.0728,lng:36.0880},
+  {name:"البلقاء",lat:32.0392,lng:35.7272},
+  {name:"مادبا",lat:31.7167,lng:35.7933},
+  {name:"الكرك",lat:31.1853,lng:35.7048},
+  {name:"الطفيلة",lat:30.8375,lng:35.6044},
+  {name:"معان",lat:30.1929,lng:35.7342},
+  {name:"العقبة",lat:29.5267,lng:35.0078},
+  {name:"جرش",lat:32.2808,lng:35.8993},
+  {name:"عجلون",lat:32.3326,lng:35.7524},
+  {name:"المفرق",lat:32.3429,lng:36.2080}
 ];
 
 function daysFromToday(n){
-let d=new Date();
-d.setDate(d.getDate()+n);
-return d.toISOString().slice(0,10);
+  let d=new Date();
+  d.setDate(d.getDate()+n);
+  return d.toISOString().slice(0,10);
 }
 function daysAgo(n){
-let d=new Date();
-d.setDate(d.getDate()-n);
-return d.toISOString().slice(0,10);
+  let d=new Date();
+  d.setDate(d.getDate()-n);
+  return d.toISOString().slice(0,10);
 }
 
-/*
-  الأسماء التجارية والبديلة هنا بيانات توضيحية.
-  يمكن أن يحتوي السجل الواحد على أكثر من اسم بحث.
-*/
+/* ==========================================
+   3. DEMO MEDICINE DATA
+========================================== */
+
 let medicines=[
-{id:1,brand:"Panadol",active:"Paracetamol",aliases:["Panda","بانادول","باراسيتامول"],strength:"500 mg",batch:"NM-2601",qty:120,province:"عمّان",expiry:daysFromToday(20)},
-{id:2,brand:"Panda",active:"Paracetamol",aliases:["Panadol","بانادول","باراسيتامول"],strength:"500 mg",batch:"NM-2602",qty:75,province:"إربد",expiry:daysFromToday(65)},
-{id:3,brand:"Vitamin D3",active:"Cholecalciferol",aliases:["فيتامين د"],strength:"1000 IU",batch:"NM-2603",qty:200,province:"الزرقاء",expiry:daysFromToday(180)},
-{id:4,brand:"Ibuprofen",active:"Ibuprofen",aliases:["بروفين"],strength:"200 mg",batch:"NM-2604",qty:50,province:"الكرك",expiry:daysAgo(8)},
-{id:5,brand:"Cetirizine",active:"Cetirizine",aliases:["سيتريزين"],strength:"10 mg",batch:"NM-2605",qty:90,province:"العقبة",expiry:daysFromToday(42)},
-{id:6,brand:"Omeprazole",active:"Omeprazole",aliases:["أوميبرازول"],strength:"20 mg",batch:"NM-2606",qty:65,province:"جرش",expiry:daysFromToday(240)},
-{id:7,brand:"Panadol Extra",active:"Paracetamol + Caffeine",aliases:["بانادول إكسترا"],strength:"500 mg + 65 mg",batch:"NM-2607",qty:45,province:"عمّان",expiry:daysFromToday(110)}
+  {
+    id:1,brand:"Panadol",active:"Paracetamol",
+    aliases:["Panda","بانادول","باراسيتامول"],
+    strength:"500 mg",batch:"NM-2601",qty:120,
+    province:"عمّان",expiry:daysFromToday(20)
+  },
+  {
+    id:2,brand:"Panda",active:"Paracetamol",
+    aliases:["Panadol","بانادول","باراسيتامول"],
+    strength:"500 mg",batch:"NM-2602",qty:75,
+    province:"إربد",expiry:daysFromToday(65)
+  },
+  {
+    id:3,brand:"Vitamin D3",active:"Cholecalciferol",
+    aliases:["فيتامين د"],
+    strength:"1000 IU",batch:"NM-2603",qty:200,
+    province:"الزرقاء",expiry:daysFromToday(180)
+  },
+  {
+    id:4,brand:"Ibuprofen",active:"Ibuprofen",
+    aliases:["بروفين"],
+    strength:"200 mg",batch:"NM-2604",qty:50,
+    province:"الكرك",expiry:daysAgo(8)
+  },
+  {
+    id:5,brand:"Cetirizine",active:"Cetirizine",
+    aliases:["سيتريزين"],
+    strength:"10 mg",batch:"NM-2605",qty:90,
+    province:"العقبة",expiry:daysFromToday(42)
+  },
+  {
+    id:6,brand:"Omeprazole",active:"Omeprazole",
+    aliases:["أوميبرازول"],
+    strength:"20 mg",batch:"NM-2606",qty:65,
+    province:"جرش",expiry:daysFromToday(240)
+  },
+  {
+    id:7,brand:"Panadol Extra",active:"Paracetamol + Caffeine",
+    aliases:["بانادول إكسترا"],
+    strength:"500 mg + 65 mg",batch:"NM-2607",qty:45,
+    province:"عمّان",expiry:daysFromToday(110)
+  }
 ];
 
 const reportTypes={
-medicine:"بلاغ دوائي",
-special:"معالجة خاصة",
-recycle:"عبوات تدوير"
+  medicine:"بلاغ دوائي",
+  special:"معالجة خاصة",
+  recycle:"عبوات تدوير"
 };
 
 let reports=[];
 let selectedProvince="all";
 let selectedMonth=null;
+
 let jordanMap=null;
 let reportMap=null;
 let networkMarkers=[];
 let reportMarkers=[];
 
-/* =========================
-   GENERAL HELPERS
-========================= */
+/* ==========================================
+   4. GENERAL FUNCTIONS
+========================================== */
 
 function esc(value){
-return String(value??"").replace(/[&<>"']/g,c=>({
-"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
-}[c]));
+  return String(value??"").replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
 }
 
 function showToast(message){
-const el=document.getElementById("toast");
-el.textContent=message;
-el.classList.add("show");
-setTimeout(()=>el.classList.remove("show"),2600);
+  const el=document.getElementById("toast");
+  el.textContent=message;
+  el.classList.add("show");
+  setTimeout(()=>el.classList.remove("show"),2600);
 }
 
 function closeModal(id){
-document.getElementById(id).classList.remove("show");
+  document.getElementById(id).classList.remove("show");
 }
 
 function monthIndex(date){
-return new Date(date+"T00:00:00").getMonth();
+  return new Date(date+"T00:00:00").getMonth();
 }
 
 function monthInfo(date){
-return months[monthIndex(date)];
+  return months[monthIndex(date)];
 }
 
 function expiryStatus(m){
-const today=new Date();
-today.setHours(0,0,0,0);
-const expiry=new Date(m.expiry+"T00:00:00");
-const days=Math.ceil((expiry-today)/86400000);
-if(days<0)return "expired";
-if(days<=90)return "soon";
-return "good";
+  const today=new Date();
+  today.setHours(0,0,0,0);
+  const expiry=new Date(m.expiry+"T00:00:00");
+  const days=Math.ceil((expiry-today)/86400000);
+
+  if(days<0)return "expired";
+  if(days<=90)return "soon";
+  return "good";
 }
 
 function statusLabel(status){
-return status==="expired"?"منتهي الصلاحية":
-status==="soon"?"قريب الانتهاء":"ساري";
+  return status==="expired"?"منتهي الصلاحية":
+         status==="soon"?"قريب الانتهاء":"ساري";
 }
 
 function statusBadge(status){
-const cls=status==="expired"?"red":status==="soon"?"amber":"green";
-return `<span class="pill ${cls}">${statusLabel(status)}</span>`;
+  const cls=status==="expired"?"red":
+            status==="soon"?"amber":"green";
+  return `<span class="pill ${cls}">${statusLabel(status)}</span>`;
 }
 
 function dateArabic(date){
-return new Date(date+"T00:00:00").toLocaleDateString("ar-JO",{
-year:"numeric",month:"short",day:"numeric"
-});
+  return new Date(date+"T00:00:00").toLocaleDateString("ar-JO",{
+    year:"numeric",month:"short",day:"numeric"
+  });
 }
 
 function normalizeSearch(value){
-return String(value||"")
-.toLowerCase()
-.normalize("NFKD")
-.replace(/[\u064B-\u065F\u0670]/g,"")
-.replace(/[أإآ]/g,"ا")
-.replace(/ة/g,"ه")
-.replace(/\s+/g," ")
-.trim();
+  return String(value||"")
+    .toLowerCase()
+    .normalize("NFKD")
+    .replace(/[\u064B-\u065F\u0670]/g,"")
+    .replace(/[أإآ]/g,"ا")
+    .replace(/ة/g,"ه")
+    .replace(/\s+/g," ")
+    .trim();
 }
 
-/* البحث بالاسم التجاري والمادة الفعالة والبدائل والتركيز والتشغيلة */
+/* Search by brand, active ingredient, aliases, strength, batch */
 function medicineMatches(m,query){
-const q=normalizeSearch(query);
-if(!q)return true;
+  const q=normalizeSearch(query);
+  if(!q)return true;
 
-const searchable=[
-m.brand,
-m.active,
-m.strength,
-m.batch,
-m.province,
-...(m.aliases||[])
-].map(normalizeSearch);
+  const searchable=[
+    m.brand,m.active,m.strength,m.batch,m.province,
+    ...(m.aliases||[])
+  ].map(normalizeSearch);
 
-return searchable.some(value=>value.includes(q));
+  return searchable.some(value=>value.includes(q));
 }
 
-/* =========================
-   NAVIGATION
-========================= */
+/* ==========================================
+   5. NAVIGATION
+========================================== */
 
 function showPage(page){
-document.querySelectorAll(".page").forEach(p=>{
-p.classList.toggle("active",p.id===page);
-});
+  document.querySelectorAll(".page").forEach(p=>{
+    p.classList.toggle("active",p.id===page);
+  });
 
-document.querySelectorAll(".nav button").forEach(b=>{
-b.classList.toggle("active",b.dataset.page===page);
-});
+  document.querySelectorAll(".nav button").forEach(b=>{
+    b.classList.toggle("active",b.dataset.page===page);
+  });
 
-const titles={
-dashboard:"لوحة التحكم",
-inventory:"مخزون الأدوية",
-calendar:"تقويم الصلاحية",
-alerts:"مركز التنبيهات",
-network:"خريطة الأردن",
-impact:"الأثر البيئي"
-};
+  const titles={
+    dashboard:"لوحة التحكم",
+    inventory:"مخزون الأدوية",
+    calendar:"تقويم الصلاحية",
+    alerts:"مركز التنبيهات",
+    network:"خريطة الأردن",
+    impact:"الأثر البيئي"
+  };
 
-document.getElementById("pageTitle").textContent=titles[page];
+  document.getElementById("pageTitle").textContent=titles[page];
 
-if(page==="network"){
-setTimeout(()=>{
-initJordanMap();
-if(jordanMap)jordanMap.invalidateSize();
-},150);
-}
+  /* Leaflet needs invalidateSize after its container becomes visible */
+  setTimeout(()=>{
+    if(page==="network"){
+      initJordanMap();
+      if(jordanMap)jordanMap.invalidateSize();
+    }
 
-if(page==="dashboard"){
-setTimeout(()=>{
-initReportMap();
-if(reportMap)reportMap.invalidateSize();
-},150);
-}
+    if(page==="dashboard"){
+      initReportMap();
+      if(reportMap)reportMap.invalidateSize();
+    }
+  },180);
 }
 
 document.querySelectorAll(".nav button").forEach(button=>{
-button.addEventListener("click",()=>showPage(button.dataset.page));
+  button.addEventListener("click",()=>showPage(button.dataset.page));
 });
 
-/* =========================
-   SELECTS
-========================= */
+/* ==========================================
+   6. FORM SELECTS
+========================================== */
 
 function fillSelects(){
-const options=provinces.map(p=>
-`<option value="${esc(p.name)}">${esc(p.name)}</option>`
-).join("");
+  const options=provinces.map(p=>
+    `<option value="${esc(p.name)}">${esc(p.name)}</option>`
+  ).join("");
 
-document.getElementById("medicineProvince").innerHTML=options;
-document.getElementById("reportProvince").innerHTML=options;
+  document.getElementById("medicineProvince").innerHTML=options;
+  document.getElementById("reportProvince").innerHTML=options;
 
-document.getElementById("provinceFilter").innerHTML=
-'<option value="all">كل المحافظات</option>'+options;
+  document.getElementById("provinceFilter").innerHTML=
+    '<option value="all">كل المحافظات</option>'+options;
 
-document.getElementById("monthFilter").innerHTML=
-'<option value="all">كل أشهر الانتهاء</option>'+
-months.map((m,i)=>`<option value="${i}">${m.name}</option>`).join("");
+  document.getElementById("monthFilter").innerHTML=
+    '<option value="all">كل أشهر الانتهاء</option>'+
+    months.map((m,i)=>`<option value="${i}">${m.name}</option>`).join("");
 }
 
-/* =========================
-   INVENTORY
-========================= */
+/* ==========================================
+   7. INVENTORY
+========================================== */
 
 function renderInventory(){
-const query=document.getElementById("medicineSearch").value;
-const status=document.getElementById("statusFilter").value;
-const month=document.getElementById("monthFilter").value;
-const province=document.getElementById("provinceFilter").value;
+  const query=document.getElementById("medicineSearch").value;
+  const status=document.getElementById("statusFilter").value;
+  const month=document.getElementById("monthFilter").value;
+  const province=document.getElementById("provinceFilter").value;
 
-const filtered=medicines.filter(m=>{
-const matches=medicineMatches(m,query);
-const matchesStatus=status==="all"||expiryStatus(m)===status;
-const matchesMonth=month==="all"||monthIndex(m.expiry)===Number(month);
-const matchesProvince=province==="all"||m.province===province;
-return matches&&matchesStatus&&matchesMonth&&matchesProvince;
-});
+  const filtered=medicines.filter(m=>{
+    const matches=medicineMatches(m,query);
+    const matchesStatus=status==="all"||expiryStatus(m)===status;
+    const matchesMonth=month==="all"||monthIndex(m.expiry)===Number(month);
+    const matchesProvince=province==="all"||m.province===province;
+    return matches&&matchesStatus&&matchesMonth&&matchesProvince;
+  });
 
-document.getElementById("inventoryTable").innerHTML=
-filtered.map(m=>{
-const info=monthInfo(m.expiry);
-return `
-<tr>
-<td><b>${esc(m.brand)}</b></td>
-<td>${esc(m.active)}</td>
-<td>${esc(m.strength)}</td>
-<td>${esc(m.batch)}</td>
-<td>${m.qty}</td>
-<td>${esc(m.province)}</td>
-<td>${dateArabic(m.expiry)}</td>
-<td><span class="month-dot" style="background:${info.color}"></span>${info.name}</td>
-<td>${statusBadge(expiryStatus(m))}</td>
-<td><button class="btn light" onclick="showQR(${m.id})">QR</button></td>
-</tr>`;
-}).join("")||'<tr><td colspan="10" class="empty">لا توجد نتائج مطابقة للبحث.</td></tr>';
+  document.getElementById("inventoryTable").innerHTML=
+    filtered.map(m=>{
+      const info=monthInfo(m.expiry);
+      return `
+      <tr>
+        <td><b>${esc(m.brand)}</b></td>
+        <td>${esc(m.active)}</td>
+        <td>${esc(m.strength)}</td>
+        <td>${esc(m.batch)}</td>
+        <td>${m.qty}</td>
+        <td>${esc(m.province)}</td>
+        <td>${dateArabic(m.expiry)}</td>
+        <td><span class="month-dot" style="background:${info.color}"></span>${info.name}</td>
+        <td>${statusBadge(expiryStatus(m))}</td>
+        <td><button class="btn light" onclick="showQR(${m.id})">QR</button></td>
+      </tr>`;
+    }).join("")||
+    '<tr><td colspan="10" class="empty">لا توجد نتائج مطابقة للبحث.</td></tr>';
 }
 
 function openMedicineModal(){
-document.getElementById("medicineModal").classList.add("show");
+  document.getElementById("medicineModal").classList.add("show");
 }
 
 document.getElementById("medicineForm").addEventListener("submit",event=>{
-event.preventDefault();
-const form=new FormData(event.target);
+  event.preventDefault();
 
-const aliases=String(form.get("aliases")||"")
-.split(/[,،]/)
-.map(x=>x.trim())
-.filter(Boolean);
+  const form=new FormData(event.target);
+  const aliases=String(form.get("aliases")||"")
+    .split(/[,،]/)
+    .map(x=>x.trim())
+    .filter(Boolean);
 
-medicines.push({
-id:Date.now(),
-brand:String(form.get("brand")).trim(),
-active:String(form.get("active")).trim(),
-aliases,
-strength:String(form.get("strength")||"").trim(),
-batch:String(form.get("batch")).trim(),
-qty:Number(form.get("qty")),
-province:form.get("province"),
-expiry:form.get("expiry")
+  medicines.push({
+    id:Date.now(),
+    brand:String(form.get("brand")).trim(),
+    active:String(form.get("active")).trim(),
+    aliases,
+    strength:String(form.get("strength")||"").trim(),
+    batch:String(form.get("batch")).trim(),
+    qty:Number(form.get("qty")),
+    province:form.get("province"),
+    expiry:form.get("expiry")
+  });
+
+  event.target.reset();
+  closeModal("medicineModal");
+  refreshAll();
+  showToast("تمت إضافة الدواء وتحديث المخزون.");
 });
 
-event.target.reset();
-closeModal("medicineModal");
-refreshAll();
-showToast("تمت إضافة الدواء وتحديث المخزون.");
-});
-
-/* =========================
-   QR CODE
-========================= */
+/* ==========================================
+   8. QR CODE
+========================================== */
 
 function showQR(id){
-const m=medicines.find(x=>x.id===id);
-if(!m)return;
+  const m=medicines.find(x=>x.id===id);
+  if(!m)return;
 
-document.getElementById("qrCanvas").innerHTML="";
-document.getElementById("qrName").textContent=m.brand+" – "+m.active;
+  document.getElementById("qrCanvas").innerHTML="";
+  document.getElementById("qrName").textContent=m.brand+" – "+m.active;
 
-const data=JSON.stringify({
-id:m.id,
-brand:m.brand,
-active:m.active,
-batch:m.batch,
-expiry:m.expiry
-});
+  const data=JSON.stringify({
+    id:m.id,
+    brand:m.brand,
+    active:m.active,
+    batch:m.batch,
+    expiry:m.expiry
+  });
 
-if(window.QRCode){
-new QRCode(document.getElementById("qrCanvas"),{
-text:data,width:180,height:180,
-colorDark:"#174c3e",colorLight:"#ffffff"
-});
-}else{
-document.getElementById("qrCanvas").textContent="تعذر تحميل مكتبة QR.";
+  if(window.QRCode){
+    new QRCode(document.getElementById("qrCanvas"),{
+      text:data,width:180,height:180,
+      colorDark:"#174c3e",colorLight:"#ffffff"
+    });
+  }else{
+    document.getElementById("qrCanvas").textContent="تعذر تحميل مكتبة QR.";
+  }
+
+  document.getElementById("qrModal").classList.add("show");
 }
 
-document.getElementById("qrModal").classList.add("show");
-}
-
-/* =========================
-   MONTH CALENDAR
-========================= */
+/* ==========================================
+   9. MONTH CALENDAR
+========================================== */
 
 function renderMonthGrid(){
-document.getElementById("monthGrid").innerHTML=months.map((m,i)=>{
-const count=medicines.filter(x=>monthIndex(x.expiry)===i).length;
-return `
-<div class="month-card ${selectedMonth===i?"active":""}" onclick="selectMonth(${i})">
- <div class="month-circle" style="background:${m.color}"></div>
- <b>${m.name}</b>
- <small>${count} دواء</small>
-</div>`;
-}).join("");
+  document.getElementById("monthGrid").innerHTML=months.map((m,i)=>{
+    const count=medicines.filter(x=>monthIndex(x.expiry)===i).length;
+
+    return `
+    <div class="month-card ${selectedMonth===i?"active":""}" onclick="selectMonth(${i})">
+      <div class="month-circle" style="background:${m.color}"></div>
+      <b>${m.name}</b>
+      <small>${count} دواء</small>
+    </div>`;
+  }).join("");
 }
 
 function selectMonth(index){
-selectedMonth=index;
-renderMonthGrid();
+  selectedMonth=index;
+  renderMonthGrid();
 
-const month=months[index];
-const items=medicines.filter(m=>monthIndex(m.expiry)===index);
+  const month=months[index];
+  const items=medicines.filter(m=>monthIndex(m.expiry)===index);
 
-document.getElementById("monthDetail").innerHTML=`
-<div style="display:flex;align-items:center;gap:9px;margin-bottom:9px">
- <span class="month-dot" style="width:15px;height:15px;background:${month.color}"></span>
- <b>${month.name}</b>
- <span class="muted">عدد السجلات: ${items.length}</span>
-</div>
-${items.length?items.map(m=>`
-<div style="padding:7px 0;border-top:1px solid var(--line)">
- <b>${esc(m.brand)}</b> – ${esc(m.active)}
- <span class="muted"> | ${dateArabic(m.expiry)} | ${esc(m.province)}</span>
- ${statusBadge(expiryStatus(m))}
-</div>`).join(""):'لا توجد أدوية مسجلة تنتهي صلاحيتها في هذا الشهر.'}
-`;
+  document.getElementById("monthDetail").innerHTML=`
+    <div style="display:flex;align-items:center;gap:9px;margin-bottom:9px">
+      <span class="month-dot" style="width:15px;height:15px;background:${month.color}"></span>
+      <b>${month.name}</b>
+      <span class="muted">عدد السجلات: ${items.length}</span>
+    </div>
+
+    ${items.length?items.map(m=>`
+      <div style="padding:7px 0;border-top:1px solid var(--line)">
+        <b>${esc(m.brand)}</b> – ${esc(m.active)}
+        <span class="muted"> | ${dateArabic(m.expiry)} | ${esc(m.province)}</span>
+        ${statusBadge(expiryStatus(m))}
+      </div>
+    `).join(""):"لا توجد أدوية مسجلة تنتهي صلاحيتها في هذا الشهر."}
+  `;
 }
 
-/* =========================
-   ALERTS AND DASHBOARD
-========================= */
+/* ==========================================
+   10. ALERTS AND DASHBOARD
+========================================== */
 
 function getAlerts(){
-return medicines.filter(m=>expiryStatus(m)!=="good")
-.sort((a,b)=>a.expiry.localeCompare(b.expiry));
+  return medicines.filter(m=>expiryStatus(m)!=="good")
+    .sort((a,b)=>a.expiry.localeCompare(b.expiry));
 }
 
 function alertHTML(m){
-const status=expiryStatus(m);
-return `
-<div class="alert">
- <span class="alert-dot" style="background:${status==="expired"?"#d93636":"#e9ac22"}"></span>
- <div class="info">
-  <b>${esc(m.brand)} – ${esc(m.active)}</b>
-  <small>${esc(m.province)} • انتهاء الصلاحية: ${dateArabic(m.expiry)}</small>
- </div>
- ${statusBadge(status)}
-</div>`;
+  const status=expiryStatus(m);
+
+  return `
+  <div class="alert">
+    <span class="alert-dot" style="background:${status==="expired"?"#d93636":"#e9ac22"}"></span>
+    <div class="info">
+      <b>${esc(m.brand)} – ${esc(m.active)}</b>
+      <small>${esc(m.province)} • انتهاء الصلاحية: ${dateArabic(m.expiry)}</small>
+    </div>
+    ${statusBadge(status)}
+  </div>`;
 }
 
 function renderAlerts(){
-const items=getAlerts();
-const html=items.length?items.map(alertHTML).join():
-'<div class="empty">لا توجد أدوية منتهية أو قريبة من الانتهاء.</div>';
+  const items=getAlerts();
 
-document.getElementById("allAlerts").innerHTML=html;
-document.getElementById("dashboardAlerts").innerHTML=
-items.slice(0,4).length?items.slice(0,4).map(alertHTML).join():
-'<div class="empty">لا توجد تنبيهات حالياً.</div>';
+  const html=items.length?items.map(alertHTML).join():
+    '<div class="empty">لا توجد أدوية منتهية أو قريبة من الانتهاء.</div>';
+
+  document.getElementById("allAlerts").innerHTML=html;
+
+  document.getElementById("dashboardAlerts").innerHTML=
+    items.slice(0,4).length?
+    items.slice(0,4).map(alertHTML).join():
+    '<div class="empty">لا توجد تنبيهات حالياً.</div>';
 }
 
 function renderStats(){
-const expired=medicines.filter(m=>expiryStatus(m)==="expired").length;
-const soon=medicines.filter(m=>expiryStatus(m)==="soon").length;
+  const expired=medicines.filter(m=>expiryStatus(m)==="expired").length;
+  const soon=medicines.filter(m=>expiryStatus(m)==="soon").length;
 
-document.getElementById("totalMedicines").textContent=medicines.length;
-document.getElementById("expiredMedicines").textContent=expired;
-document.getElementById("soonMedicines").textContent=soon;
-document.getElementById("totalReports").textContent=reports.length;
+  document.getElementById("totalMedicines").textContent=medicines.length;
+  document.getElementById("expiredMedicines").textContent=expired;
+  document.getElementById("soonMedicines").textContent=soon;
+  document.getElementById("totalReports").textContent=reports.length;
 }
+
+/* ==========================================
+   11. ENVIRONMENTAL IMPACT
+========================================== */
 
 function renderImpact(){
-const expired=medicines.filter(m=>expiryStatus(m)==="expired").length;
-const soon=medicines.filter(m=>expiryStatus(m)==="soon").length;
-const recycle=reports.filter(r=>r.type==="recycle").length;
+  const expired=medicines.filter(m=>expiryStatus(m)==="expired").length;
+  const soon=medicines.filter(m=>expiryStatus(m)==="soon").length;
+  const recycle=reports.filter(r=>r.type==="recycle").length;
 
-document.getElementById("impactExpired").textContent=expired;
-document.getElementById("impactSoon").textContent=soon;
-document.getElementById("impactRecycle").textContent=recycle;
+  document.getElementById("impactExpired").textContent=expired;
+  document.getElementById("impactSoon").textContent=soon;
+  document.getElementById("impactRecycle").textContent=recycle;
 
-const warning=document.getElementById("environmentWarning");
+  const warning=document.getElementById("environmentWarning");
 
-if(expired>0){
-warning.style.background="#fff0ef";
-warning.style.borderColor="#f0c8c5";
-warning.style.color="#a33b36";
-warning.innerHTML=`⚠️ يوجد ${expired} سجل دوائي منتهي الصلاحية. يجب مراجعة السجلات والتعامل معها وفق إجراءات التخلص المعتمدة.`;
-}else if(soon>0){
-warning.style.background="#fff8e9";
-warning.style.borderColor="#f3e4c3";
-warning.style.color="#805b20";
-warning.innerHTML=`تنبيه مبكر: يوجد ${soon} سجل دوائي قريب من انتهاء الصلاحية. راجعي المخزون لتقليل احتمالية الهدر.`;
-}else{
-warning.style.background="#eaf6ee";
-warning.style.borderColor="#cfe8d8";
-warning.style.color="#26745d";
-warning.innerHTML="لا توجد حالياً أدوية منتهية أو قريبة من الانتهاء ضمن السجلات التجريبية.";
+  if(expired>0){
+    warning.style.background="#fff0ef";
+    warning.style.borderColor="#f0c8c5";
+    warning.style.color="#a33b36";
+    warning.innerHTML=
+      `⚠️ يوجد ${expired} سجل دوائي منتهي الصلاحية. يجب مراجعة السجلات والتعامل معها وفق إجراءات التخلص المعتمدة.`;
+  }else if(soon>0){
+    warning.style.background="#fff8e9";
+    warning.style.borderColor="#f3e4c3";
+    warning.style.color="#805b20";
+    warning.innerHTML=
+      `تنبيه مبكر: يوجد ${soon} سجل دوائي قريب من انتهاء الصلاحية. راجعي المخزون لتقليل احتمالية الهدر.`;
+  }else{
+    warning.style.background="#eaf6ee";
+    warning.style.borderColor="#cfe8d8";
+    warning.style.color="#26745d";
+    warning.innerHTML=
+      "لا توجد حالياً أدوية منتهية أو قريبة من الانتهاء ضمن السجلات التجريبية.";
+  }
+
+  document.getElementById("wasteIndicator").innerHTML=
+    `تتابع المنصة حالياً ${medicines.length} سجلاً دوائياً.
+    منها ${expired} منتهي الصلاحية و${soon} قريب من الانتهاء.
+    هذه أرقام تشغيلية من بيانات النموذج وليست قياساً لكمية النفايات أو الأثر البيئي الفعلي.`;
 }
 
-document.getElementById("wasteIndicator").innerHTML=
-`تتابع المنصة حالياً ${medicines.length} سجلاً دوائياً.
-منها ${expired} منتهي الصلاحية و${soon} قريب من الانتهاء.
-هذه أرقام تشغيلية من بيانات النموذج وليست قياساً لكمية النفايات أو الأثر البيئي الفعلي.`;
-}
-
-/* =========================
-   REPORTS
-========================= */
+/* ==========================================
+   12. REPORTS
+========================================== */
 
 function seedReports(){
-const examples=[
-["صيدلية تجريبية – عمّان","medicine","عمّان","received"],
-["منشأة صحية تجريبية","special","إربد","review"],
-["نقطة تدوير تجريبية","recycle","الزرقاء","received"],
-["صيدلية تجريبية – الكرك","medicine","الكرك","pending"],
-["مستودع تجريبي","special","عمّان","received"],
-["نقطة تدوير تجريبية","recycle","العقبة","pending"],
-["صيدلية تجريبية – جرش","medicine","جرش","received"],
-["منشأة صحية تجريبية","special","المفرق","review"]
-];
+  const examples=[
+    ["صيدلية تجريبية – عمّان","medicine","عمّان","received"],
+    ["منشأة صحية تجريبية","special","إربد","review"],
+    ["نقطة تدوير تجريبية","recycle","الزرقاء","received"],
+    ["صيدلية تجريبية – الكرك","medicine","الكرك","pending"],
+    ["مستودع تجريبي","special","عمّان","received"],
+    ["نقطة تدوير تجريبية","recycle","العقبة","pending"],
+    ["صيدلية تجريبية – جرش","medicine","جرش","received"],
+    ["منشأة صحية تجريبية","special","المفرق","review"]
+  ];
 
-examples.forEach((x,i)=>{
-const p=provinces.find(v=>v.name===x[2]);
-reports.push({
-id:128-i,source:x[0],type:x[1],province:x[2],status:x[3],
-lat:p.lat+((i%3)-1)*.012,
-lng:p.lng+((i%4)-1.5)*.012,
-created:Date.now()-i*3600000
-});
-});
+  examples.forEach((x,i)=>{
+    const p=provinces.find(v=>v.name===x[2]);
+
+    reports.push({
+      id:128-i,
+      source:x[0],
+      type:x[1],
+      province:x[2],
+      status:x[3],
+      lat:p.lat+((i%3)-1)*.012,
+      lng:p.lng+((i%4)-1.5)*.012,
+      created:Date.now()-i*3600000
+    });
+  });
 }
 
 function reportStatus(s){
-return s==="pending"?"قيد المتابعة":
-s==="review"?"للمراجعة":"تم الاستلام";
+  return s==="pending"?"قيد المتابعة":
+         s==="review"?"للمراجعة":"تم الاستلام";
 }
 
 function renderReports(){
-const sorted=[...reports].sort((a,b)=>b.created-a.created);
+  const sorted=[...reports].sort((a,b)=>b.created-a.created);
 
-document.getElementById("latestReports").innerHTML=
-sorted.slice(0,6).map(r=>`
-<tr>
-<td><b>PG-${String(r.id).padStart(4,"0")}</b></td>
-<td>${esc(r.source)}</td>
-<td>${reportTypes[r.type]}</td>
-<td>${esc(r.province)}</td>
-<td><span class="pill ${r.status==="review"?"red":r.status==="pending"?"amber":"green"}">${reportStatus(r.status)}</span></td>
-</tr>`).join("")||'<tr><td colspan="5" class="empty">لا توجد بلاغات.</td></tr>';
+  document.getElementById("latestReports").innerHTML=
+    sorted.slice(0,6).map(r=>`
+      <tr>
+        <td><b>PG-${String(r.id).padStart(4,"0")}</b></td>
+        <td>${esc(r.source)}</td>
+        <td>${reportTypes[r.type]}</td>
+        <td>${esc(r.province)}</td>
+        <td>
+          <span class="pill ${r.status==="review"?"red":r.status==="pending"?"amber":"green"}">
+            ${reportStatus(r.status)}
+          </span>
+        </td>
+      </tr>
+    `).join("")||
+    '<tr><td colspan="5" class="empty">لا توجد بلاغات.</td></tr>';
 
-refreshReportMarkers();
+  refreshReportMarkers();
 }
 
 function openReportModal(){
-document.getElementById("reportModal").classList.add("show");
+  document.getElementById("reportModal").classList.add("show");
 }
 
 document.getElementById("reportForm").addEventListener("submit",event=>{
-event.preventDefault();
-const f=new FormData(event.target);
-const p=provinces.find(x=>x.name===f.get("province"));
+  event.preventDefault();
 
-reports.push({
-id:Date.now()%1000000,
-source:String(f.get("source")).trim(),
-type:f.get("type"),
-province:f.get("province"),
-status:f.get("status"),
-lat:p.lat,lng:p.lng,created:Date.now()
+  const f=new FormData(event.target);
+  const p=provinces.find(x=>x.name===f.get("province"));
+
+  reports.push({
+    id:Date.now()%1000000,
+    source:String(f.get("source")).trim(),
+    type:f.get("type"),
+    province:f.get("province"),
+    status:f.get("status"),
+    lat:p.lat,
+    lng:p.lng,
+    created:Date.now()
+  });
+
+  event.target.reset();
+  closeModal("reportModal");
+
+  renderReports();
+  renderStats();
+  renderImpact();
+
+  showToast("تم تسجيل البلاغ وتحديث الجدول والخريطة.");
 });
 
-event.target.reset();
-closeModal("reportModal");
-renderReports();
-renderStats();
-renderImpact();
-showToast("تم تسجيل البلاغ وتحديث الجدول والخريطة.");
-});
-
-/* =========================
-   JORDAN MAP
-========================= */
+/* ==========================================
+   13. REAL OPENSTREETMAP BASE MAP
+========================================== */
 
 /*
-  خريطة تفاعلية محصورة في نطاق الأردن.
-  حدود تقريبية مرسومة داخل الخريطة لتوضيح نطاق الدولة.
-  يمكن التكبير والتصغير وتحريك العرض ضمن حدود الأردن.
+  مهم:
+  - لا يوجد رسم يدوي لحدود الأردن.
+  - لا توجد طبقة بيضاء تغطي الدول المجاورة.
+  - الخريطة تعتمد على OpenStreetMap.
+  - عرض الخريطة متمركز على الأردن.
+  - يمكن التكبير والتصغير وتحريك الخريطة.
 */
 
-const jordanOutline=[
-[33.37,35.58],[33.35,35.75],[33.20,35.85],[33.10,35.90],
-[32.95,36.00],[32.75,36.10],[32.55,36.20],[32.40,36.25],
-[32.15,36.35],[31.95,36.50],[31.75,36.65],[31.50,36.75],
-[31.25,36.85],[31.00,37.00],[30.80,37.10],[30.55,37.20],
-[30.30,37.35],[30.10,37.50],[29.90,37.70],[29.70,37.80],
-[29.50,37.85],[29.30,37.80],[29.20,37.60],[29.25,37.40],
-[29.40,37.20],[29.55,37.00],[29.70,36.80],[29.85,36.60],
-[30.00,36.40],[30.20,36.20],[30.35,36.00],[30.55,35.85],
-[30.75,35.75],[30.95,35.70],[31.15,35.65],[31.35,35.60],
-[31.55,35.55],[31.75,35.50],[31.95,35.48],[32.15,35.45],
-[32.35,35.50],[32.55,35.55],[32.75,35.60],[32.95,35.60],
-[33.15,35.58],[33.37,35.58]
-];
-
 const jordanBounds=L.latLngBounds(
-[29.0,35.3],[33.6,38.0]
+  [29.0,34.8],
+  [33.5,39.0]
 );
 
-function setupJordanBase(map){
-L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
-attribution:'&copy; OpenStreetMap',
-maxZoom:15
-}).addTo(map);
+function createJordanMap(elementId){
+  const map=L.map(elementId,{
+    center:[31.25,36.0],
+    zoom:7,
+    minZoom:6,
+    maxZoom:18,
+    zoomControl:true,
+    scrollWheelZoom:true,
+    dragging:true,
+    maxBounds:jordanBounds,
+    maxBoundsViscosity:0.75
+  });
 
-/* طبقة بيضاء خارج حدود الأردن */
-const outer=[
-[28.5,34.8],[28.5,38.5],[34.0,38.5],[34.0,34.8],[28.5,34.8]
-];
+  /* Real OpenStreetMap tiles */
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{
+    attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+    maxZoom:19,
+    subdomains:"abc"
+  }).addTo(map);
 
-L.polygon([outer,jordanOutline],{
-stroke:false,
-fillColor:"#ffffff",
-fillOpacity:.93,
-interactive:false
-}).addTo(map);
+  /* Keep the map focused on Jordan without drawing fake borders */
+  map.setMaxBounds(jordanBounds);
 
-L.polygon(jordanOutline,{
-color:"#26745d",
-weight:2,
-fillColor:"#b9dfcf",
-fillOpacity:.35
-}).addTo(map);
-
-map.setMaxBounds(jordanBounds);
-map.options.maxBoundsViscosity=1.0;
+  return map;
 }
+
+/* ==========================================
+   14. NETWORK MAP
+========================================== */
 
 function initJordanMap(){
-if(jordanMap||!window.L)return;
+  if(jordanMap||!window.L)return;
 
-jordanMap=L.map("jordanMap",{
-zoomControl:true,
-scrollWheelZoom:true,
-minZoom:6,
-maxZoom:13,
-maxBounds:jordanBounds,
-maxBoundsViscosity:1
-}).setView([31.25,36.0],7);
+  jordanMap=createJordanMap("jordanMap");
+  renderNetworkMarkers();
+  renderProvinceList();
 
-setupJordanBase(jordanMap);
-renderNetworkMarkers();
-renderProvinceList();
+  setTimeout(()=>jordanMap.invalidateSize(),250);
 }
 
+/* Example partner locations - replace with real verified data */
 const demoPartners=[
-{name:"صيدلية تجريبية 1",province:"عمّان",type:"pharmacy",lat:31.9539,lng:35.9106},
-{name:"صيدلية تجريبية 2",province:"عمّان",type:"pharmacy",lat:31.985,lng:35.86},
-{name:"شركة تجريبية",province:"عمّان",type:"company",lat:31.92,lng:35.94},
-{name:"صيدلية تجريبية",province:"إربد",type:"pharmacy",lat:32.5568,lng:35.8469},
-{name:"صيدلية تجريبية",province:"الزرقاء",type:"pharmacy",lat:32.0728,lng:36.088},
-{name:"شركة تجريبية",province:"الزرقاء",type:"company",lat:32.10,lng:36.12},
-{name:"صيدلية تجريبية",province:"البلقاء",type:"pharmacy",lat:32.0392,lng:35.7272},
-{name:"صيدلية تجريبية",province:"مادبا",type:"pharmacy",lat:31.7167,lng:35.7933},
-{name:"صيدلية تجريبية",province:"الكرك",type:"pharmacy",lat:31.1853,lng:35.7048},
-{name:"صيدلية تجريبية",province:"الطفيلة",type:"pharmacy",lat:30.8375,lng:35.6044},
-{name:"شركة تجريبية",province:"معان",type:"company",lat:30.1929,lng:35.7342},
-{name:"صيدلية تجريبية",province:"العقبة",type:"pharmacy",lat:29.5267,lng:35.0078},
-{name:"صيدلية تجريبية",province:"جرش",type:"pharmacy",lat:32.2808,lng:35.8993},
-{name:"صيدلية تجريبية",province:"عجلون",type:"pharmacy",lat:32.3326,lng:35.7524},
-{name:"صيدلية تجريبية",province:"المفرق",type:"pharmacy",lat:32.3429,lng:36.208}
+  {name:"صيدلية تجريبية 1",province:"عمّان",type:"pharmacy",lat:31.9539,lng:35.9106},
+  {name:"صيدلية تجريبية 2",province:"عمّان",type:"pharmacy",lat:31.985,lng:35.86},
+  {name:"شركة تجريبية",province:"عمّان",type:"company",lat:31.92,lng:35.94},
+  {name:"صيدلية تجريبية",province:"إربد",type:"pharmacy",lat:32.5568,lng:35.8469},
+  {name:"صيدلية تجريبية",province:"الزرقاء",type:"pharmacy",lat:32.0728,lng:36.088},
+  {name:"شركة تجريبية",province:"الزرقاء",type:"company",lat:32.10,lng:36.12},
+  {name:"صيدلية تجريبية",province:"البلقاء",type:"pharmacy",lat:32.0392,lng:35.7272},
+  {name:"صيدلية تجريبية",province:"مادبا",type:"pharmacy",lat:31.7167,lng:35.7933},
+  {name:"صيدلية تجريبية",province:"الكرك",type:"pharmacy",lat:31.1853,lng:35.7048},
+  {name:"صيدلية تجريبية",province:"الطفيلة",type:"pharmacy",lat:30.8375,lng:35.6044},
+  {name:"شركة تجريبية",province:"معان",type:"company",lat:30.1929,lng:35.7342},
+  {name:"صيدلية تجريبية",province:"العقبة",type:"pharmacy",lat:29.5267,lng:35.0078},
+  {name:"صيدلية تجريبية",province:"جرش",type:"pharmacy",lat:32.2808,lng:35.8993},
+  {name:"صيدلية تجريبية",province:"عجلون",type:"pharmacy",lat:32.3326,lng:35.7524},
+  {name:"صيدلية تجريبية",province:"المفرق",type:"pharmacy",lat:32.3429,lng:36.208}
 ];
 
 function renderNetworkMarkers(){
-if(!jordanMap)return;
+  if(!jordanMap)return;
 
-networkMarkers.forEach(m=>jordanMap.removeLayer(m));
-networkMarkers=[];
+  networkMarkers.forEach(m=>jordanMap.removeLayer(m));
+  networkMarkers=[];
 
-demoPartners.filter(p=>selectedProvince==="all"||p.province===selectedProvince)
-.forEach(p=>{
-const color=p.type==="company"?"#d58a25":"#26745d";
-const marker=L.circleMarker([p.lat,p.lng],{
-radius:7,color:"#fff",weight:2,fillColor:color,fillOpacity:1
-}).addTo(jordanMap);
+  const visible=demoPartners.filter(p=>
+    selectedProvince==="all"||p.province===selectedProvince
+  );
 
-marker.bindPopup(`
-<b>${esc(p.name)}</b><br>
-${esc(p.province)}<br>
-<small>${p.type==="company"?"شركة تجريبية":"صيدلية تجريبية"}</small>
-`);
-networkMarkers.push(marker);
-});
+  visible.forEach(p=>{
+    const color=p.type==="company"?"#d58a25":"#26745d";
 
-if(selectedProvince==="all"){
-jordanMap.setView([31.25,36.0],7);
-document.getElementById("provinceDetails").textContent=
-"تعرض الخريطة نقاطاً تجريبية موزعة على محافظات الأردن.";
-}else{
-const p=provinces.find(x=>x.name===selectedProvince);
-jordanMap.setView([p.lat,p.lng],9);
-const count=demoPartners.filter(x=>x.province===selectedProvince).length;
-document.getElementById("provinceDetails").innerHTML=
-`<b style="color:var(--green)">${esc(selectedProvince)}</b><br>
-عدد النقاط التجريبية: ${count}<br>
-<span class="muted">هذه النقاط افتراضية وليست مواقع شركاء مؤكدة.</span>`;
-}
+    const marker=L.circleMarker([p.lat,p.lng],{
+      radius:8,
+      color:"#ffffff",
+      weight:2,
+      fillColor:color,
+      fillOpacity:1
+    }).addTo(jordanMap);
+
+    marker.bindPopup(`
+      <b>${esc(p.name)}</b><br>
+      ${esc(p.province)}<br>
+      <small>${p.type==="company"?"شركة تجريبية":"صيدلية تجريبية"}</small>
+    `);
+
+    networkMarkers.push(marker);
+  });
+
+  if(selectedProvince==="all"){
+    jordanMap.setView([31.25,36.0],7);
+    document.getElementById("provinceDetails").textContent=
+      "تعرض الخريطة نقاطاً تجريبية موزعة على محافظات الأردن.";
+  }else{
+    const p=provinces.find(x=>x.name===selectedProvince);
+    jordanMap.setView([p.lat,p.lng],10);
+
+    const count=demoPartners.filter(x=>x.province===selectedProvince).length;
+
+    document.getElementById("provinceDetails").innerHTML=`
+      <b style="color:var(--green)">${esc(selectedProvince)}</b><br>
+      عدد النقاط التجريبية: ${count}<br>
+      <span class="muted">هذه النقاط افتراضية وليست مواقع شركاء مؤكدة.</span>
+    `;
+  }
 }
 
 function renderProvinceList(){
-const el=document.getElementById("provinceList");
-if(!el)return;
+  const el=document.getElementById("provinceList");
+  if(!el)return;
 
-el.innerHTML=provinces.map(p=>{
-const count=demoPartners.filter(x=>x.province===p.name).length;
-return `
-<button class="province-btn ${selectedProvince===p.name?"active":""}" onclick="selectProvince('${p.name}')">
-<span>${p.name}</span><span class="count">${count}</span>
-</button>`;
-}).join("");
+  el.innerHTML=provinces.map(p=>{
+    const count=demoPartners.filter(x=>x.province===p.name).length;
+
+    return `
+      <button class="province-btn ${selectedProvince===p.name?"active":""}"
+        onclick="selectProvince('${p.name}')">
+        <span>${p.name}</span>
+        <span class="count">${count}</span>
+      </button>
+    `;
+  }).join("");
 }
 
 function selectProvince(name){
-selectedProvince=name;
-renderProvinceList();
+  selectedProvince=name;
+  renderProvinceList();
 
-if(jordanMap)renderNetworkMarkers();
+  if(jordanMap)renderNetworkMarkers();
 }
 
-/* =========================
-   REPORT MAP
-========================= */
+/* ==========================================
+   15. REPORT MAP
+========================================== */
 
 function initReportMap(){
-if(reportMap||!window.L)return;
+  if(reportMap||!window.L)return;
 
-reportMap=L.map("reportMap",{
-zoomControl:true,
-scrollWheelZoom:true,
-minZoom:6,
-maxZoom:12,
-maxBounds:jordanBounds,
-maxBoundsViscosity:1
-}).setView([31.25,36.0],7);
+  reportMap=createJordanMap("reportMap");
+  refreshReportMarkers();
 
-setupJordanBase(reportMap);
-refreshReportMarkers();
+  setTimeout(()=>reportMap.invalidateSize(),250);
 }
 
 function refreshReportMarkers(){
-if(!reportMap)return;
+  if(!reportMap)return;
 
-reportMarkers.forEach(m=>reportMap.removeLayer(m));
-reportMarkers=[];
+  reportMarkers.forEach(m=>reportMap.removeLayer(m));
+  reportMarkers=[];
 
-reports.forEach(r=>{
-const color=r.type==="special"?"#d58a25":
-r.type==="recycle"?"#5689b5":"#26745d";
+  reports.forEach(r=>{
+    const color=
+      r.type==="special"?"#d58a25":
+      r.type==="recycle"?"#5689b5":
+      "#26745d";
 
-const marker=L.circleMarker([r.lat,r.lng],{
-radius:6,color:"#fff",weight:1.5,
-fillColor:color,fillOpacity:.95
-}).addTo(reportMap);
+    const marker=L.circleMarker([r.lat,r.lng],{
+      radius:7,
+      color:"#ffffff",
+      weight:2,
+      fillColor:color,
+      fillOpacity:.95
+    }).addTo(reportMap);
 
-marker.bindPopup(`
-<b>${esc(r.source)}</b><br>
-${reportTypes[r.type]}<br>
-${esc(r.province)}<br>
-${reportStatus(r.status)}
-`);
+    marker.bindPopup(`
+      <b>${esc(r.source)}</b><br>
+      ${reportTypes[r.type]}<br>
+      ${esc(r.province)}<br>
+      ${reportStatus(r.status)}
+    `);
 
-reportMarkers.push(marker);
-});
+    reportMarkers.push(marker);
+  });
 }
 
-/* =========================
-   REFRESH
-========================= */
+/* ==========================================
+   16. REFRESH ALL DATA
+========================================== */
 
 function refreshAll(){
-renderStats();
-renderInventory();
-renderAlerts();
-renderMonthGrid();
-renderImpact();
-renderReports();
-renderProvinceList();
+  renderStats();
+  renderInventory();
+  renderAlerts();
+  renderMonthGrid();
+  renderImpact();
+  renderReports();
+  renderProvinceList();
 }
 
+/* ==========================================
+   17. INITIALIZE
+========================================== */
+
 document.getElementById("today").textContent=
-new Date().toLocaleDateString("ar-JO",{
-weekday:"long",year:"numeric",month:"long",day:"numeric"
-});
+  new Date().toLocaleDateString("ar-JO",{
+    weekday:"long",
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+  });
 
 fillSelects();
 seedReports();
 refreshAll();
 
-setTimeout(()=>{
-initReportMap();
-},300);
+/* Initialize dashboard map after page loads */
+window.addEventListener("load",()=>{
+  setTimeout(()=>{
+    initReportMap();
+  },300);
+});
+
+/* Recalculate map dimensions when screen orientation changes */
+window.addEventListener("resize",()=>{
+  if(jordanMap)jordanMap.invalidateSize();
+  if(reportMap)reportMap.invalidateSize();
+});
 
 </script>
 </body>
