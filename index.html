@@ -3,242 +3,173 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Recycle Rx Jordan | Smart Pharmaceutical Waste Management</title>
+<title>NAMAA | منظومة أذكى لموارد أفضل</title>
 <!-- مكتبة توليد رمز QR حقيقي -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:#f5f8f7;color:#173b3a}
 button,input,select,textarea{font:inherit}button{cursor:pointer}
-.app{display:flex;min-height:100vh}.side{width:240px;background:#123f3d;color:white;padding:25px 16px;position:fixed;right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between;z-index:100}
-.logo{font-size:25px;font-weight:800;padding:10px 12px 28px}.logo span{color:#8ee0c0}
+.app{display:flex;min-height:100vh}.side{width:260px;background:#123f3d;color:white;padding:25px 16px;position:fixed;right:0;top:0;bottom:0;display:flex;flex-direction:column;justify-content:space-between;z-index:100}
+.logo{font-size:24px;font-weight:800;padding:10px 12px 20px;line-height:1.4}.logo span{color:#8ee0c0;display:block;font-size:12px;font-weight:normal;margin-top:5px}
 .nav button{display:block;width:100%;text-align:right;border:0;background:transparent;color:#d7ebe6;padding:12px 14px;border-radius:12px;margin:3px 0;font-size:14px}.nav button.active,.nav button:hover{background:#21625e;color:#fff}
-.main{margin-right:240px;width:calc(100% - 240px);padding:30px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.top h1{margin:0;font-size:28px}.badge{background:#dff5ec;color:#17634f;padding:8px 13px;border-radius:20px;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid #e4eeeb;border-radius:18px;padding:20px;box-shadow:0 5px 20px #123f3d0b}.metric{font-size:30px;font-weight:800;margin-top:8px}.muted{color:#718785;font-size:13px}.row{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:18px}.card h2{font-size:18px;margin:0 0 15px}.chart{height:210px;display:flex;align-items:end;gap:15px;padding:10px 10px 5px}.bar{flex:1;background:#6bb9a5;border-radius:8px 8px 2px 2px;min-height:20px;position:relative}.bar small{position:absolute;bottom:-22px;left:50%;transform:translateX(-50%);white-space:nowrap;color:#718785}
+.main{margin-right:260px;width:calc(100% - 260px);padding:30px;max-width:1500px}.top{display:flex;justify-content:space-between;align-items:center;margin-bottom:25px}.top h1{margin:0;font-size:28px}.badge{background:#dff5ec;color:#17634f;padding:8px 13px;border-radius:20px;font-weight:700}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.card{background:#fff;border:1px solid #e4eeeb;border-radius:18px;padding:20px;box-shadow:0 5px 20px #123f3d0b}.metric{font-size:30px;font-weight:800;margin-top:8px}.muted{color:#718785;font-size:13px}.row{display:grid;grid-template-columns:1.3fr 1fr;gap:18px;margin-top:18px}.card h2{font-size:18px;margin:0 0 15px}
 table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px solid #edf2f0;text-align:right;font-size:14px}.status{padding:5px 9px;border-radius:14px;background:#e9f5ef;color:#17634f;font-size:12px}.risk{background:#fff2db;color:#9a6500}.danger{background:#fde9e7;color:#a73b35}
-.page{display:none}.page.active{display:block}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d7e4e0;border-radius:10px;background:#fbfdfc}.field.full{grid-column:1/-1}.primary{background:#1f7167;color:white;border:0;padding:12px 20px;border-radius:11px;font-weight:700}.secondary{background:#edf6f3;color:#17634f;border:0;padding:12px 20px;border-radius:11px;font-weight:700}.actions{display:flex;gap:10px;margin-top:18px}
-.timeline{display:flex;justify-content:space-between;gap:8px;margin:25px 0}.step{flex:1;text-align:center;position:relative}.dot{width:28px;height:28px;border-radius:50%;background:#cfe1dc;margin:auto;border:5px solid #f5f8f7}.step.done .dot{background:#238a73}.step.current .dot{background:#f0b34e}.step:not(:last-child):after{content:"";height:3px;background:#d5e3df;position:absolute;top:13px;left:-50%;right:50%;z-index:-1}.step.done:not(:last-child):after{background:#238a73}.step span{display:block;font-size:12px;margin-top:8px;color:#657a77}
+.page{display:none}.page.active{display:block}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d7e4e0;border-radius:10px;background:#fbfdfc}.field.full{grid-column:1/-1}.primary{background:#1f7167;color:white;border:0;padding:12px 20px;border-radius:11px;font-weight:700}.actions{display:flex;gap:10px;margin-top:18px}
 .qr-box{padding:10px;background:#fff;border:1px solid #cadbd6;border-radius:12px;display:inline-block;margin:auto}
-.map{height:260px;border-radius:15px;background:#e5f1ee;position:relative;overflow:hidden}.jordan{position:absolute;left:35%;top:15%;width:32%;height:72%;background:#8dc6b7;clip-path:polygon(45% 0,72% 12%,78% 32%,94% 45%,78% 61%,70% 84%,42% 100%,27% 78%,8% 70%,21% 47%,9% 29%,28% 17%)}.pin{position:absolute;width:13px;height:13px;background:#d66a5f;border:3px solid white;border-radius:50%;box-shadow:0 2px 6px #0004}
-.alert{padding:15px;border-radius:12px;background:#fff7e6;border-right:4px solid #e8a83c;margin-top:15px}.score{font-size:42px;font-weight:800;color:#238a73}.pillrow{display:flex;gap:8px;flex-wrap:wrap}.pill{padding:8px 12px;background:#edf6f3;border-radius:18px;font-size:13px}
-.home-card{background:linear-gradient(135deg, #123f3d, #21625e);color:white;padding:25px;border-radius:20px;margin-bottom:20px}
-.home-card h2{color:#8ee0c0;margin-top:0}.eco-badge{display:inline-block;padding:6px 14px;background:#8ee0c0;color:#123f3d;border-radius:20px;font-weight:bold;font-size:13px}
+.alert{padding:15px;border-radius:12px;background:#fff7e6;border-right:4px solid #e8a83c;margin-top:15px}
 .copyright-footer{margin-top:25px;padding-top:15px;border-top:1px solid #e4eeeb;text-align:center;font-size:12px;color:#718785}
-@media(max-width:850px){.side{width:75px}.logo{font-size:0}.logo span{font-size:22px}.nav button{font-size:0;text-align:center}.nav button:before{content:"•";font-size:25px}.main{margin-right:75px;width:calc(100% - 75px);padding:18px}.grid{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}.formgrid{grid-template-columns:1fr}.field.full{grid-column:auto}}
+@media(max-width:850px){.side{width:75px}.logo{font-size:12px}.logo span{display:none}.nav button{font-size:0;text-align:center}.nav button:before{content:"•";font-size:25px}.main{margin-right:75px;width:calc(100% - 75px);padding:18px}.grid{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="app">
 <aside class="side">
 <div>
-  <div class="logo">Pharma<span>Guard</span></div>
+  <!-- يمكنك استبدال النص التالي بوسم صورة الشعار <img src="namaa-logo.png" alt="NAMAA"> -->
+  <div class="logo">NAMAA | نماء<span>منظومة أذكى لموارد أفضل</span></div>
   <div class="nav">
-    <button class="active" onclick="show('dashboard',this)">لوحة التحكم</button>
-    <button onclick="show('household',this)">🏠 خدمة المنازل والأفراد</button>
-    <button onclick="show('drugSearch',this)">🔍 البحث عن الدواء</button>
-    <button onclick="show('register',this)">تسجيل دواء / نفاية</button>
-    <button onclick="show('tracking',this)">تتبع QR</button>
-    <button onclick="show('assessment',this)">التصنيف البيئي</button>
-    <button onclick="show('logistics',this)">الجمع واللوجستيات</button>
-    <button onclick="show('circular',this)">المواد الدائرية</button>
-    <button onclick="show('reports',this)">التقارير</button>
+    <button class="active" onclick="show('dashboard',this)">📊 لوحة التحكم</button>
+    <button onclick="show('inventory',this)">📦 جرد الأدوية (QR)</button>
+    <button onclick="show('pharmacyLink',this)">🔄 ربط الصيدليات</button>
+    <button onclick="show('researchPath',this)">🧪 المسار البحثي والبيئي</button>
   </div>
 </div>
 <div style="font-size:11px;color:#a3c7c2;padding:10px;text-align:center;border-top:1px solid #1c524f">
-  © 2026 Recycle Rx<br>جميع الحقوق محفوظة
+  © 2026 NAMAA<br>جائزة مؤتة للريادة والابتكار
 </div>
 </aside>
 
 <main class="main">
 <!-- لوحة التحكم -->
 <section id="dashboard" class="page active">
-<div class="top"><div><h1>Recycle Rx Jordan</h1><div class="muted">منصة ذكية لتتبع النفايات الدوائية ودعم الاقتصاد الدائري في الأردن</div></div><span class="badge">Concept Prototype • 2026</span></div>
+<div class="top">
+  <div>
+    <h1>مشروع نماء | NAMAA</h1>
+    <div class="muted">منصة رقمية لإدارة مخزون الأدوية وتواريخ الصلاحية باستخدام QR Code[span_2](start_span)[span_2](end_span)</div>
+  </div>
+  <span class="badge">جائزة مؤتة للريادة والابتكار 2026[span_3](start_span)[span_3](end_span)</span>
+</div>
+
 <div class="alert" style="margin-bottom:18px">
-<b>Recycle Rx — نموذج أولي بحثي (جميع حقوق الملكية محفوظة):</b>
-هذه الواجهة توضح فكرة المشروع باستخدام بيانات تجريبية. لا تمثل نظامًا تشغيليًا فعليًا ولا تمنح تصريحًا للتخلص من النفايات أو إعادة استخدامها.
+<b>📌 نموذج أولي (Prototype):</b> نظام ذكي لتنظيم مخزون الأدوية وتقليل الهدر، مع مسار بحثي مستقبلي لإدارة المخلفات[span_4](start_span)[span_4](end_span)[span_5](start_span)[span_5](end_span).
 </div>
+
 <div class="grid">
-<div class="card"><div class="muted">الأدوية المسجلة</div><div class="metric" id="statRegistered">128</div><div class="muted">بيانات تجريبية</div></div>
-<div class="card"><div class="muted">مساهمات المنازل</div><div class="metric" id="statHousehold">45</div><div class="muted">تسليم أفراد</div></div>
-<div class="card"><div class="muted">تحتاج معالجة خاصة</div><div class="metric">17</div><div class="muted">للمراجعة</div></div>
-<div class="card"><div class="muted">عبوات للتدوير</div><div class="metric" id="statRecycle">31</div><div class="muted">مرشحة بحثيًا</div></div>
-</div>
-<div class="row">
-<div class="card"><h2>توزيع السجلات حسب المحافظة</h2><div class="chart"><div class="bar" style="height:80%"><small>عمّان</small></div><div class="bar" style="height:48%"><small>إربد</small></div><div class="bar" style="height:34%"><small>الزرقاء</small></div><div class="bar" style="height:55%"><small>الكرك</small></div><div class="bar" style="height:30%"><small>أخرى</small></div></div></div>
-<div class="card"><h2>خريطة البلاغات ونقاط الجمع</h2><div class="map"><div class="jordan"></div><i class="pin" style="left:55%;top:40%"></i><i class="pin" style="left:48%;top:55%"></i><i class="pin" style="left:60%;top:62%"></i><i class="pin" style="left:43%;top:70%"></i></div></div>
+<div class="card"><div class="muted">الأدوية المسجلة</div><div class="metric" id="statRegistered">128</div><div class="muted">قاعدة البيانات النشطة</div></div>
+<div class="card"><div class="muted">قريبة من الانتهاء</div><div class="metric" style="color:#d97706">12</div><div class="muted">تحتاج متابعة</div></div>
+<div class="card"><div class="muted">منتهية الصلاحية</div><div class="metric" style="color:#dc2626">5</div><div class="muted">للمراجعة والتخلص الآمن</div></div>
+<div class="card"><div class="muted">صيدليات مرتبطة</div><div class="metric">14</div><div class="muted">شبكة تجريبية</div></div>
 </div>
 
-<div class="card" style="margin-top:18px"><h2>آخر السجلات المسجلة</h2>
-<table id="recentTable">
-<tr><th>ID</th><th>المنشأة / المصدر</th><th>النوع</th><th>المحافظة</th><th>الحالة</th></tr>
-<tr><td>PG-0128</td><td>مساهمة منزلية</td><td>عبوات زجاجية وفائض</td><td>الكرك</td><td><span class="status">بانتظار التسليم</span></td></tr>
-<tr><td>PG-0127</td><td>صيدلية تجريبية</td><td>عبوات دوائية</td><td>عمّان</td><td><span class="status">تم الجمع</span></td></tr>
-<tr><td>PG-0126</td><td>منشأة صحية</td><td>نفايات دوائية</td><td>إربد</td><td><span class="status risk">تقييم</span></td></tr>
-</table></div>
-</section>
-
-<!-- قسم خدمة المنازل والأفراد الجيد -->
-<section id="household" class="page">
-<div class="top"><div><h1>خدمة الأسر والمنازل (Green Home Portal)</h1><div class="muted">ساهم في حماية البيئة والمياه الجوفية بإعادة تدوير العبوات والتخلص الآمن من الأدوية المنزلية</div></div></div>
-
-<div class="home-card">
-  <h2>🏡 كيف تساعدك منصة Recycle Rx في منزلك؟</h2>
-  <p>بدلاً من رمي الأدوية في النفايات المنزلية أو الصرف الصحي، يتيح لك النظام تسليم العبوات والأدوية المنتهية لأقرب صيدلية معتمدة وتجميع نقاط بيئية تشجيعية!</p>
-  <span class="eco-badge">🌱 رصيدك الحالي: <span id="userPoints">150</span> نقطة خضراء</span>
-</div>
-
-<div class="row">
-  <div class="card">
-    <h2>تسجيل دواء أو عبوة منزلية</h2>
-    <div class="field" style="margin-bottom:12px">
-      <label>اسم الدواء أو نوع العبوة</label>
-      <input id="hItem" placeholder="مثال: شراب معلق / عبوة زجاجية فارغة / حبوب فائضة">
-    </div>
-    <div class="field" style="margin-bottom:12px">
-      <label>المحافظة والحي</label>
-      <select id="hGov">
-        <option>الكرك - الثنية / جامعة مؤتة</option>
-        <option>عمّان - الجبيهة / الجامعة الأردنية</option>
-        <option>إربد - شارع الجامعة</option>
-        <option>الزرقاء - وسط البلد</option>
-      </select>
-    </div>
-    <div class="field" style="margin-bottom:12px">
-      <label>نوع المادة للتسليم</label>
-      <select id="hType">
-        <option value="glass">عبوات زجاجية نظيفة (للتدوير)</option>
-        <option value="plastic">عبوات بلاستيكية (للتدوير)</option>
-        <option value="expired">دواء منتهي الصلاحية (للتخلص الآمن)</option>
-      </select>
-    </div>
-    <button class="primary" style="width:100%" onclick="submitHousehold()">تسجيل وطلب كود التسليم (+20 نقطة)</button>
-    <div id="hResult" class="alert" style="display:none"></div>
-  </div>
-
-  <div class="card">
-    <h2>📍 أقرب نقاط الجمع المعتمدة بالكرك والمحافظات</h2>
-    <p class="muted">يمكنك تسليم الأدوية والعبوات المسجلة لأي صيدلية مشاركة:</p>
-    <ul>
-      <li><b>صيدلية المبادرة البيئية:</b> الكرك - قرب الجامعة (مفتوح)</li>
-      <li><b>صيدلية السلام المعتمدة:</b> عمّان - الجبيهة</li>
-      <li><b>مركز الجمع المركزي:</b> إربد - المدينة الطبية</li>
-    </ul>
-    <div class="alert" style="background:#eef7f5;border-color:#1f7167">
-      <b>💡 نصيحة منزلية:</b> يُرجى فصل العبوات الزجاجية والبلاستيكية الفارغة عن الأدوية السائلة قبل التسليم لتسهيل عملية التدوير.
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- قسم البحث المباشر -->
-<section id="drugSearch" class="page">
-<div class="top"><div><h1>الاستعلام والبحث عن الأدوية</h1><div class="muted">ابحث عن الدواء للتحقق من المادة الفعالة ودواعي الاستعمال بواسطة OpenFDA API</div></div></div>
-<div class="card">
-<h2>البحث في قاعدة بيانات الأدوية العالمية</h2>
-<div style="display:flex;gap:10px;margin-bottom:15px;flex-wrap:wrap">
-<input id="apiSearchInput" placeholder="اكتب اسم الدواء بالإنجليزي (مثل Panadol, Paracetamol, Aspirin)..." style="flex:1;min-width:250px;padding:12px;border:1px solid #d7e4e0;border-radius:10px">
-<button class="primary" onclick="searchFDA()">بحث عن الدواء</button>
-</div>
-<div id="searchLoading" class="alert" style="display:none;background:#eef7f5;border-color:#1f7167">جاري البحث في القاعدة الرسمية... ⏳</div>
-<div id="searchError" class="alert danger" style="display:none"></div>
-
-<div id="searchResult" style="display:none;margin-top:15px;background:#f8fbfb;padding:18px;border-radius:12px;border:1px solid #d7e4e0">
-<h2 id="resBrand" style="color:#1f7167;margin-top:0">-</h2>
-<p><b>المادة الفعالة (Active Ingredient):</b> <span id="resActive">-</span></p>
-<p><b>دواعي الاستخدام (Purpose):</b> <span id="resPurpose">-</span></p>
-<p><b>التحذيرات وطريقة الاستخدام:</b> <span id="resWarnings">-</span></p>
-</div>
-</div>
-</section>
-
-<!-- قسم تسجيل المؤسسات -->
-<section id="register" class="page">
-<div class="top"><div><h1>تسجيل دواء / نفاية دوائية (للمؤسسات)</h1><div class="muted">أدخل بيانات منشأة/حالة تجريبية.</div></div></div>
-<div class="card"><div class="formgrid">
-<div class="field"><label>اسم الدواء التجاري</label><input id="drug" placeholder="مثال: Revanin / Amoxil"></div>
-<div class="field"><label>المادة الفعالة</label>
-  <input id="active" list="activeIngredientsList" placeholder="اختر أو اكتب المادة الفعالة...">
-  <datalist id="activeIngredientsList">
-    <option value="Paracetamol"></option>
-    <option value="Amoxicillin"></option>
-    <option value="Ibuprofen"></option>
-    <option value="Metformin"></option>
-    <option value="Omeprazole"></option>
-    <option value="Aspirin"></option>
-  </datalist>
-</div>
-<div class="field"><label>الشكل الدوائي</label><select id="dosageForm"><option>أقراص / حبوب</option><option>كبسولات</option><option>شراب سائل</option><option>أخرى</option></select></div>
-<div class="field"><label>حالة سلامة العبوة</label>
-  <select id="packageCondition">
-    <option value="intact">مغلقة بالكامل وسليمة</option>
-    <option value="opened">مفتوحة جزئياً ولكن سليمة</option>
-    <option value="damaged">تالفة / تسريب (تحتاج إتلاف آمن)</option>
-  </select>
-</div>
-<div class="field"><label>تاريخ الانتهاء</label><input id="expDate" type="date"></div>
-<div class="field"><label>نوع مادة العبوة</label><select id="packaging">
-<option value="glass">زجاج طبّي</option><option value="plastic">بلاستيك (HDPE/PET)</option><option value="aluminum">ألومنيوم</option></select></div>
-<div class="field"><label>المحافظة</label><select id="gov"><option>الكرك</option><option>عمّان</option><option>إربد</option><option>الزرقاء</option></select></div>
-<div class="field full"><label>ملاحظات إضافية</label><textarea id="notes" rows="2"></textarea></div>
-</div>
-<div class="actions"><button class="primary" onclick="assess()">تسجيل وإجراء تقييم أولي</button></div>
-<div id="saved" class="alert" style="display:none">تم إنشاء السجل <b id="newid"></b> كنموذج تجريبي.</div>
-</div>
-</section>
-
-<!-- قسم التقييم والتتبع والتقارير -->
-<section id="assessment" class="page">
-<div class="top"><div><h1>التصنيف والتقييم الأولي</h1><div class="muted">نموذج فرز وتصنيف آمن للنفايات الدوائية.</div></div></div>
-<div class="row"><div class="card"><h2>ملخص السجل <span id="aid">PG-0128</span></h2><div class="pillrow" id="assessPills"><span class="pill">أدوية منتهية</span></div></div>
-<div class="card" style="text-align:center"><div class="muted">مؤشر الفرز البحثي</div><div class="score" id="assessScore">78%</div></div></div>
 <div class="card" style="margin-top:18px">
-<h2>النتيجة والمسار الموصى به</h2>
-<p><b id="assessResultTitle">Candidate for Laboratory Testing</b></p>
-<p class="muted" id="assessResultDesc">إرشادات المعالجة والفرز.</p>
-<button class="primary" onclick="show('tracking')">فتح التتبع ورؤية QR</button></div>
+  <h2>آخر الأدوية المسجلة في النظام</h2>
+  <table id="recentTable">
+    <tr><th>رمز QR / ID</th><th>اسم الدواء</th><th>الكمية</th><th>تاريخ الانتهاء</th><th>الحالة</th></tr>
+    <tr><td>PG-0128</td><td>Amoxicillin 500mg</td><td>20</td><td>2026-06-15</td><td><span class="status risk">قريب من الانتهاء</span></td></tr>
+    <tr><td>PG-0127</td><td>Paracetamol</td><td>50</td><td>2026-07-20</td><td><span class="status">آمن</span></td></tr>
+    <tr><td>PG-0126</td><td>Ibuprofen</td><td>35</td><td>2026-08-12</td><td><span class="status">آمن</span></td></tr>
+  </table>
+</div>
 </section>
 
-<section id="tracking" class="page">
-<div class="top"><div><h1>التتبع الذكي توليد رمز QR</h1><div class="muted">رمز QR فريد لتتبع الشحنات والعبوات.</div></div></div>
-<div class="card"><div class="row" style="margin:0"><div><h2 id="currentTrackID">PG-0128</h2><div class="timeline">
-<div class="step done"><div class="dot"></div><span>مسجل</span></div><div class="step done"><div class="dot"></div><span>تم الجمع</span></div><div class="step current"><div class="dot"></div><span>النقل</span></div><div class="step"><div class="dot"></div><span>المعالجة</span></div></div></div>
-<div style="text-align:center">
-  <div id="qrcodeCanvas" class="qr-box"></div>
-  <p><b id="qrCodeLabel">QR: PG-0128</b></p>
-</div></div></div>
+<!-- قسم جرد الأدوية ورمز QR -->
+<section id="inventory" class="page">
+<div class="top">
+  <div>
+    <h1>إدارة المخزون والجرد الذكي</h1>
+    <div class="muted">تسجيل الأدوية وتواريخ صلاحيتها عبر رمز QR مع تصنيف لوني حسب شهر الانتهاء[span_6](start_span)[span_6](end_span)[span_7](start_span)[span_7](end_span)</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card">
+    <h2>إضافة دواء جديد للنظام</h2>
+    <div class="formgrid">
+      <div class="field"><label>اسم الدواء التجاري</label><input id="drugName" placeholder="مثال: Amoxicillin"></div>
+      <div class="field"><label>الكمية</label><input id="drugQty" type="number" placeholder="مثال: 20"></div>
+      <div class="field"><label>تاريخ الانتهاء</label><input id="drugExp" type="date"></div>
+      <div class="field"><label>الشكل الدوائي</label><select><option>أقراص / حبوب</option><option>كبسولات</option><option>شراب سائل</option></select></div>
+    </div>
+    <div class="actions"><button class="primary" onclick="addDrug()">حفظ وتوليد QR Code</button></div>
+  </div>
+
+  <div class="card" style="text-align:center">
+    <h2>تتبع رمز QR للدواء</h2>
+    <div id="qrcodeCanvas" class="qr-box" style="margin:15px 0"></div>
+    <p><b id="qrCodeLabel">QR: PG-0128</b></p>
+    <p class="muted">مسح الرمز يظهر كافة بيانات الصلاحية والتنبيهات[span_8](start_span)[span_8](end_span).</p>
+  </div>
+</div>
 </section>
 
-<section id="logistics" class="page">
-  <div class="top"><div><h1>الجمع واللوجستيات</h1><div class="muted">تنظيم مسار الجمع والنقل.</div></div></div>
-  <div class="card"><h2>مسار الجمع والترتيب اللوجستي</h2><div class="alert">جميع عمليات الجمع والنقل تتم بالتعاون مع الجهات المعتمدة.</div></div>
+<!-- قسم ربط الصيدليات -->
+<section id="pharmacyLink" class="page">
+<div class="top">
+  <div>
+    <h1>ربط الصيدليات وتصحيح الهدر</h1>
+    <div class="muted">مطابقة العرض والطلب بين الصيدليات لتفادي انتهاء الصلاحية[span_9](start_span)[span_9](end_span)</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card" style="border-right: 4px solid #1f7167;">
+    <h2>صيدلية (أ) — لديها فائض</h2>
+    <p class="muted">لديها أدوية قريبة من انتهاء الصلاحية وترغب بعرضها ضمن شبكة نماء لتجنب خسائر الهدر[span_10](start_span)[span_10](end_span).</p>
+    <div class="alert" style="background:#eef7f5;border-color:#1f7167">
+      <b>الدواء المعروض:</b> Amoxicillin (تنتهي خلال 15 يوم) — الكمية: 15 علبة.
+    </div>
+  </div>
+
+  <div class="card" style="border-right: 4px solid #e8a83c;">
+    <h2>صيدلية (ب) — تصور مستقبلي للطلب</h2>
+    <p class="muted">تحتاج هذه الأدوية ضمن مدة صلاحيتها قبل الهدر، ويتم التنسيق وفق الأنظمة المعتمدة في الأردن[span_11](start_span)[span_11](end_span).</p>
+    <button class="primary" style="margin-top:15px" onclick="alert('تم إرسال طلب التنسيق التجريبي بنجاح')">طلب مطابقة المخزون</button>
+  </div>
+</div>
 </section>
 
-<section id="circular" class="page">
-<div class="top"><div><h1>المواد الدائرية واختبارات السلامة</h1><div class="muted">دراسة إمكانية إعادة تدوير مواد التغليف والعبوات.</div></div></div>
-<div class="card"><h2>الفحوصات البيئية والميكانيكية للعبوات</h2><p class="muted">تخضع العبوات الزجاجية والبلاستيكية لإعادة تدوير صناعي بعد الفحص والتعقيم.</p></div>
-</section>
+<!-- قسم المسار البحثي والبيئي -->
+<section id="researchPath" class="page">
+<div class="top">
+  <div>
+    <h1>المسار البحثي والبيئي لمشروع نماء</h1>
+    <div class="muted">استكشاف تقليل الأثر البيئي للمخلفات الدوائية وإعادة استخدام العبوات[span_12](start_span)[span_12](end_span)[span_13](start_span)[span_13](end_span)</div>
+  </div>
+</div>
 
-<section id="reports" class="page">
-<div class="top"><div><h1>التقارير والاستطلاعات</h1><div class="muted">إحصائيات المنصة ومشاركات الأسر والصيدليات.</div></div></div>
-<div class="card"><h2>إحصائيات الأثر البيئي للمشروع</h2><p class="muted">تم حماية مئات الليترات من المياه الجوفية من التلوث الدوائي من خلال تجميع النفايات المنزلية والمؤسسية.</p></div>
+<div class="grid" style="grid-template-columns: 1fr 1fr">
+  <div class="card">
+<h2>🌱 الأثر البيئي ودرجات التلوث</h2>
+<p class="muted">بحسب الدراسات الحديثة في الأردن (مثل دراسة Almashaqbeh وآخرون، 2026)، تم رصد بقايا أدوية ومسكنات (مثل Diclofenac و Ciprofloxacin) في حمأة محطات المعالجة[span_14](start_span)[span_14](end_span).</p>
+<p><b>هدف نماء:</b> الحد من وصول هذه المواد للبيئة عبر توعية الأفراد وتتبع التخلص الآمن منها.</p>
+</div>
+
+  <div class="card">
+    <h2>🧱 الاستخدامات البحثية المستقبلية</h2>
+    <p class="muted">استكشاف إمكانية الاستفادة من مكونات محددة أو عبوات الأدوية (البليستر) في تطبيقات بناء غير إنشائية وفق اختبارات مخبرية دقيقة (مقاومة الضغط والتحقق العلمي)[span_15](start_span)[span_15](end_span)[span_16](start_span)[span_16](end_span).</p>
+    <div class="alert" style="background:#eef7f5;border-color:#1f7167">
+      <b>فريق المشروع:</b> أماني الزحلان (صيدلة) • نغم الصرايرة (هندسة مدنية) • لجين السعودي (هندسة بيئية)[span_17](start_span)[span_17](end_span).
+    </div>
+  </div>
+</div>
 </section>
 
 <div class="copyright-footer">
-  جميع حقوق الملكية الفكرية والتصميم محفوظة © 2026 <b>Recycle Rx Jordan</b> • إعداد وتطوير المشروع.
+  مشروع نماء | NAMAA • جائزة مؤتة للريادة والابتكار 2026[span_18](start_span)[span_18](end_span) • جميع الحقوق محفوظة
 </div>
 </main></div>
 
 <script>
 let counter = 128;
-let householdCounter = 45;
 let currentID = 'PG-0128';
-let userPoints = 150;
 
 function show(id, btn){
  document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
  document.getElementById(id).classList.add('active');
  document.querySelectorAll('.nav button').forEach(x => x.classList.remove('active'));
  if(btn) btn.classList.add('active');
- if(id === 'tracking') generateQRCode(currentID);
+ if(id === 'inventory') generateQRCode(currentID);
 }
 
 function generateQRCode(text){
@@ -246,99 +177,33 @@ function generateQRCode(text){
  container.innerHTML = '';
  new QRCode(container, { text: text, width: 110, height: 110 });
  document.getElementById('qrCodeLabel').innerText = 'QR: ' + text;
- document.getElementById('currentTrackID').innerText = text;
 }
 
-function submitHousehold(){
- const item = document.getElementById('hItem').value.trim();
- const res = document.getElementById('hResult');
- if(!item){
-   res.innerHTML = '🔴 يرجى كتابة اسم الدواء أو العبوة أولاً.';
-   res.style.display = 'block';
+function addDrug(){
+ const name = document.getElementById('drugName').value.trim();
+ const qty = document.getElementById('drugQty').value;
+ const exp = document.getElementById('drugExp').value;
+
+ if(!name || !qty || !exp){
+   alert('يرجى تعبئة كافة الحقول المطلوبة.');
    return;
  }
- counter++;
- householdCounter++;
- userPoints += 20;
- currentID = 'HM-' + String(counter).padStart(4, '0');
- 
- document.getElementById('userPoints').innerText = userPoints;
- document.getElementById('statHousehold').innerText = householdCounter;
- document.getElementById('statRegistered').innerText = counter;
 
- res.innerHTML = `✅ <b>تم التسجيل بنجاح!</b> كود التتبع المنزلي الخاص بك هو: <b>${currentID}</b>.<br>تم إشعار صيدلية الجمع القريبة، وإضافة <b>20 نقطة خضراء</b> لرصيدك!`;
- res.style.display = 'block';
-
- const table = document.getElementById('recentTable');
- const row = table.insertRow(1);
- row.innerHTML = `<td>${currentID}</td><td>مساهمة منزلية (${item})</td><td>فرز منزلي</td><td>الكرك</td><td><span class="status">بانتظار التسليم</span></td>`;
-}
-
-function assess(){
  counter++;
  currentID = 'PG-' + String(counter).padStart(4, '0');
- document.getElementById('newid').textContent = currentID;
- document.getElementById('saved').style.display = 'block';
- document.getElementById('aid').textContent = currentID;
-
- const drugName = document.getElementById('drug').value || 'دواء مسجل';
- const gov = document.getElementById('gov').value;
- const pkg = document.getElementById('packaging').value;
- const condition = document.getElementById('packageCondition').value;
-
  document.getElementById('statRegistered').innerText = counter;
 
  const table = document.getElementById('recentTable');
  const row = table.insertRow(1);
- row.innerHTML = `<td>${currentID}</td><td>${drugName}</td><td>نفاية مسجلة</td><td>${gov}</td><td><span class="status">مسجل</span></td>`;
+ row.innerHTML = `<td>${currentID}</td><td>${name}</td><td>${qty}</td><td>${exp}</td><td><span class="status">آمن</span></td>`;
 
- setTimeout(() => show('assessment'), 300);
-}
-
-async function searchFDA(){
- const q = document.getElementById('apiSearchInput').value.trim();
- const resBox = document.getElementById('searchResult');
- const errBox = document.getElementById('searchError');
- const loadBox = document.getElementById('searchLoading');
-
- if(!q) return;
- resBox.style.display = 'none';
- errBox.style.display = 'none';
- loadBox.style.display = 'block';
-
- try {
-  let url = `https://api.fda.gov/drug/label.json?search=openfda.brand_name:${encodeURIComponent(q)}+openfda.generic_name:${encodeURIComponent(q)}&limit=1`;
-  let res = await fetch(url);
-  let data = await res.json();
-
-  if(!data.results){
-    url = `https://api.fda.gov/drug/label.json?search=${encodeURIComponent(q)}&limit=1`;
-    res = await fetch(url);
-    data = await res.json();
-  }
-
-  loadBox.style.display = 'none';
-
-  if(data.results && data.results.length > 0){
-   const drug = data.results[0];
-   document.getElementById('resBrand').innerText = drug.openfda?.brand_name?.[0] || q;
-   document.getElementById('resActive').innerText = drug.active_ingredient?.[0] || drug.openfda?.substance_name?.[0] || 'غير محدد';
-   document.getElementById('resPurpose').innerText = (drug.purpose?.[0] || drug.indications_and_usage?.[0] || 'غير متوفر').substring(0, 300) + '...';
-   document.getElementById('resWarnings').innerText = (drug.warnings?.[0] || 'يرجى مراجعة النشرة الطبية المرفقة.').substring(0, 300) + '...';
-   resBox.style.display = 'block';
-  } else {
-   throw new Error('Not found');
-  }
- } catch(e){
-  loadBox.style.display = 'none';
-  errBox.innerHTML = `لم يتم العثور على اسم العلامة التجارية <b>"${q}"</b> في قاعدة البيانات.<br><br>💡 <b>نصيحة:</b> جربي البحث عن المادة الفعالة مثل <b>Paracetamol</b> أو <b>Ibuprofen</b>.`;
-  errBox.style.display = 'block';
- }
+ generateQRCode(currentID);
+ alert('تم اضافة الدواء بنجاح وتوليد رمز QR الخاص به!');
 }
 
 window.onload = function(){
  generateQRCode('PG-0128');
 };
 </script>
-</body></html>
-
+</body>
+</html>
