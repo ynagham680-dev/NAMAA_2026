@@ -33,14 +33,14 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
   </div>
   <div class="nav">
     <button class="active" onclick="show('dashboard',this)">📊 لوحة التحكم</button>
-    <button onclick="show('inventory',this)">📦 تجربة الجرد والتحذيرات الصوتية</button>
-    <button onclick="show('slide6Section',this)">🎨 تفاصيل السلايد 6 (الألوان والدلالات)</button>
-    <button onclick="show('pharmacyLink',this)">🔄 ربط الصيدليات</button>
-    <button onclick="show('researchPath',this)">🧪 المسار البحثي والبيئي</button>
+    <button onclick="show('inventory',this)">📦 الجرد الذكي وتواريخ الصلاحية</button>
+    <button onclick="show('pharmacyMap',this)">🗺️ خريطة الصيدليات والشركات</button>
+    <button onclick="show('pharmacyLink',this)">🔄 ربط الصيدليات وتصحيح الهدر</button>
+    <button onclick="show('researchPath',this)">🧪 المسار البيئي والبحثي</button>
   </div>
 </div>
 <div style="font-size:11px;color:#a3c7c2;padding:10px;text-align:center;border-top:1px solid #1c524f">
-  © 2026 NAMAA<br>جائزة مؤتة للريادة والابتكار
+  © 2026 NAMAA<br>جائزة مؤتة للريادة والابتكار[span_2](start_span)[span_2](end_span)
 </div>
 </aside>
 
@@ -50,63 +50,243 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
 <div class="top">
   <div>
     <h1>مشروع نماء | NAMAA</h1>
-    <div class="muted">منصة رقمية لإدارة مخزون الأدوية وتواريخ الصلاحية باستخدام QR Code</div>
+    <div class="muted">منصة رقمية لإدارة مخزون الأدوية وتواريخ الصلاحية باستخدام QR Code[span_3](start_span)[span_3](end_span)</div>
   </div>
-  <span class="badge">جائزة مؤتة للريادة والابتكار 2026</span>
+  <span class="badge">جائزة مؤتة للريادة والابتكار 2026[span_4](start_span)[span_4](end_span)</span>
 </div>
 
 <div class="alert" style="margin-bottom:18px">
-<b>📌 نموذج تفاعلي:</b> اختبري النظام في قسم "تجربة الجرد"، وأدخلي تواريخ مختلفة لمشاهدة التنبيه الصوتي ودلالات الألوان فوراً.
+<b>📌 نظام الجرد والتنبيه المبكر:</b> يعتمد النظام ألواناً مخصصة لكل شهر مع تنبيهات تلقائية لتقليل الهدر الدوائي[span_5](start_span)[span_5](end_span).
 </div>
 
 <div class="grid">
-<div class="card"><div class="muted">الأدوية المسجلة</div><div class="metric" id="statRegistered">128</div><div class="muted">قاعدة بيانات نشطة</div></div>
-<div class="card"><div class="muted">قريبة من الانتهاء</div><div class="metric" id="statNear" style="color:#d97706">4</div><div class="muted">تنبيه مبكر تلقائي</div></div>
-<div class="card"><div class="muted">منتهية الصلاحية</div><div class="metric" id="statExpired" style="color:#dc2626">2</div><div class="muted">تجاوزت التاريخ</div></div>
-<div class="card"><div class="muted">صيدليات مرتبطة</div><div class="metric">14</div><div class="muted">شبكة تجريبية</div></div>
+<div class="card"><div class="muted">الأدوية المسجلة</div><div class="metric" id="statRegistered">128</div><div class="muted">قاعدة البيانات النشطة</div></div>
+<div class="card"><div class="muted">قريبة من الانتهاء</div><div class="metric" id="statNear" style="color:#d97706">4</div><div class="muted">تنبيه مبكر تلقائي[span_6](start_span)[span_6](end_span)</div></div>
+<div class="card"><div class="muted">منتهية الصلاحية</div><div class="metric" id="statExpired" style="color:#dc2626">2</div><div class="muted">تجاوزت التاريخ[span_7](start_span)[span_7](end_span)[span_8](start_span)[span_8](end_span)</div></div>
+<div class="card"><div class="muted">جهات مرتبطة</div><div class="metric">14</div><div class="muted">صيدليات ومستودعات</div></div>
 </div>
 
 <div class="card" style="margin-top:18px">
-  <h2>سجلات الأدوية (تطبيقات السلايد 6)</h2>
+  <h2>سجلات الأدوية وتصنيف الأشهر والألوان</h2>
   <table id="recentTable">
-    <tr><th>رمز QR / ID</th><th>اسم الدواء</th><th>الكمية</th><th>تاريخ الانتهاء</th><th>الحالة ودلالة اللون</th></tr>
-    <tr><td>PG-0128</td><td>Amoxicillin</td><td>20</td><td>2026-06-15</td><td><span class="status-tag" style="background:#059669">⏳ حزيران (قريب من الانتهاء)</span></td></tr>
-    <tr><td>PG-0127</td><td>Vitamin D</td><td>50</td><td>2026-06-18</td><td><span class="status-tag" style="background:#059669">⏳ حزيران (قريب)</span></td></tr>
-    <tr><td>PG-0126</td><td>Metformin</td><td>30</td><td>2026-01-10</td><td><span class="status-tag" style="background:#dc2626">❌ منتهي الصلاحية</span></td></tr>
+    <tr><th>رمز QR / ID</th><th>اسم الدواء</th><th>الكمية</th><th>تاريخ الانتهاء</th><th>التصنيف اللوني وحالة الصلاحية</th></tr>
+    <tr><td>PG-0128</td><td>Amoxicillin</td><td>20</td><td>2026-06-15</td><td><span class="status-tag" style="background:#059669">حزيران - قريب من الانتهاء[span_9](start_span)[span_9](end_span)</span></td></tr>
+    <tr><td>PG-0127</td><td>Vitamin D</td><td>50</td><td>2026-06-18</td><td><span class="status-tag" style="background:#059669">حزيران - قريب من الانتهاء[span_10](start_span)[span_10](end_span)</span></td></tr>
+    <tr><td>PG-0126</td><td>Metformin</td><td>30</td><td>2026-01-10</td><td><span class="status-tag" style="background:#dc2626">أيلول - منتهي الصلاحية[span_11](start_span)[span_11](end_span)[span_12](start_span)[span_12](end_span)</span></td></tr>
   </table>
 </div>
 </section>
 
-<!-- قسم تجربة الجرد والتحذيرات التفاعلي -->
+<!-- قسم الجرد الذكي وتواريخ الصلاحية -->
 <section id="inventory" class="page">
 <div class="top">
   <div>
-    <h1>تجربة الجرد الذكي والتحذير الصوتي (السلايد 6)</h1>
-    <div class="muted">إدخال بيانات الدواء وربطه برمز QR لاختبار التنبيه التلقائي</div>
+    <h1>النظام الذكي للجرد وتواريخ الصلاحية (QR Code)</h1>
+    <div class="muted">إدخال الأدوية، ربطها برمز QR، والتنبيه التلقائي بالألوان والصوت[span_13](start_span)[span_13](end_span)</div>
   </div>
 </div>
 
 <div class="row">
   <div class="card">
-    <h2>أدخل بيانات دواء جديد للاختبار</h2>
+    <h2>تسجيل دواء جديد وفحص الصلاحية</h2>
     <div class="formgrid">
-      <div class="field"><label>اسم الدواء</label><input id="drugName" placeholder="مثال: Panadol / Aspirin"></div>
+      <div class="field"><label>اسم الدواء</label><input id="drugName" placeholder="مثال: Panadol / Amoxicillin"></div>
       <div class="field"><label>الكمية</label><input id="drugQty" type="number" placeholder="مثال: 50"></div>
       <div class="field"><label>تاريخ الانتهاء</label><input id="drugExp" type="date"></div>
       <div class="field"><label>الشكل الدوائي</label><select><option>أقراص / حبوب</option><option>كبسولات</option><option>شراب سائل</option></select></div>
     </div>
-    <div class="actions"><button class="primary" onclick="addDrugInteractive()">فحص وتوليد التنبيه الصوتي و QR</button></div>
+    <div class="actions"><button class="primary" onclick="addDrugInteractive()">حفظ، توليد QR، وإطلاق التنبيه</button></div>
     <div id="testAlertBox" class="alert" style="display:none; margin-top:15px"></div>
   </div>
 
   <div class="card" style="text-align:center">
-    <h2>معاينة رمز QR والبطاقة الذكية</h2>
+    <h2>رمز الـ QR الخاص بالدواء</h2>
     <div id="qrcodeCanvas" class="qr-box" style="margin:15px 0"></div>
     <p><b id="qrCodeLabel">QR: PG-0128</b></p>
-    <p class="muted">مسح الرمز يظهر حالة الدواء للجنة التحكيم.</p>
+    <p class="muted">مسح الرمز يظهر كافة بيانات الصلاحية واللون المخصص[span_14](start_span)[span_14](end_span).</p>
   </div>
 </div>
 </section>
 
-<!-- قسم السلايد السادس: تفاصيل دلالات الألوان والأشكال -->
-<section id="slide6Section" class="
+<!-- قسم خريطة الصيدليات والشركات (بناءً على السوق والفئات المستهدفة في البرزنتيشن) -->
+<section id="pharmacyMap" class="page">
+<div class="top">
+  <div>
+    <h1>خريطة انتشار وتوزيع الفئات المستفيدة في الأردن</h1>
+    <div class="muted">توزيع الصيدليات الخاصة، سلاسل الصيدليات، ومستودعات الأدوية ضمن منظومة نماء[span_15](start_span)[span_15](end_span)</div>
+  </div>
+</div>
+
+<div class="grid" style="grid-template-columns: 1fr 1fr">
+  <div class="card">
+    <h2>🏥 الصيدليات الخاصة وسلاسل الصيدليات</h2>
+    <p class="muted"><b>الدور والنطاق:</b> المستفيدون الأساسيون (صيادلة، مسؤولو الجرد والمخزون). يتيح النظام لهم إدارة المخزون محلياً في محافظات الأردن كبداية[span_16](start_span)[span_16](end_span).</p>
+    <div class="alert" style="background:#eef7f5;border-color:#1f7167">
+      <b>نقاط التوزيع النشطة تجريبياً:</b> عمان، الكرك، إربد، والزرقاء.
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🏢 شركات توزيع الأدوية والمستودعات</h2>
+    <p class="muted"><b>الشركاء المقترحون:</b> شركات ومصانع الأدوية ومستودعات التخزين الكبرى لتحسين رؤية المخزون ودعم قرارات التوزيع وإدارة الهدر[span_17](start_span)[span_17](end_span)[span_18](start_span)[span_18](end_span).</p>
+    <div class="alert" style="background:#fef3c7;border-color:#d97706">
+      <b>الهدف الإستراتيجي:</b> ربط سلسة الإمداد لتقليل الهدر وتحسين كفاءة الموارد[span_19](start_span)[span_19](end_span)[span_20](start_span)[span_20](end_span).
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- قسم ربط الصيدليات وتصحيح الهدر -->
+<section id="pharmacyLink" class="page">
+<div class="top">
+  <div>
+    <h1>ربط الصيدليات وتصحيح الهدر (مطابق للسلايد 7)</h1>
+    <div class="muted">مطابقة العرض والطلب بين الصيدليات لتفادي انتهاء الصلاحية[span_21](start_span)[span_21](end_span)</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="card" style="border-right: 4px solid #1f7167;">
+    <h2>صيدلية (أ) — لديها فائض</h2>
+    <p class="muted">لديها أدوية قريبة من انتهاء الصلاحية وترغب بعرضها ضمن منصة نماء لتجنب الهدر[span_22](start_span)[span_22](end_span).</p>
+    <div class="alert" style="background:#eef7f5;border-color:#1f7167">
+      <b>الدواء المعروض:</b> Amoxicillin (تنتهي قريباً) — الكمية متاحة للتنسيق[span_23](start_span)[span_23](end_span).
+    </div>
+  </div>
+
+  <div class="card" style="border-right: 4px solid #e8a83c;">
+    <h2>صيدلية (ب) — الاحتياج والطلب</h2>
+    <p class="muted">تحتاج هذه الأدوية ضمن مدة صلاحيتها. يتم التنسيق المبكر بدل الاكتشاف المتأخر وفق الأنظمة المعتمدة في الأردن[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span).</p>
+    <button class="primary" style="margin-top:15px" onclick="alert('تم إرسال طلب مطابقة المخزون والتنسيق بنجاح')">طلب مطابقة المخزون</button>
+  </div>
+</div>
+</section>
+
+<!-- المسار البيئي والبحثي -->
+<section id="researchPath" class="page">
+<div class="top">
+  <div>
+    <h1>المسار البيئي والبحثي لمشروع نماء</h1>
+    <div class="muted">استكشاف الأثر البيئي للمخلفات الدوائية والتطبيقات الإنشائية/غير الإنشائية[span_26](start_span)[span_26](end_span)[span_27](start_span)[span_27](end_span)[span_28](start_span)[span_28](end_span)</div>
+  </div>
+</div>
+
+<div class="grid" style="grid-template-columns: 1fr 1fr">
+  <div class="card">
+    <h2>🌱 الأثر البيئي (دراسة الأردن 2026)</h2>
+    <p class="muted">بقايا الأدوية في حمأة محطات المعالجة الأردنية (مثل Diclofenac بتركيز 195.7 ميكروغرام/كغ، و Ciprofloxacin بتركيز 2165.6 ميكروغرام/كغ)[span_29](start_span)[span_29](end_span).</p>
+  </div>
+  <div class="card">
+    <h2>🧱 المسار البحثي المستقبلي</h2>
+    <p class="muted">دراسة إمكانية الاستفادة من عبوات الأدوية (البليستر) في تطبيقات بناء غير إنشائية واختبارات مقاومة الضغط مخبرياً[span_30](start_span)[span_30](end_span)[span_31](start_span)[span_31](end_span). فريق العمل: أماني الزحلان، نغم الصرايرة، لجين السعودي[span_32](start_span)[span_32](end_span).</p>
+  </div>
+</div>
+</section>
+
+<div class="copyright-footer">
+  مشروع نماء | NAMAA • جائزة مؤتة للريادة والابتكار 2026[span_33](start_span)[span_33](end_span) • جميع الحقوق محفوظة
+</div>
+</main></div>
+
+<script>
+let counter = 128;
+let nearCount = 4;
+let expiredCount = 2;
+let currentID = 'PG-0128';
+
+function show(id, btn){
+ document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+ document.querySelectorAll('.nav button').forEach(x => x.classList.remove('active'));
+ if(btn) btn.classList.add('active');
+ if(id === 'inventory') generateQRCode(currentID);
+}
+
+function generateQRCode(text){
+ const container = document.getElementById('qrcodeCanvas');
+ container.innerHTML = '';
+ new QRCode(container, { text: text, width: 110, height: 110 });
+ document.getElementById('qrCodeLabel').innerText = 'QR: ' + text;
+}
+
+// دالة التنبيه الصوتي التلقائي عند إدخال تواريخ قريبة أو منتهية
+function playWarningSound(type) {
+  try {
+    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    
+    osc.type = type === 'expired' ? 'sawtooth' : 'sine';
+    osc.frequency.setValueAtTime(type === 'expired' ? 300 : 600, audioCtx.currentTime);
+    
+    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
+    
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+    
+    osc.start();
+    osc.stop(audioCtx.currentTime + 0.8);
+  } catch(e) {
+    console.log("Audio not supported");
+  }
+}
+
+function addDrugInteractive(){
+ const name = document.getElementById('drugName').value.trim();
+ const qty = document.getElementById('drugQty').value;
+ const expDateStr = document.getElementById('drugExp').value;
+ const testAlert = document.getElementById('testAlertBox');
+
+ if(!name || !qty || !expDateStr){
+   testAlert.innerHTML = '🔴 يرجى تعبئة كافة الحقول (اسم الدواء، الكمية، وتاريخ الانتهاء) لاختبار النظام.';
+   testAlert.style.display = 'block';
+   return;
+ }
+
+ counter++;
+ currentID = 'PG-' + String(counter).padStart(4, '0');
+ 
+ const expDate = new Date(expDateStr);
+ const today = new Date();
+ const diffTime = expDate - today;
+ const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+ let statusHtml = '';
+ let alertMsg = '';
+
+ if (diffDays < 0) {
+   expiredCount++;
+   document.getElementById('statExpired').innerText = expiredCount;
+   statusHtml = `<span class="status-tag" style="background:#dc2626">منتهي الصلاحية ❌</span>`;
+   alertMsg = `❌ <b>تنبيه تلقائي - منتهي الصلاحية:</b> الدواء <b>${name}</b> تجاوز تاريخ الصلاحية منذ ${Math.abs(diffDays)} يوم. تم توجيهه للتعامل وفق الأنظمة المعتمدة[span_34](start_span)[span_34](end_span)[span_35](start_span)[span_35](end_span).`;
+   playWarningSound('expired');
+ } else if (diffDays <= 30) {
+   nearCount++;
+   document.getElementById('statNear').innerText = nearCount;
+   statusHtml = `<span class="status-tag" style="background:#059669">قريب من الانتهاء ⏳</span>`;
+   alertMsg = `⚠️ <b>تنبيه مبكر نشط:</b> الدواء <b>${name}</b> سينتهي خلال ${diffDays} يوم! تم تفعيل الإنذار لتفادي الهدر وعرضه للتبادل[span_36](start_span)[span_36](end_span)[span_37](start_span)[span_37](end_span).`;
+   playWarningSound('near');
+ } else {
+   statusHtml = `<span class="status-tag" style="background:#10b981">آمن وسليم ✅</span>`;
+   alertMsg = `✅ <b>تم التسجيل بنجاح:</b> الدواء <b>${name}</b> بحالة آمنة وصلاحيته ممتدة[span_38](start_span)[span_38](end_span).`;
+ }
+
+ document.getElementById('statRegistered').innerText = counter;
+
+ const table = document.getElementById('recentTable');
+ const row = table.insertRow(1);
+ row.innerHTML = `<td>${currentID}</td><td>${name}</td><td>${qty}</td><td>${expDateStr}</td><td>${statusHtml}</td>`;
+
+ generateQRCode(currentID);
+
+ testAlert.innerHTML = alertMsg;
+ testAlert.style.display = 'block';
+}
+
+window.onload = function(){
+ generateQRCode('PG-0128');
+};
+</script>
+</body>
+</html>
