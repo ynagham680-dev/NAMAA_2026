@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
@@ -11,21 +12,130 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
 :root{--green:#174c3e;--green2:#26745d;--mint:#e9f5ef;--ink:#19342d;--muted:#71827c;--line:#e3ebe6;--bg:#f5f8f6;--white:#fff;--red:#c94b4b;--amber:#d58a25;--blue:#3d78a6;--shadow:0 10px 30px rgba(25,65,51,.07)}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo",sans-serif}button,input,select{font:inherit}button{cursor:pointer}.app{display:flex;min-height:100vh}.sidebar{width:248px;background:#123f35;color:#fff;padding:25px 16px;display:flex;flex-direction:column;flex-shrink:0}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 28px;border-bottom:1px solid #ffffff22}.brand-mark{width:43px;height:43px;border-radius:14px;background:#e2f3e9;color:#174c3e;display:grid;place-items:center;font-weight:800;font-size:21px}.brand h1{font-size:22px;margin:0;letter-spacing:1px}.brand small{display:block;color:#b9d8ca;font-size:11px}.nav{padding-top:22px;display:grid;gap:7px}.nav button{border:0;background:transparent;color:#c8ddd4;text-align:right;padding:12px 14px;border-radius:11px;font-weight:600;display:flex;align-items:center;gap:12px}.nav button.active,.nav button:hover{background:#ffffff18;color:#fff}.nav .ico{width:22px;text-align:center;font-size:17px}.side-note{margin-top:auto;background:#ffffff12;border:1px solid #ffffff20;border-radius:13px;padding:13px;color:#d9e9e1;font-size:11px;line-height:1.8}.main{flex:1;min-width:0;padding:28px 34px 45px}.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:25px}.eyebrow{color:var(--green2);font-weight:700;font-size:12px}.topbar h2{margin:3px 0 0;font-size:25px}.top-actions{display:flex;align-items:center;gap:10px}.date-chip,.user-chip{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:12px;color:var(--muted)}.user-chip{color:var(--green);font-weight:700}.page{display:none}.page.active{display:block}.welcome{background:linear-gradient(115deg,#174c3e,#2c8064);border-radius:19px;padding:25px 28px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px;overflow:hidden}.welcome h3{font-size:21px;margin:0 0 5px}.welcome p{margin:0;color:#d9ebe2;font-size:13px}.welcome .symbol{font-size:60px;opacity:.25}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}.stat,.panel,.feature{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}.stat{padding:17px 18px}.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.stat-icon{width:34px;height:34px;border-radius:10px;background:var(--mint);display:grid;place-items:center;color:var(--green);font-size:17px}.stat strong{display:block;font-size:28px;margin-top:9px;color:var(--green)}.stat small{color:var(--muted);font-size:11px}.grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:17px;margin-bottom:18px}.panel{padding:19px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}.panel-head h3{font-size:16px;margin:0}.muted{color:var(--muted);font-size:11px}.btn{border:0;border-radius:10px;background:var(--green);color:#fff;padding:9px 15px;font-size:12px;font-weight:700}.btn:hover{background:var(--green2)}.btn.light{background:var(--mint);color:var(--green)}.btn.outline{background:#fff;border:1px solid var(--line);color:var(--green)}.alert-list{display:grid;gap:10px}.alert{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:12px;padding:11px}.alert-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}.alert.red .alert-dot{background:var(--red)}.alert.amber .alert-dot{background:var(--amber)}.alert .info{flex:1}.alert b{display:block;font-size:12px}.alert small{color:var(--muted);font-size:10px}.pill{font-size:10px;padding:4px 9px;border-radius:20px;font-weight:700;white-space:nowrap}.pill.red{background:#fff0ef;color:var(--red)}.pill.amber{background:#fff6e8;color:#a96b16}.pill.green{background:#eaf6ee;color:var(--green2)}.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.quick{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:right}.quick span{font-size:21px}.quick b{display:block;font-size:12px;margin-top:7px}.quick small{color:var(--muted);font-size:10px}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:620px}th,td{text-align:right;padding:12px 10px;border-bottom:1px solid var(--line);font-size:11px}th{color:var(--muted);font-weight:700;background:#fbfdfb}td b{font-size:12px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}.toolbar input,.toolbar select,.field input,.field select{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink);outline:none}.toolbar input{min-width:200px;flex:1}.toolbar input:focus,.field input:focus,.field select:focus{border-color:var(--green2)}.map-layout{display:grid;grid-template-columns:1fr 280px;gap:15px}.map-box{height:520px;border-radius:14px;overflow:hidden;border:1px solid var(--line);z-index:1}#jordanMap{height:100%;width:100%}.province-list{display:grid;gap:7px;max-height:460px;overflow:auto}.province-btn{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fff;text-align:right;font-size:11px}.province-btn.active{border-color:var(--green2);background:var(--mint);color:var(--green);font-weight:700}.count{background:#edf4ef;border-radius:20px;padding:2px 8px}.map-legend{display:flex;gap:13px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:10px}.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:5px}.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.feature{padding:20px}.feature .big{font-size:27px}.feature h3{font-size:14px;margin:8px 0 4px}.feature p{font-size:11px;color:var(--muted);line-height:1.9;margin:0}.notice{padding:12px 14px;background:#fff8e9;border:1px solid #f3e4c3;border-radius:11px;color:#805b20;font-size:11px;line-height:1.8;margin-bottom:15px}.modal{display:none;position:fixed;inset:0;background:#10251fcc;z-index:1000;align-items:center;justify-content:center;padding:18px}.modal.show{display:flex}.modal-card{background:#fff;width:min(480px,100%);border-radius:17px;padding:22px;max-height:90vh;overflow:auto}.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}.modal-head h3{margin:0;font-size:17px}.close{border:0;background:#f0f4f1;border-radius:9px;width:32px;height:32px;font-size:18px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:grid;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:11px;font-weight:700;color:var(--muted)}.field input,.field select{width:100%}.modal-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:17px}.empty{text-align:center;color:var(--muted);font-size:12px;padding:25px}.qr-area{text-align:center;padding:15px}.qr-area canvas,.qr-area img{margin:10px auto}.footer{text-align:center;color:#91a29a;font-size:10px;margin-top:25px}.toast{position:fixed;bottom:22px;left:22px;background:#173f34;color:#fff;padding:12px 17px;border-radius:11px;box-shadow:var(--shadow);font-size:12px;z-index:1200;display:none}.toast.show{display:block}
-@media(max-width:1000px){.sidebar{width:210px}.main{padding:23px}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.map-layout{grid-template-columns:1fr}.province-list{grid-template-columns:repeat(3,1fr);max-height:none}.feature-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:650px){.app{display:block}.sidebar{width:100%;padding:13px 12px}.brand{padding:0 7px 12px;border:0}.brand-mark{width:37px;height:37px}.brand h1{font-size:19px}.nav{display:flex;overflow:auto;padding-top:10px;gap:5px}.nav button{white-space:nowrap;padding:9px 11px;font-size:11px}.side-note{display:none}.main{padding:18px 13px 35px}.topbar{align-items:flex-start}.topbar h2{font-size:20px}.date-chip{display:none}.welcome{padding:20px}.welcome .symbol{display:none}.stats{gap:9px}.stat{padding:13px}.stat strong{font-size:23px}.stat-top{font-size:10px}.feature-grid{grid-template-columns:1fr}.province-list{grid-template-columns:1fr 1fr}.map-box{height:390px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.top-actions{gap:5px}.user-chip{font-size:10px;padding:8px}}
-
-/* Slide 12 dashboard */
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Cairo",sans-serif}
+button,input,select{font:inherit}
+button{cursor:pointer}
+.app{display:flex;min-height:100vh}
+.sidebar{width:248px;background:#123f35;color:#fff;padding:25px 16px;display:flex;flex-direction:column;flex-shrink:0}
+.brand{display:flex;align-items:center;gap:11px;padding:0 10px 28px;border-bottom:1px solid #ffffff22}
+.brand-mark{width:43px;height:43px;border-radius:14px;background:#e2f3e9;color:#174c3e;display:grid;place-items:center;font-weight:800;font-size:21px}
+.brand h1{font-size:22px;margin:0;letter-spacing:1px}
+.brand small{display:block;color:#b9d8ca;font-size:11px}
+.nav{padding-top:22px;display:grid;gap:7px}
+.nav button{border:0;background:transparent;color:#c8ddd4;text-align:right;padding:12px 14px;border-radius:11px;font-weight:600;display:flex;align-items:center;gap:12px}
+.nav button.active,.nav button:hover{background:#ffffff18;color:#fff}
+.nav .ico{width:22px;text-align:center;font-size:17px}
+.side-note{margin-top:auto;background:#ffffff12;border:1px solid #ffffff20;border-radius:13px;padding:13px;color:#d9e9e1;font-size:11px;line-height:1.8}
+.main{flex:1;min-width:0;padding:28px 34px 45px}
+.topbar{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:25px}
+.eyebrow{color:var(--green2);font-weight:700;font-size:12px}
+.topbar h2{margin:3px 0 0;font-size:25px}
+.top-actions{display:flex;align-items:center;gap:10px}
+.date-chip,.user-chip{background:#fff;border:1px solid var(--line);border-radius:12px;padding:9px 13px;font-size:12px;color:var(--muted)}
+.user-chip{color:var(--green);font-weight:700}
+.page{display:none}
+.page.active{display:block}
+.welcome{background:linear-gradient(115deg,#174c3e,#2c8064);border-radius:19px;padding:25px 28px;color:#fff;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-bottom:20px;overflow:hidden}
+.welcome h3{font-size:21px;margin:0 0 5px}
+.welcome p{margin:0;color:#d9ebe2;font-size:13px}
+.welcome .symbol{font-size:60px;opacity:.25}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-bottom:20px}
+.stat,.panel,.feature{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow)}
+.stat{padding:17px 18px}
+.stat-top{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
+.stat-icon{width:34px;height:34px;border-radius:10px;background:var(--mint);display:grid;place-items:center;color:var(--green);font-size:17px}
+.stat strong{display:block;font-size:28px;margin-top:9px;color:var(--green)}
+.stat small{color:var(--muted);font-size:11px}
+.grid2{display:grid;grid-template-columns:1.25fr .75fr;gap:17px;margin-bottom:18px}
+.panel{padding:19px}
+.panel-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:15px}
+.panel-head h3{font-size:16px;margin:0}
+.muted{color:var(--muted);font-size:11px}
+.btn{border:0;border-radius:10px;background:var(--green);color:#fff;padding:9px 15px;font-size:12px;font-weight:700}
+.btn:hover{background:var(--green2)}
+.btn.light{background:var(--mint);color:var(--green)}
+.btn.outline{background:#fff;border:1px solid var(--line);color:var(--green)}
+.alert-list{display:grid;gap:10px}
+.alert{display:flex;align-items:center;gap:11px;border:1px solid var(--line);border-radius:12px;padding:11px}
+.alert-dot{width:9px;height:9px;border-radius:50%;flex-shrink:0}
+.alert.red .alert-dot{background:var(--red)}
+.alert.amber .alert-dot{background:var(--amber)}
+.alert .info{flex:1}
+.alert b{display:block;font-size:12px}
+.alert small{color:var(--muted);font-size:10px}
+.pill{font-size:10px;padding:4px 9px;border-radius:20px;font-weight:700;white-space:nowrap}
+.pill.red{background:#fff0ef;color:var(--red)}
+.pill.amber{background:#fff6e8;color:#a96b16}
+.pill.green{background:#eaf6ee;color:var(--green2)}
+.quick-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.quick{padding:15px;border:1px solid var(--line);border-radius:12px;background:#fff;text-align:right}
+.quick span{font-size:21px}
+.quick b{display:block;font-size:12px;margin-top:7px}
+.quick small{color:var(--muted);font-size:10px}
+.table-wrap{overflow:auto}
+table{width:100%;border-collapse:collapse;min-width:620px}
+th,td{text-align:right;padding:12px 10px;border-bottom:1px solid var(--line);font-size:11px}
+th{color:var(--muted);font-weight:700;background:#fbfdfb}
+td b{font-size:12px}
+.toolbar{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:14px}
+.toolbar input,.toolbar select,.field input,.field select{border:1px solid var(--line);background:#fff;border-radius:10px;padding:10px 12px;color:var(--ink);outline:none}
+.toolbar input{min-width:200px;flex:1}
+.toolbar input:focus,.field input:focus,.field select:focus{border-color:var(--green2)}
+.map-layout{display:grid;grid-template-columns:1fr 280px;gap:15px}
+.map-box{height:520px;border-radius:14px;overflow:hidden;border:1px solid var(--line);z-index:1}
+#jordanMap{height:100%;width:100%}
+.province-list{display:grid;gap:7px;max-height:460px;overflow:auto}
+.province-btn{display:flex;justify-content:space-between;align-items:center;border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:#fff;text-align:right;font-size:11px}
+.province-btn.active{border-color:var(--green2);background:var(--mint);color:var(--green);font-weight:700}
+.count{background:#edf4ef;border-radius:20px;padding:2px 8px}
+.map-legend{display:flex;gap:13px;flex-wrap:wrap;margin-top:12px;color:var(--muted);font-size:10px}
+.legend-dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-left:5px}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.feature{padding:20px}
+.feature .big{font-size:27px}
+.feature h3{font-size:14px;margin:8px 0 4px}
+.feature p{font-size:11px;color:var(--muted);line-height:1.9;margin:0}
+.notice{padding:12px 14px;background:#fff8e9;border:1px solid #f3e4c3;border-radius:11px;color:#805b20;font-size:11px;line-height:1.8;margin-bottom:15px}
+.modal{display:none;position:fixed;inset:0;background:#10251fcc;z-index:1000;align-items:center;justify-content:center;padding:18px}
+.modal.show{display:flex}
+.modal-card{background:#fff;width:min(480px,100%);border-radius:17px;padding:22px;max-height:90vh;overflow:auto}
+.modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:15px}
+.modal-head h3{margin:0;font-size:17px}
+.close{border:0;background:#f0f4f1;border-radius:9px;width:32px;height:32px;font-size:18px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.field{display:grid;gap:5px}
+.field.full{grid-column:1/-1}
+.field label{font-size:11px;font-weight:700;color:var(--muted)}
+.field input,.field select{width:100%}
+.modal-actions{display:flex;justify-content:flex-start;gap:8px;margin-top:17px}
+.empty{text-align:center;color:var(--muted);font-size:12px;padding:25px}
+.qr-area{text-align:center;padding:15px}
+.qr-area canvas,.qr-area img{margin:10px auto}
+.footer{text-align:center;color:#91a29a;font-size:10px;margin-top:25px}
+.toast{position:fixed;bottom:22px;left:22px;background:#173f34;color:#fff;padding:12px 17px;border-radius:11px;box-shadow:var(--shadow);font-size:12px;z-index:1200;display:none}
+.toast.show{display:block}
 .slide12-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-bottom:16px}
 .slide12-stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:15px 16px;box-shadow:var(--shadow)}
-.slide12-stat span{display:block;color:var(--muted);font-size:11px;line-height:1.7}.slide12-stat strong{display:block;color:#183f37;font-size:25px;margin:4px 0}.slide12-stat small{font-size:10px;color:var(--muted)}
+.slide12-stat span{display:block;color:var(--muted);font-size:11px;line-height:1.7}
+.slide12-stat strong{display:block;color:#183f37;font-size:25px;margin:4px 0}
+.slide12-stat small{font-size:10px;color:var(--muted)}
 .slide12-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:14px;margin-bottom:14px}
 .slide12-map{height:270px;width:100%;border-radius:12px;overflow:hidden;background:#e7f3ef;border:1px solid var(--line)}
 .slide12-chart{height:270px;display:flex;align-items:flex-end;justify-content:space-around;gap:10px;padding:24px 12px 12px;border-radius:12px;background:#fff}
 .chart-col{height:100%;flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;gap:7px;min-width:0}
-.chart-value{font-size:10px;color:var(--green);font-weight:800}.chart-bar{width:min(44px,75%);min-height:8px;background:#6db6a5;border-radius:7px 7px 0 0;transition:height .25s}.chart-label{font-size:9px;color:var(--muted);white-space:nowrap}
-.slide12-table table{min-width:650px}.slide12-table th,.slide12-table td{padding:10px 9px}.record-id{font-weight:800;color:#65756f;direction:ltr;display:inline-block}.record-status{display:inline-block;border-radius:20px;padding:4px 9px;font-size:9px;background:#eaf6ef;color:#28745e;white-space:nowrap}.record-status.pending{background:#fff5df;color:#9b701c}.record-status.review{background:#fceeed;color:#b34d45}
+.chart-value{font-size:10px;color:var(--green);font-weight:800}
+.chart-bar{width:min(44px,75%);min-height:8px;background:#6db6a5;border-radius:7px 7px 0 0;transition:height .25s}
+.chart-label{font-size:9px;color:var(--muted);white-space:nowrap}
+.slide12-table table{min-width:650px}
+.slide12-table th,.slide12-table td{padding:10px 9px}
+.record-id{font-weight:800;color:#65756f;direction:ltr;display:inline-block}
+.record-status{display:inline-block;border-radius:20px;padding:4px 9px;font-size:9px;background:#eaf6ef;color:#28745e;white-space:nowrap}
+.record-status.pending{background:#fff5df;color:#9b701c}
+.record-status.review{background:#fceeed;color:#b34d45}
+@media(max-width:1000px){.sidebar{width:210px}.main{padding:23px}.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.map-layout{grid-template-columns:1fr}.province-list{grid-template-columns:repeat(3,1fr);max-height:none}.feature-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:850px){.slide12-grid{grid-template-columns:1fr}.slide12-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.app{display:block}.sidebar{width:100%;padding:13px 12px}.brand{padding:0 7px 12px;border:0}.brand-mark{width:37px;height:37px}.brand h1{font-size:19px}.nav{display:flex;overflow:auto;padding-top:10px;gap:5px}.nav button{white-space:nowrap;padding:9px 11px;font-size:11px}.side-note{display:none}.main{padding:18px 13px 35px}.topbar{align-items:flex-start}.topbar h2{font-size:20px}.date-chip{display:none}.welcome{padding:20px}.welcome .symbol{display:none}.stats{gap:9px}.stat{padding:13px}.stat strong{font-size:23px}.stat-top{font-size:10px}.feature-grid{grid-template-columns:1fr}.province-list{grid-template-columns:1fr 1fr}.map-box{height:390px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.top-actions{gap:5px}.user-chip{font-size:10px;padding:8px}}
 @media(max-width:520px){.slide12-stat{padding:12px}.slide12-stat strong{font-size:22px}.slide12-map,.slide12-chart{height:240px}}
 </style>
 </head>
@@ -42,8 +152,12 @@
  </nav>
  <div class="side-note">نسخة تجريبية للعرض والتقييم.<br>البيانات المعروضة افتراضية وليست سجلات تشغيلية أو تعاقدات فعلية.</div>
 </aside>
+
 <main class="main">
- <header class="topbar"><div><div class="eyebrow">NAMAA • SMART PHARMACY PLATFORM</div><h2 id="pageTitle">لوحة التحكم</h2></div><div class="top-actions"><div class="date-chip" id="today"></div><div class="user-chip">● مساحة تجريبية</div></div></header>
+ <header class="topbar">
+  <div><div class="eyebrow">NAMAA • SMART PHARMACY PLATFORM</div><h2 id="pageTitle">لوحة التحكم</h2></div>
+  <div class="top-actions"><div class="date-chip" id="today"></div><div class="user-chip">● مساحة تجريبية</div></div>
+ </header>
 
  <section class="page active" id="dashboard">
   <div class="welcome"><div><h3>مرحباً بك في منظومة نماء</h3><p>لوحة متابعة البلاغات والمساهمات المنزلية وعمليات الجمع والتدوير.</p></div><div class="symbol">♻</div></div>
@@ -53,17 +167,34 @@
    <div class="slide12-stat"><span>تحتاج معالجة خاصة</span><strong id="specialTotal">17</strong><small>سجلات للمراجعة</small></div>
    <div class="slide12-stat"><span>عبوات التدوير</span><strong id="recycleTotal">31</strong><small>عبوات مرشحة للتدوير بحثياً</small></div>
   </div>
+
   <div class="slide12-grid">
-   <div class="panel"><div class="panel-head"><h3>خريطة البلاغات ونقاط الجمع</h3><span class="muted">مواقع البلاغات المسجلة</span></div><div id="reportMap" class="slide12-map"></div><div class="map-legend"><span><i class="legend-dot" style="background:#26745d"></i>مساهمة منزلية</span><span><i class="legend-dot" style="background:#d58a25"></i>معالجة خاصة</span><span><i class="legend-dot" style="background:#5689b5"></i>تدوير</span></div></div>
-   <div class="panel"><div class="panel-head"><h3>توزيع السجلات حسب المحافظة</h3><span class="muted">عدد السجلات</span></div><div id="provinceChart" class="slide12-chart" aria-label="رسم بياني لتوزيع السجلات حسب المحافظة"></div></div>
+   <div class="panel">
+    <div class="panel-head"><h3>خريطة البلاغات ونقاط الجمع</h3><span class="muted">مواقع البلاغات المسجلة</span></div>
+    <div id="reportMap" class="slide12-map"></div>
+    <div class="map-legend"><span><i class="legend-dot" style="background:#26745d"></i>مساهمة منزلية</span><span><i class="legend-dot" style="background:#d58a25"></i>معالجة خاصة</span><span><i class="legend-dot" style="background:#5689b5"></i>تدوير</span></div>
+   </div>
+   <div class="panel">
+    <div class="panel-head"><h3>توزيع السجلات حسب المحافظة</h3><span class="muted">عدد السجلات</span></div>
+    <div id="provinceChart" class="slide12-chart" aria-label="رسم بياني لتوزيع السجلات حسب المحافظة"></div>
+   </div>
   </div>
-  <div class="panel slide12-table"><div class="panel-head"><div><h3>آخر السجلات المسجلة</h3><span class="muted">تتحدث القائمة تلقائياً عند إضافة بلاغ جديد</span></div><button class="btn" onclick="openReportModal()">＋ إضافة بلاغ</button></div><div class="table-wrap"><table><thead><tr><th>ID</th><th>المنشأة / المصدر</th><th>النوع</th><th>المحافظة</th><th>الحالة</th></tr></thead><tbody id="latestReports"></tbody></table></div></div>
+
+  <div class="panel slide12-table">
+   <div class="panel-head"><div><h3>آخر السجلات المسجلة</h3><span class="muted">تتحدث القائمة تلقائياً عند إضافة بلاغ جديد</span></div><button class="btn" onclick="openReportModal()">＋ إضافة بلاغ</button></div>
+   <div class="table-wrap"><table><thead><tr><th>ID</th><th>المنشأة / المصدر</th><th>النوع</th><th>المحافظة</th><th>الحالة</th></tr></thead><tbody id="latestReports"></tbody></table></div>
+  </div>
  </section>
 
  <section class="page" id="inventory">
   <div class="notice">هذه بيانات توضيحية لتجربة الواجهة فقط. لا تستخدم المنصة لاتخاذ قرارات صرف أو نقل أو تبادل الأدوية، ويجب الالتزام بالتعليمات والأنظمة المعتمدة في الأردن.</div>
-  <div class="panel"><div class="panel-head"><h3>سجل مخزون الأدوية</h3><button class="btn" onclick="openMedicineModal()">＋ إضافة دواء</button></div>
-   <div class="toolbar"><input id="searchMedicine" placeholder="ابحث باسم الدواء أو رقم التشغيلة..." oninput="renderInventory()"><select id="filterStatus" onchange="renderInventory()"><option value="all">كل الحالات</option><option value="expired">منتهي</option><option value="soon">قريب الانتهاء</option><option value="good">ساري</option></select><select id="filterProvince" onchange="renderInventory()"><option value="all">كل المحافظات</option></select></div>
+  <div class="panel">
+   <div class="panel-head"><h3>سجل مخزون الأدوية</h3><button class="btn" onclick="openMedicineModal()">＋ إضافة دواء</button></div>
+   <div class="toolbar">
+    <input id="searchMedicine" placeholder="ابحث باسم الدواء أو رقم التشغيلة..." oninput="renderInventory()">
+    <select id="filterStatus" onchange="renderInventory()"><option value="all">كل الحالات</option><option value="expired">منتهي</option><option value="soon">قريب الانتهاء</option><option value="good">ساري</option></select>
+    <select id="filterProvince" onchange="renderInventory()"><option value="all">كل المحافظات</option></select>
+   </div>
    <div class="table-wrap"><table><thead><tr><th>الدواء</th><th>رقم التشغيلة</th><th>الكمية</th><th>المحافظة</th><th>انتهاء الصلاحية</th><th>الحالة</th><th>QR</th></tr></thead><tbody id="inventoryTable"></tbody></table></div>
   </div>
  </section>
@@ -75,9 +206,12 @@
 
  <section class="page" id="network">
   <div class="notice">الخريطة تعرض نقاطاً افتراضية لأغراض العرض. لا تمثل هذه النقاط صيدليات متعاقدة أو شركات مؤكدة. أضيفي بيانات الشركاء الحقيقية بعد الحصول على موافقتهم والتحقق من مواقعهم.</div>
-  <div class="panel"><div class="panel-head"><h3>شبكة الصيدليات والشركات في الأردن</h3><span class="muted">اختر محافظة لعرض النقاط</span></div>
-   <div class="map-layout"><div><div class="map-box"><div id="jordanMap"></div></div><div class="map-legend"><span><i class="legend-dot" style="background:#26745d"></i>صيدلية (بيانات تجريبية)</span><span><i class="legend-dot" style="background:#d58a25"></i>شركة / مستودع (بيانات تجريبية)</span></div></div>
-   <div><div class="panel-head"><h3>محافظات الأردن</h3><button class="btn light" onclick="selectProvince('all')">الكل</button></div><div class="province-list" id="provinceList"></div><div id="provinceDetails" class="muted" style="margin-top:12px;line-height:1.9">اختر محافظة من القائمة أو الخريطة لعرض البيانات التجريبية.</div></div></div>
+  <div class="panel">
+   <div class="panel-head"><h3>شبكة الصيدليات والشركات في الأردن</h3><span class="muted">اختر محافظة لعرض النقاط</span></div>
+   <div class="map-layout">
+    <div><div class="map-box"><div id="jordanMap"></div></div><div class="map-legend"><span><i class="legend-dot" style="background:#26745d"></i>صيدلية (بيانات تجريبية)</span><span><i class="legend-dot" style="background:#d58a25"></i>شركة / مستودع (بيانات تجريبية)</span></div></div>
+    <div><div class="panel-head"><h3>محافظات الأردن</h3><button class="btn light" onclick="selectProvince('all')">الكل</button></div><div class="province-list" id="provinceList"></div><div id="provinceDetails" class="muted" style="margin-top:12px;line-height:1.9">اختر محافظة من القائمة أو الخريطة لعرض البيانات التجريبية.</div></div>
+   </div>
   </div>
  </section>
 
@@ -88,7 +222,8 @@
    <div class="feature"><div class="big">♻</div><h3>إدارة مسؤولة للمخلفات</h3><p>تعزيز التعامل المسؤول مع المخلفات الدوائية والحد من وصولها إلى البيئة وفق الإجراءات المعتمدة.</p></div>
    <div class="feature"><div class="big">⌁</div><h3>مسار بحثي مستقبلي</h3><p>استكشاف استخدامات محتملة لمكونات أو عبوات دوائية في مواد البناء بعد اختبارات مخبرية وتقييم السلامة والأثر البيئي.</p></div>
   </div>
-  <div class="panel" style="margin-top:17px"><div class="panel-head"><h3>المراحل البحثية المقترحة</h3><span class="pill amber">مسار مستقبلي غير مطبق</span></div>
+  <div class="panel" style="margin-top:17px">
+   <div class="panel-head"><h3>المراحل البحثية المقترحة</h3><span class="pill amber">مسار مستقبلي غير مطبق</span></div>
    <div class="alert-list">
     <div class="alert"><span class="alert-dot" style="background:#26745d"></span><div class="info"><b>1. اختيار المركبات أو المواد</b><small>بالتعاون مع الصيادلة والمهندسين.</small></div></div>
     <div class="alert"><span class="alert-dot" style="background:#26745d"></span><div class="info"><b>2. اختبارات مخبرية</b><small>مقاومة الضغط والانحناء، امتصاص الماء، وزمن الشك.</small></div></div>
@@ -99,6 +234,7 @@
   </div>
   <div class="panel" style="margin-top:17px"><div class="panel-head"><h3>مرجع علمي من العرض التقديمي</h3><span class="pill green">مرجع مذكور في العرض</span></div><p style="font-size:12px;line-height:2">Almashaqbeh O., Emmanouil C., Alsalhi L. (2026). <i>Quantification of Pharmaceuticals in Sludge Produced from Wastewater Treatment Plants in Jordan and Environmental Risk Assessment.</i> Toxics 14(1):62. DOI: 10.3390/toxics14010062</p></div>
  </section>
+
  <div class="footer">NAMAA 2026 • نموذج أولي تجريبي • منظومة أذكى لموارد أفضل</div>
 </main>
 </div>
@@ -111,8 +247,240 @@
  <div class="field"><label>المحافظة</label><select name="province" id="medicineProvince" required></select></div>
  <div class="field"><label>تاريخ انتهاء الصلاحية</label><input name="expiry" type="date" required></div>
 </div><div class="modal-actions"><button class="btn" type="submit">حفظ السجل</button><button class="btn outline" type="button" onclick="closeModal('medicineModal')">إلغاء</button></div></form></div></div>
+
 <div class="modal" id="qrModal"><div class="modal-card"><div class="modal-head"><h3>رمز QR للسجل</h3><button class="close" onclick="closeModal('qrModal')">×</button></div><div class="qr-area"><div id="qrCanvas"></div><b id="qrName"></b><p class="muted">رمز تجريبي يحتوي بيانات تعريف السجل فقط.</p></div></div></div>
-<div class="modal" id="reportModal"><div class="modal-card"><div class="modal-head"><h3>إضافة بلاغ جديد</h3><button class="close" onclick="closeModal('reportModal')">×</button></div><form id="reportForm"><div class="form-grid"><div class="field full"><label>المنشأة / المصدر</label><input name="source" required placeholder="مثال: مساهمة منزلية"></div><div class="field"><label>نوع السجل</label><select name="type"><option value="home">مساهمة منزلية</option><option value="special">معالجة خاصة</option><option value="recycle">عبوات تدوير</option><option value="other">بلاغ دوائي</option></select></div><div class="field"><label>المحافظة</label><select name="province" id="reportProvince"></select></div><div class="field full"><label>الحالة</label><select name="status"><option value="received">تم الاستلام</option><option value="pending">قيد الجمع</option><option value="review">للمراجعة</option></select></div></div><div class="modal-actions"><button class="btn" type="submit">حفظ البلاغ</button><button class="btn outline" type="button" onclick="closeModal('reportModal')">إلغاء</button></div></form></div></div>
+
+<div class="modal" id="reportModal"><div class="modal-card"><div class="modal-head"><h3>إضافة بلاغ جديد</h3><button class="close" onclick="closeModal('reportModal')">×</button></div>
+<form id="reportForm"><div class="form-grid">
+ <div class="field full"><label>المنشأة / المصدر</label><input name="source" required placeholder="مثال: مساهمة منزلية"></div>
+ <div class="field"><label>نوع السجل</label><select name="type"><option value="home">مساهمة منزلية</option><option value="special">معالجة خاصة</option><option value="recycle">عبوات تدوير</option><option value="other">بلاغ دوائي</option></select></div>
+ <div class="field"><label>المحافظة</label><select name="province" id="reportProvince"></select></div>
+ <div class="field full"><label>الحالة</label><select name="status"><option value="received">تم الاستلام</option><option value="pending">قيد الجمع</option><option value="review">للمراجعة</option></select></div>
+</div><div class="modal-actions"><button class="btn" type="submit">حفظ البلاغ</button><button class="btn outline" type="button" onclick="closeModal('reportModal')">إلغاء</button></div></form></div></div>
+
 <div class="toast" id="toast"></div>
+
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+const provinces=[
+{name:"عمّان",lat:31.9539,lng:35.9106},{name:"إربد",lat:32.5568,lng:35.8469},{name:"الزرقاء",lat:32.0728,lng:36.088},{name:"البلقاء",lat:32.0392,lng:35.7272},{name:"مادبا",lat:31.7167,lng:35.7933},{name:"الكرك",lat:31.1853,lng:35.7048},{name:"الطفيلة",lat:30.8375,lng:35.6044},{name:"معان",lat:30.1929,lng:35.7342},{name:"العقبة",lat:29.5267,lng:35.0078},{name:"جرش",lat:32.2808,lng:35.8993},{name:"عجلون",lat:32.3326,lng:35.7524},{name:"المفرق",lat:32.3429,lng:36.208}
+];
+
+const demoMedicines=[
+{id:1,name:"Paracetamol 500 mg",batch:"NM-2601",qty:120,province:"عمّان",expiry:future(20)},
+{id:2,name:"Amoxicillin 500 mg",batch:"NM-2602",qty:75,province:"إربد",expiry:future(65)},
+{id:3,name:"Vitamin D3",batch:"NM-2603",qty:200,province:"الزرقاء",expiry:future(180)},
+{id:4,name:"Ibuprofen 200 mg",batch:"NM-2604",qty:50,province:"الكرك",expiry:past(8)},
+{id:5,name:"Cetirizine 10 mg",batch:"NM-2605",qty:90,province:"العقبة",expiry:future(42)},
+{id:6,name:"Omeprazole 20 mg",batch:"NM-2606",qty:65,province:"جرش",expiry:future(240)}
+];
+
+let medicines=demoMedicines.map(x=>({...x}));
+let selectedProvince="all",map,markers=[];
+let reportMap=null,reportMarkers=[];
+
+function future(n){let d=new Date();d.setDate(d.getDate()+n);return d.toISOString().slice(0,10)}
+function past(n){let d=new Date();d.setDate(d.getDate()-n);return d.toISOString().slice(0,10)}
+function statusOf(m){let days=Math.ceil((new Date(m.expiry+"T23:59:59")-new Date())/86400000);return days<0?"expired":days<=90?"soon":"good"}
+function statusLabel(s){return s==="expired"?"منتهي الصلاحية":s==="soon"?"قريب الانتهاء":"ساري"}
+function badge(s){return `<span class="pill ${s==="expired"?"red":s==="soon"?"amber":"green"}">${statusLabel(s)}</span>`}
+function dateAr(d){return new Date(d+"T00:00:00").toLocaleDateString("ar-JO",{year:"numeric",month:"short",day:"numeric"})}
+function showToast(msg){let t=document.getElementById("toast");t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2600)}
+
+function showPage(page){
+document.querySelectorAll(".page").forEach(p=>p.classList.toggle("active",p.id===page));
+document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("active",b.dataset.page===page));
+let titles={dashboard:"لوحة التحكم",inventory:"مخزون الأدوية",alerts:"مركز التنبيهات",network:"خريطة الشركاء",impact:"الأثر البيئي"};
+document.getElementById("pageTitle").textContent=titles[page];
+if(page==="network"&&!map)setTimeout(initMap,100);
+if(page==="network"&&map)setTimeout(()=>map.invalidateSize(),100);
+if(page==="dashboard")setTimeout(initReportMap,120);
+}
+document.querySelectorAll(".nav button").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+
+function renderAll(){renderStats();renderDashAlerts();renderRecent();renderInventory();renderAlerts();renderProvinceList()}
+
+function renderStats(){
+let counts={expired:0,soon:0,good:0};
+medicines.forEach(m=>counts[statusOf(m)]++);
+}
+
+function alertItems(){return medicines.filter(m=>statusOf(m)!=="good").sort((a,b)=>a.expiry.localeCompare(b.expiry))}
+function alertHTML(m){
+let s=statusOf(m);
+return `<div class="alert ${s==="expired"?"red":"amber"}"><span class="alert-dot"></span><div class="info"><b>${esc(m.name)}</b><small>${esc(m.province)} • انتهاء الصلاحية: ${dateAr(m.expiry)}</small></div>${badge(s)}</div>`;
+}
+function renderDashAlerts(){}
+function renderAlerts(){
+let a=alertItems();
+document.getElementById("allAlerts").innerHTML=a.length?a.map(alertHTML).join(""):'<div class="empty">ممتاز! لا توجد أدوية منتهية أو قريبة من الانتهاء ضمن السجلات.</div>';
+}
+function renderRecent(){}
+function renderInventory(){
+let q=(document.getElementById("searchMedicine")?.value||"").toLowerCase();
+let st=document.getElementById("filterStatus")?.value||"all";
+let pr=document.getElementById("filterProvince")?.value||"all";
+let arr=medicines.filter(m=>(m.name.toLowerCase().includes(q)||m.batch.toLowerCase().includes(q))&&(st==="all"||statusOf(m)===st)&&(pr==="all"||m.province===pr));
+document.getElementById("inventoryTable").innerHTML=arr.map(m=>`<tr><td><b>${esc(m.name)}</b></td><td>${esc(m.batch)}</td><td>${m.qty}</td><td>${esc(m.province)}</td><td>${dateAr(m.expiry)}</td><td>${badge(statusOf(m))}</td><td><button class="btn light" onclick="showQR(${m.id})">عرض QR</button></td></tr>`).join("")||'<tr><td colspan="7" class="empty">لا توجد نتائج مطابقة.</td></tr>';
+}
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+function fillSelects(){
+let opts=provinces.map(p=>`<option value="${p.name}">${p.name}</option>`).join("");
+document.getElementById("medicineProvince").innerHTML=opts;
+document.getElementById("filterProvince").innerHTML='<option value="all">كل المحافظات</option>'+opts;
+document.getElementById("reportProvince").innerHTML=opts;
+}
+function openMedicineModal(){document.getElementById("medicineModal").classList.add("show")}
+function closeModal(id){document.getElementById(id).classList.remove("show")}
+
+document.getElementById("medicineForm").addEventListener("submit",e=>{
+e.preventDefault();
+let f=new FormData(e.target);
+medicines.push({id:Date.now(),name:f.get("name").trim(),batch:f.get("batch").trim(),qty:Number(f.get("qty")),province:f.get("province"),expiry:f.get("expiry")});
+e.target.reset();
+closeModal("medicineModal");
+renderAll();
+showToast("تمت إضافة السجل إلى البيانات التجريبية.");
+});
+
+function showQR(id){
+let m=medicines.find(x=>x.id===id);
+document.getElementById("qrCanvas").innerHTML="";
+document.getElementById("qrName").textContent=m.name;
+let payload=JSON.stringify({id:m.id,name:m.name,batch:m.batch,expiry:m.expiry});
+if(window.QRCode)new QRCode(document.getElementById("qrCanvas"),{text:payload,width:180,height:180,colorDark:"#174c3e",colorLight:"#ffffff"});
+else document.getElementById("qrCanvas").textContent="تعذر تحميل مكتبة QR؛ تحقق من الاتصال بالإنترنت.";
+document.getElementById("qrModal").classList.add("show");
+}
+
+function renderProvinceList(){
+let el=document.getElementById("provinceList");
+if(!el)return;
+el.innerHTML=`<button class="province-btn ${selectedProvince==="all"?"active":""}" onclick="selectProvince('all')"><span>كل المحافظات</span><span class="count">${demoPartners.length}</span></button>`+provinces.map(p=>{
+let n=demoPartners.filter(x=>x.province===p.name).length;
+return `<button class="province-btn ${selectedProvince===p.name?"active":""}" onclick="selectProvince('${p.name}')"><span>${p.name}</span><span class="count">${n}</span></button>`;
+}).join("");
+}
+
+const demoPartners=[
+{name:"نقطة صيدلية تجريبية 1",province:"عمّان",type:"pharmacy",lat:31.9539,lng:35.9106},
+{name:"نقطة صيدلية تجريبية 2",province:"عمّان",type:"pharmacy",lat:31.985,lng:35.86},
+{name:"نقطة شركة تجريبية",province:"عمّان",type:"company",lat:31.92,lng:35.94},
+{name:"نقطة صيدلية تجريبية",province:"إربد",type:"pharmacy",lat:32.5568,lng:35.8469},
+{name:"نقطة صيدلية تجريبية",province:"الزرقاء",type:"pharmacy",lat:32.0728,lng:36.088},
+{name:"نقطة شركة تجريبية",province:"الزرقاء",type:"company",lat:32.1,lng:36.12},
+{name:"نقطة صيدلية تجريبية",province:"البلقاء",type:"pharmacy",lat:32.0392,lng:35.7272},
+{name:"نقطة صيدلية تجريبية",province:"مادبا",type:"pharmacy",lat:31.7167,lng:35.7933},
+{name:"نقطة صيدلية تجريبية",province:"الكرك",type:"pharmacy",lat:31.1853,lng:35.7048},
+{name:"نقطة صيدلية تجريبية",province:"الطفيلة",type:"pharmacy",lat:30.8375,lng:35.6044},
+{name:"نقطة شركة تجريبية",province:"معان",type:"company",lat:30.1929,lng:35.7342},
+{name:"نقطة صيدلية تجريبية",province:"العقبة",type:"pharmacy",lat:29.5267,lng:35.0078},
+{name:"نقطة صيدلية تجريبية",province:"جرش",type:"pharmacy",lat:32.2808,lng:35.8993},
+{name:"نقطة صيدلية تجريبية",province:"عجلون",type:"pharmacy",lat:32.3326,lng:35.7524},
+{name:"نقطة صيدلية تجريبية",province:"المفرق",type:"pharmacy",lat:32.3429,lng:36.208}
+];
+
+function initMap(){
+if(map)return;
+if(!window.L){document.getElementById("jordanMap").innerHTML='<div class="empty">تعذر تحميل الخريطة. تحقق من اتصال الإنترنت.</div>';return}
+map=L.map("jordanMap").setView([31.25,36.0],7);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(map);
+refreshMarkers();
+renderProvinceList();
+}
+function refreshMarkers(){
+if(!map)return;
+markers.forEach(m=>map.removeLayer(m));
+markers=[];
+let items=demoPartners.filter(p=>selectedProvince==="all"||p.province===selectedProvince);
+items.forEach(p=>{
+let color=p.type==="company"?"#d58a25":"#26745d";
+let marker=L.circleMarker([p.lat,p.lng],{radius:8,color:"#fff",weight:2,fillColor:color,fillOpacity:1}).addTo(map);
+marker.bindPopup(`<b>${esc(p.name)}</b><br>${esc(p.province)}<br><small>${p.type==="company"?"شركة / مستودع":"صيدلية"} • بيانات تجريبية</small>`);
+markers.push(marker);
+});
+if(selectedProvince!=="all"){
+let p=provinces.find(x=>x.name===selectedProvince);
+map.setView([p.lat,p.lng],10);
+let partners=demoPartners.filter(x=>x.province===selectedProvince);
+document.getElementById("provinceDetails").innerHTML=`<b style="color:var(--green)">${selectedProvince}</b><br>${partners.length} نقطة تجريبية على الخريطة.<br><span class="muted">لا تمثل هذه النقاط تعاقدات حقيقية.</span>`;
+}else{
+map.setView([31.25,36.0],7);
+document.getElementById("provinceDetails").textContent="تعرض الخريطة نقاطاً افتراضية موزعة على المحافظات لأغراض توضيح فكرة الشبكة.";
+}
+}
+function selectProvince(p){selectedProvince=p;renderProvinceList();refreshMarkers()}
+
+const reportTypes={home:"مساهمة منزلية",special:"معالجة خاصة",recycle:"عبوات تدوير",other:"بلاغ دوائي"};
+const provinceWeights=["عمّان","إربد","الزرقاء","الكرك","عمّان","المفرق","إربد","عمّان","البلقاء","الزرقاء","مادبا","عمّان","العقبة","جرش","الكرك"];
+let reports=[];
+
+function seedReports(){
+const types=[...Array(45).fill("home"),...Array(17).fill("special"),...Array(31).fill("recycle"),...Array(35).fill("other")];
+types.forEach((type,i)=>{
+const province=provinceWeights[i%provinceWeights.length];
+const place=provinces.find(p=>p.name===province);
+reports.push({id:128-i,source:type==="home"?"مساهمة منزلية":type==="special"?"منشأة صحية":type==="recycle"?"نقطة تدوير":"صيدلية مشاركة",type,province,status:i%9===0?"pending":i%13===0?"review":"received",lat:place.lat+(((i%5)-2)*.009),lng:place.lng+(((i%7)-3)*.009),created:Date.now()-i*3600000});
+});
+}
+function statusText(s){return s==="pending"?"قيد الجمع":s==="review"?"للمراجعة":"تم الاستلام"}
+
+function renderReports(){
+const count=t=>reports.filter(r=>r.type===t).length;
+document.getElementById("reportTotal").textContent=reports.length;
+document.getElementById("homeTotal").textContent=count("home");
+document.getElementById("specialTotal").textContent=count("special");
+document.getElementById("recycleTotal").textContent=count("recycle");
+const sorted=[...reports].sort((a,b)=>b.created-a.created).slice(0,5);
+document.getElementById("latestReports").innerHTML=sorted.map(r=>`<tr><td><span class="record-id">PG-${String(r.id).padStart(4,"0")}</span></td><td>${esc(r.source)}</td><td>${reportTypes[r.type]}</td><td>${esc(r.province)}</td><td><span class="record-status ${r.status}">${statusText(r.status)}</span></td></tr>`).join("")||'<tr><td colspan="5" class="empty">لا توجد سجلات بعد.</td></tr>';
+renderProvinceChart();
+refreshReportMarkers();
+}
+function renderProvinceChart(){
+const counts=provinces.map(p=>({name:p.name,n:reports.filter(r=>r.province===p.name).length})).sort((a,b)=>b.n-a.n).slice(0,5);
+const max=Math.max(1,...counts.map(x=>x.n));
+document.getElementById("provinceChart").innerHTML=counts.map(x=>`<div class="chart-col"><span class="chart-value">${x.n}</span><div class="chart-bar" title="${esc(x.name)}: ${x.n}" style="height:${Math.max(8,x.n/max*76)}%"></div><span class="chart-label">${esc(x.name)}</span></div>`).join("");
+}
+function initReportMap(){
+if(reportMap||!document.getElementById("reportMap"))return;
+if(!window.L){document.getElementById("reportMap").innerHTML='<div class="empty">تعذر تحميل الخريطة. تحقق من الاتصال بالإنترنت.</div>';return}
+reportMap=L.map("reportMap").setView([31.25,36.0],7);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'}).addTo(reportMap);
+refreshReportMarkers();
+}
+function refreshReportMarkers(){
+if(!reportMap)return;
+reportMarkers.forEach(m=>reportMap.removeLayer(m));
+reportMarkers=[];
+reports.forEach(r=>{
+const color=r.type==="home"?"#26745d":r.type==="special"?"#d58a25":r.type==="recycle"?"#5689b5":"#78958b";
+const marker=L.circleMarker([r.lat,r.lng],{radius:5,color:"#fff",weight:1.5,fillColor:color,fillOpacity:.9}).addTo(reportMap);
+marker.bindPopup(`<b>${esc(r.source)}</b><br>${reportTypes[r.type]}<br>${esc(r.province)}<br>${statusText(r.status)}`);
+reportMarkers.push(marker);
+});
+}
+function openReportModal(){document.getElementById("reportModal").classList.add("show")}
+
+document.getElementById("reportForm").addEventListener("submit",e=>{
+e.preventDefault();
+const f=new FormData(e.target);
+const p=provinces.find(x=>x.name===f.get("province"));
+const r={id:Date.now()%100000,source:f.get("source").trim(),type:f.get("type"),province:f.get("province"),status:f.get("status"),lat:p.lat,lng:p.lng,created:Date.now()};
+reports.push(r);
+e.target.reset();
+closeModal("reportModal");
+renderReports();
+showToast("تمت إضافة البلاغ وتحديث الخريطة والرسم والجدول.");
+});
+
+document.getElementById("today").textContent=new Date().toLocaleDateString("ar-JO",{weekday:"long",year:"numeric",month:"long",day:"numeric"});
+fillSelects();
+renderAll();
+seedReports();
+renderReports();
+setTimeout(initReportMap,250);
+</script>
+</body>
+</html>
