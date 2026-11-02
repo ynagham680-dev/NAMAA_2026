@@ -18,7 +18,7 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
 .page{display:none}.page.active{display:block}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field label{display:block;font-weight:700;font-size:13px;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;padding:12px;border:1px solid #d7e4e0;border-radius:10px;background:#fbfdfc}.field.full{grid-column:1/-1}.primary{background:#1f7167;color:white;border:0;padding:12px 20px;border-radius:11px;font-weight:700}.actions{display:flex;gap:10px;margin-top:18px}
 .qr-box{padding:10px;background:#fff;border:1px solid #cadbd6;border-radius:12px;display:inline-block;margin:auto}
 .alert{padding:15px;border-radius:12px;background:#fff7e6;border-right:4px solid #e8a83c;margin-top:15px}
-.month-tag { padding: 4px 10px; border-radius: 6px; color: white; font-weight: bold; display: inline-block; font-size: 12px; }
+.status-tag { padding: 5px 12px; border-radius: 8px; color: white; font-weight: bold; display: inline-block; font-size: 12px; }
 .copyright-footer{margin-top:25px;padding-top:15px;border-top:1px solid #e4eeeb;text-align:center;font-size:12px;color:#718785}
 @media(max-width:850px){.side{width:75px}.logo span{display:none}.nav button{font-size:0;text-align:center}.nav button:before{content:"•";font-size:25px}.main{margin-right:75px;width:calc(100% - 75px);padding:18px}.grid{grid-template-columns:1fr 1fr}.row{grid-template-columns:1fr}}
 </style>
@@ -34,13 +34,13 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
   <div class="nav">
     <button class="active" onclick="show('dashboard',this)">📊 لوحة التحكم</button>
     <button onclick="show('inventory',this)">📦 تجربة الجرد والتحذيرات الصوتية</button>
-    <button onclick="show('slide6Section',this)">🎨 تفاصيل السلايد 6 (الألوان)</button>
+    <button onclick="show('slide6Section',this)">🎨 تفاصيل السلايد 6 (الألوان والدلالات)</button>
     <button onclick="show('pharmacyLink',this)">🔄 ربط الصيدليات</button>
     <button onclick="show('researchPath',this)">🧪 المسار البحثي والبيئي</button>
   </div>
 </div>
 <div style="font-size:11px;color:#a3c7c2;padding:10px;text-align:center;border-top:1px solid #1c524f">
-  © 2026 NAMAA<br>جائزة مؤتة للريادة والابتكار[span_0](start_span)[span_0](end_span)
+  © 2026 NAMAA<br>جائزة مؤتة للريادة والابتكار
 </div>
 </aside>
 
@@ -50,29 +50,29 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
 <div class="top">
   <div>
     <h1>مشروع نماء | NAMAA</h1>
-    <div class="muted">منصة رقمية لإدارة مخزون الأدوية وتواريخ الصلاحية باستخدام QR Code[span_1](start_span)[span_1](end_span)</div>
+    <div class="muted">منصة رقمية لإدارة مخزون الأدوية وتواريخ الصلاحية باستخدام QR Code</div>
   </div>
-  <span class="badge">جائزة مؤتة للريادة والابتكار 2026[span_2](start_span)[span_2](end_span)</span>
+  <span class="badge">جائزة مؤتة للريادة والابتكار 2026</span>
 </div>
 
 <div class="alert" style="margin-bottom:18px">
-<b>📌 لوحة التفاعل والتحذيرات الصوتية:</b> عند إدخال دواء تاريخه قريب أو منتهي في قسم "تجربة الجرد"، سيصدر النظام <b>تنبيهًا صوتيًا تلقائيًا</b> مع الإنذار البصري الملون[span_3](start_span)[span_3](end_span)!
+<b>📌 نموذج تفاعلي:</b> اختبري النظام في قسم "تجربة الجرد"، وأدخلي تواريخ مختلفة لمشاهدة التنبيه الصوتي ودلالات الألوان فوراً.
 </div>
 
 <div class="grid">
 <div class="card"><div class="muted">الأدوية المسجلة</div><div class="metric" id="statRegistered">128</div><div class="muted">قاعدة بيانات نشطة</div></div>
-<div class="card"><div class="muted">قريبة من الانتهاء</div><div class="metric" id="statNear" style="color:#d97706">4</div><div class="muted">تنبيه مبكر تلقائي[span_4](start_span)[span_4](end_span)</div></div>
-<div class="card"><div class="muted">منتهية الصلاحية</div><div class="metric" id="statExpired" style="color:#dc2626">2</div><div class="muted">تجاوزت التاريخ[span_5](start_span)[span_5](end_span)[span_6](start_span)[span_6](end_span)</div></div>
+<div class="card"><div class="muted">قريبة من الانتهاء</div><div class="metric" id="statNear" style="color:#d97706">4</div><div class="muted">تنبيه مبكر تلقائي</div></div>
+<div class="card"><div class="muted">منتهية الصلاحية</div><div class="metric" id="statExpired" style="color:#dc2626">2</div><div class="muted">تجاوزت التاريخ</div></div>
 <div class="card"><div class="muted">صيدليات مرتبطة</div><div class="metric">14</div><div class="muted">شبكة تجريبية</div></div>
 </div>
 
 <div class="card" style="margin-top:18px">
-  <h2>سجلات الأدوية التفاعلية</h2>
+  <h2>سجلات الأدوية (تطبيقات السلايد 6)</h2>
   <table id="recentTable">
-    <tr><th>رمز QR / ID</th><th>اسم الدواء</th><th>الكمية</th><th>تاريخ الانتهاء</th><th>نتيجة التنبيه واللون</th></tr>
-    <tr><td>PG-0128</td><td>Amoxicillin</td><td>20</td><td>2026-06-15</td><td><span class="month-tag" style="background:#059669">حزيران (قريب من الانتهاء)[span_7](start_span)[span_7](end_span)</span></td></tr>
-    <tr><td>PG-0127</td><td>Vitamin D</td><td>50</td><td>2026-06-18</td><td><span class="month-tag" style="background:#059669">حزيران (قريب)[span_8](start_span)[span_8](end_span)</span></td></tr>
-    <tr><td>PG-0126</td><td>Metformin</td><td>30</td><td>2026-01-10</td><td><span class="month-tag" style="background:#dc2626">منتهي الصلاحية[span_9](start_span)[span_9](end_span)[span_10](start_span)[span_10](end_span)</span></td></tr>
+    <tr><th>رمز QR / ID</th><th>اسم الدواء</th><th>الكمية</th><th>تاريخ الانتهاء</th><th>الحالة ودلالة اللون</th></tr>
+    <tr><td>PG-0128</td><td>Amoxicillin</td><td>20</td><td>2026-06-15</td><td><span class="status-tag" style="background:#059669">⏳ حزيران (قريب من الانتهاء)</span></td></tr>
+    <tr><td>PG-0127</td><td>Vitamin D</td><td>50</td><td>2026-06-18</td><td><span class="status-tag" style="background:#059669">⏳ حزيران (قريب)</span></td></tr>
+    <tr><td>PG-0126</td><td>Metformin</td><td>30</td><td>2026-01-10</td><td><span class="status-tag" style="background:#dc2626">❌ منتهي الصلاحية</span></td></tr>
   </table>
 </div>
 </section>
@@ -81,8 +81,8 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
 <section id="inventory" class="page">
 <div class="top">
   <div>
-    <h1>تجربة الجرد الذكي والتحذير الصوتي (تفاعلي)</h1>
-    <div class="muted">أدخلي تاريخاً منتهياً أو قريباً واضغطي فحص لتسمعي التنبيه الصوتي المباشر[span_11](start_span)[span_11](end_span)</div>
+    <h1>تجربة الجرد الذكي والتحذير الصوتي (السلايد 6)</h1>
+    <div class="muted">إدخال بيانات الدواء وربطه برمز QR لاختبار التنبيه التلقائي</div>
   </div>
 </div>
 
@@ -100,193 +100,13 @@ table{width:100%;border-collapse:collapse}th,td{padding:12px;border-bottom:1px s
   </div>
 
   <div class="card" style="text-align:center">
-    <h2>توليد رمز QR فوري للدواء المُدخل</h2>
+    <h2>معاينة رمز QR والبطاقة الذكية</h2>
     <div id="qrcodeCanvas" class="qr-box" style="margin:15px 0"></div>
     <p><b id="qrCodeLabel">QR: PG-0128</b></p>
-    <p class="muted">مسح الرمز يوضح حالة الدواء للجنة التحكيم[span_12](start_span)[span_12](end_span).</p>
+    <p class="muted">مسح الرمز يظهر حالة الدواء للجنة التحكيم.</p>
   </div>
 </div>
 </section>
 
-<!-- قسم السلايد السادس: تفاصيل ألوان الأشهر -->
-<section id="slide6Section" class="page">
-<div class="top">
-  <div>
-    <h1>السلايد 6: تفاصيل النظام اللوني والتنبيهات</h1>
-    <div class="muted">آلية عمل الفرز اللوني والتنبيه التلقائي المبكر[span_13](start_span)[span_13](end_span)</div>
-  </div>
-</div>
-
-<div class="grid" style="grid-template-columns: 1fr 1fr">
-  <div class="card">
-    <h2>🎨 دليل ألوان الأشهر المعتمدة</h2>
-    <p class="muted">لكل شهر لون ثابت لتمييز الصلاحية بنظرة واحدة[span_14](start_span)[span_14](end_span):</p>
-    <div style="margin-top:15px">
-      <span class="month-tag" style="background:#3b82f6; margin:4px">كانون الثاني (أزرق)</span>
-      <span class="month-tag" style="background:#8b5cf6; margin:4px">آذار (بنفسجي)</span>
-      <span class="month-tag" style="background:#10b981; margin:4px">آيار (أخضر فاتح)</span>
-      <span class="month-tag" style="background:#059669; margin:4px">حزيران (أخضر داكن - قريب)[span_15](start_span)[span_15](end_span)</span>
-      <span class="month-tag" style="background:#d97706; margin:4px">تموز (برتقالي)</span>
-      <span class="month-tag" style="background:#dc2626; margin:4px">أيلول (أحمر - منتهي)[span_16](start_span)[span_16](end_span)</span>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>⚡ محاكاة التنبيه الصوتي والتلقائي</h2>
-    <div class="alert" style="background:#fef3c7;border-color:#d97706">
-      <b>⚠️ خاصية التنبيه الصوتي:</b> يصدر النظام نغمة تنبيه فورية عند اكتشاف أدوية قريبة من الانتهاء أو منتهية لتنبيه الصيدلاني فورا[span_17](start_span)[span_17](end_span).
-    </div>
-  </div>
-</div>
-</section>
-
-<!-- قسم ربط الصيدليات -->
-<section id="pharmacyLink" class="page">
-<div class="top">
-  <div>
-    <h1>ربط الصيدليات وتصحيح الهدر</h1>
-    <div class="muted">مطابقة العرض والطلب بين الصيدليات[span_18](start_span)[span_18](end_span)</div>
-  </div>
-</div>
-
-<div class="row">
-  <div class="card" style="border-right: 4px solid #1f7167;">
-    <h2>صيدلية (أ) — لديها فائض</h2>
-    <p class="muted">عرض الأدوية القريبة من الانتهاء لتفادي الخسائر[span_19](start_span)[span_19](end_span).</p>
-  </div>
-  <div class="card" style="border-right: 4px solid #e8a83c;">
-    <h2>صيدلية (ب) — الاحتياج</h2>
-    <p class="muted">طلب الأدوية ضمن مدة صلاحيتها بالتنسيق المعتمد[span_20](start_span)[span_20](end_span).</p>
-  </div>
-</div>
-</section>
-
-<!-- قسم المسار البحثي والبيئي -->
-<section id="researchPath" class="page">
-<div class="top">
-  <div>
-    <h1>المسار البحثي والبيئي لمشروع نماء</h1>
-    <div class="muted">استكشاف تقليل الأثر البيئي للمخلفات الدوائية[span_21](start_span)[span_21](end_span)[span_22](start_span)[span_22](end_span)</div>
-  </div>
-</div>
-
-<div class="grid" style="grid-template-columns: 1fr 1fr">
-  <div class="card">
-    <h2>🌱 الأثر البيئي (دراسة الأردن 2026)</h2>
-    <p class="muted">رصد بقايا أدوية في حمأة محطات المعالجة (مثل Diclofenac و Ciprofloxacin)[span_23](start_span)[span_23](end_span).</p>
-  </div>
-  <div class="card">
-    <h2>🧱 الاستخدامات البحثية المستقبلية</h2>
-    <p class="muted">دراسة استخدام عبوات الأدوية في تطبيقات بناء غير إنشائية مخبرياً[span_24](start_span)[span_24](end_span)[span_25](start_span)[span_25](end_span). فريق العمل: أماني، نغم، لجين[span_26](start_span)[span_26](end_span).</p>
-  </div>
-</div>
-</section>
-
-<div class="copyright-footer">
-  مشروع نماء | NAMAA • جائزة مؤتة للريادة والابتكار 2026[span_27](start_span)[span_27](end_span) • جميع الحقوق محفوظة
-</div>
-</main></div>
-
-<script>
-let counter = 128;
-let nearCount = 4;
-let expiredCount = 2;
-let currentID = 'PG-0128';
-
-function show(id, btn){
- document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
- document.getElementById(id).classList.add('active');
- document.querySelectorAll('.nav button').forEach(x => x.classList.remove('active'));
- if(btn) btn.classList.add('active');
- if(id === 'inventory') generateQRCode(currentID);
-}
-
-function generateQRCode(text){
- const container = document.getElementById('qrcodeCanvas');
- container.innerHTML = '';
- new QRCode(container, { text: text, width: 110, height: 110 });
- document.getElementById('qrCodeLabel').innerText = 'QR: ' + text;
-}
-
-// دالة لتوليد نغمة صوتية تحذيرية برمجياً (تنبيه صوتي)
-function playWarningSound(type) {
-  try {
-    const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-    const osc = audioCtx.createOscillator();
-    const gain = audioCtx.createGain();
-    
-    osc.type = type === 'expired' ? 'sawtooth' : 'sine';
-    osc.frequency.setValueAtTime(type === 'expired' ? 300 : 600, audioCtx.currentTime);
-    
-    gain.gain.setValueAtTime(0.1, audioCtx.currentTime);
-    gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.8);
-    
-    osc.connect(gain);
-    gain.connect(audioCtx.destination);
-    
-    osc.start();
-    osc.stop(audioCtx.currentTime + 0.8);
-  } catch(e) {
-    console.log("Audio not supported");
-  }
-}
-
-// دالة فحص التاريخ وإطلاق التنبيه الصوتي والمرئي
-function addDrugInteractive(){
- const name = document.getElementById('drugName').value.trim();
- const qty = document.getElementById('drugQty').value;
- const expDateStr = document.getElementById('drugExp').value;
- const testAlert = document.getElementById('testAlertBox');
-
- if(!name || !qty || !expDateStr){
-   testAlert.innerHTML = '🔴 يرجى تعبئة كافة الحقول (الاسم، الكمية، وتاريخ الانتهاء) للاختبار.';
-   testAlert.style.display = 'block';
-   return;
- }
-
- counter++;
- currentID = 'PG-' + String(counter).padStart(4, '0');
- 
- const expDate = new Date(expDateStr);
- const today = new Date();
- const diffTime = expDate - today;
- const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-
- let statusHtml = '';
- let alertMsg = '';
-
- if (diffDays < 0) {
-   expiredCount++;
-   document.getElementById('statExpired').innerText = expiredCount;
-   statusHtml = `<span class="month-tag" style="background:#dc2626">منتهي الصلاحية ❌</span>`;
-   alertMsg = `❌ <b>تنبيه صوتي - خطورة عالية:</b> الدواء <b>${name}</b> منتهي الصلاحية (تجاوز التاريخ منذ ${Math.abs(diffDays)} يوم). تم توجيهه للتعامل وفق الأنظمة[span_28](start_span)[span_28](end_span)[span_29](start_span)[span_29](end_span).`;
-   playWarningSound('expired'); // تشغيل صوت تحذيري حاد
- } else if (diffDays <= 30) {
-   nearCount++;
-   document.getElementById('statNear').innerText = nearCount;
-   statusHtml = `<span class="month-tag" style="background:#d97706">قريب من الانتهاء ⚠️</span>`;
-   alertMsg = `⚠️ <b>تنبيه صوتي مبكر:</b> الدواء <b>${name}</b> سينتهي خلال ${diffDays} يوم! تم إرسال إشعار صوتي لتلافي الهدر[span_30](start_span)[span_30](end_span).`;
-   playWarningSound('near'); // تشغيل صوت تنبيه متوسط
- } else {
-   statusHtml = `<span class="month-tag" style="background:#059669">آمن وسليم ✅</span>`;
-   alertMsg = `✅ <b>تم التسجيل بنجاح:</b> الدواء <b>${name}</b> بحالة آمنة وصلاحيته سارية[span_31](start_span)[span_31](end_span).`;
- }
-
- document.getElementById('statRegistered').innerText = counter;
-
- const table = document.getElementById('recentTable');
- const row = table.insertRow(1);
- row.innerHTML = `<td>${currentID}</td><td>${name}</td><td>${qty}</td><td>${expDateStr}</td><td>${statusHtml}</td>`;
-
- generateQRCode(currentID);
-
- testAlert.innerHTML = alertMsg;
- testAlert.style.display = 'block';
-}
-
-window.onload = function(){
- generateQRCode('PG-0128');
-};
-</script>
-</body>
-</html>
+<!-- قسم السلايد السادس: تفاصيل دلالات الألوان والأشكال -->
+<section id="slide6Section" class="
